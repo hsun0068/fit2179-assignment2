@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Overview + Detail: National Health and Lifestyle Trends",
+    "subtitle": "Brush the lower chart to filter the top chart",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "data/national_trends.csv"
+  },
+  "vconcat": [
+    {
+      "width": 780,
+      "height": 300,
+      "mark": {
+        "type": "line",
+        "point": true
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "scale": {
+            "domain": {
+              "param": "brush"
+            }
+          },
+          "title": "Selected year range"
+        },
+        "y": {
+          "field": "rate",
+          "type": "quantitative",
+          "title": "Rate (%)"
+        },
+        "color": {
+          "field": "metric",
+          "type": "nominal",
+          "title": "Indicator"
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal"
+          },
+          {
+            "field": "metric",
+            "type": "nominal"
+          },
+          {
+            "field": "rate",
+            "type": "quantitative",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "width": 780,
+      "height": 80,
+      "mark": "line",
+      "params": [
+        {
+          "name": "brush",
+          "select": {
+            "type": "interval",
+            "encodings": [
+              "x"
+            ]
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Brush to select years"
+        },
+        "y": {
+          "field": "rate",
+          "aggregate": "mean",
+          "type": "quantitative",
+          "axis": {
+            "tickCount": 3,
+            "grid": false
+          },
+          "title": "Mean rate"
+        },
+        "color": {
+          "field": "metric",
+          "type": "nominal",
+          "legend": null
+        }
+      }
+    }
+  ]
+}

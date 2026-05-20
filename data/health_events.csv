@@ -1,0 +1,961 @@
+date,year,area,state,abbr,lon,lat,risk_events,severity
+2011-01-01,2011,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,58,4.1
+2011-01-01,2011,NSW Region 5,New South Wales,NSW,148.2,-35.82,46,3.7
+2011-01-01,2011,VIC Region 11,Victoria,VIC,142.81,-37.16,119,4.2
+2011-01-01,2011,NT Region 4,Northern Territory,NT,129.77,-19.74,12,4.2
+2011-01-01,2011,TAS Region 2,Tasmania,TAS,147.61,-43.05,40,4.2
+2011-01-01,2011,NSW Region 11,New South Wales,NSW,149.58,-36.68,78,4.6
+2011-01-01,2011,QLD Region 6,Queensland,QLD,142.73,-20.46,267,4.5
+2011-01-01,2011,QLD Region 11,Queensland,QLD,146.38,-15.86,264,4.3
+2011-01-01,2011,QLD Region 3,Queensland,QLD,139.76,-22.66,197,4.8
+2011-01-01,2011,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,38,4.0
+2011-01-01,2011,VIC Region 4,Victoria,VIC,144.48,-36.78,79,3.8
+2011-01-01,2011,WA Region 8,Western Australia,WA,117.35,-31.42,119,4.5
+2011-01-01,2011,VIC Region 8,Victoria,VIC,146.7,-37.99,163,3.7
+2011-01-01,2011,NSW Region 10,New South Wales,NSW,141.44,-36.71,217,4.0
+2011-01-01,2011,SA Region 7,South Australia,SA,134.49,-28.35,26,4.1
+2011-01-01,2011,VIC Region 1,Victoria,VIC,141.67,-37.19,242,4.1
+2011-01-01,2011,TAS Region 3,Tasmania,TAS,147.69,-41.3,33,4.2
+2011-01-01,2011,WA Region 3,Western Australia,WA,120.85,-22.44,85,4.4
+2011-01-01,2011,NSW Region 2,New South Wales,NSW,145.87,-31.23,286,4.1
+2011-01-01,2011,NSW Region 7,New South Wales,NSW,146.09,-29.31,64,3.9
+2011-04-01,2011,NSW Region 3,New South Wales,NSW,143.67,-30.11,88,4.6
+2011-04-01,2011,QLD Region 3,Queensland,QLD,139.76,-22.66,147,4.7
+2011-04-01,2011,VIC Region 9,Victoria,VIC,145.34,-36.4,108,4.6
+2011-04-01,2011,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,31,4.0
+2011-04-01,2011,QLD Region 11,Queensland,QLD,146.38,-15.86,206,4.3
+2011-04-01,2011,NSW Region 8,New South Wales,NSW,142.53,-30.93,108,3.8
+2011-04-01,2011,VIC Region 10,Victoria,VIC,141.57,-38.55,29,4.1
+2011-04-01,2011,VIC Region 6,Victoria,VIC,148.91,-36.24,230,3.7
+2011-04-01,2011,QLD Region 12,Queensland,QLD,148.09,-14.98,535,4.6
+2011-04-01,2011,NT Region 5,Northern Territory,NT,132.33,-17.55,15,4.3
+2011-04-01,2011,QLD Region 5,Queensland,QLD,147.0,-25.35,57,4.4
+2011-04-01,2011,QLD Region 10,Queensland,QLD,143.89,-17.34,180,4.8
+2011-04-01,2011,SA Region 3,South Australia,SA,134.63,-30.95,85,4.7
+2011-04-01,2011,WA Region 8,Western Australia,WA,117.35,-31.42,161,4.7
+2011-04-01,2011,NSW Region 1,New South Wales,NSW,141.79,-34.17,115,3.8
+2011-04-01,2011,QLD Region 4,Queensland,QLD,150.82,-23.9,275,4.9
+2011-04-01,2011,NSW Region 4,New South Wales,NSW,143.72,-37.13,110,4.0
+2011-04-01,2011,VIC Region 12,Victoria,VIC,143.6,-38.57,323,3.6
+2011-04-01,2011,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,40,3.7
+2011-04-01,2011,SA Region 4,South Australia,SA,131.02,-30.3,74,4.3
+2011-07-01,2011,NSW Region 6,New South Wales,NSW,144.12,-32.31,47,3.8
+2011-07-01,2011,QLD Region 11,Queensland,QLD,146.38,-15.86,264,4.4
+2011-07-01,2011,QLD Region 4,Queensland,QLD,150.82,-23.9,152,4.4
+2011-07-01,2011,QLD Region 6,Queensland,QLD,142.73,-20.46,257,4.9
+2011-07-01,2011,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,30,4.2
+2011-07-01,2011,NT Region 1,Northern Territory,NT,130.31,-21.64,6,4.2
+2011-07-01,2011,NSW Region 11,New South Wales,NSW,149.58,-36.68,81,4.3
+2011-07-01,2011,TAS Region 2,Tasmania,TAS,147.61,-43.05,36,4.1
+2011-07-01,2011,QLD Region 1,Queensland,QLD,141.26,-15.33,130,4.1
+2011-07-01,2011,QLD Region 8,Queensland,QLD,152.36,-22.4,32,4.7
+2011-07-01,2011,NT Region 2,Northern Territory,NT,129.68,-25.0,7,4.7
+2011-07-01,2011,NT Region 3,Northern Territory,NT,130.85,-14.99,19,4.2
+2011-07-01,2011,WA Region 1,Western Australia,WA,120.57,-28.81,101,4.2
+2011-07-01,2011,WA Region 6,Western Australia,WA,127.24,-32.15,63,4.7
+2011-07-01,2011,WA Region 4,Western Australia,WA,114.33,-27.32,184,4.4
+2011-07-01,2011,QLD Region 3,Queensland,QLD,139.76,-22.66,200,4.2
+2011-07-01,2011,NSW Region 7,New South Wales,NSW,146.09,-29.31,51,4.0
+2011-07-01,2011,VIC Region 11,Victoria,VIC,142.81,-37.16,192,4.1
+2011-07-01,2011,TAS Region 3,Tasmania,TAS,147.69,-41.3,32,5.0
+2011-07-01,2011,SA Region 2,South Australia,SA,130.96,-29.16,57,4.4
+2011-10-01,2011,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,33,4.0
+2011-10-01,2011,SA Region 7,South Australia,SA,134.49,-28.35,29,4.6
+2011-10-01,2011,NT Region 2,Northern Territory,NT,129.68,-25.0,8,4.1
+2011-10-01,2011,QLD Region 11,Queensland,QLD,146.38,-15.86,203,4.2
+2011-10-01,2011,QLD Region 6,Queensland,QLD,142.73,-20.46,167,4.1
+2011-10-01,2011,QLD Region 10,Queensland,QLD,143.89,-17.34,177,4.0
+2011-10-01,2011,VIC Region 9,Victoria,VIC,145.34,-36.4,107,3.7
+2011-10-01,2011,WA Region 5,Western Australia,WA,113.99,-18.42,71,4.2
+2011-10-01,2011,SA Region 6,South Australia,SA,134.79,-27.58,89,4.6
+2011-10-01,2011,QLD Region 7,Queensland,QLD,139.37,-19.65,106,4.4
+2011-10-01,2011,NSW Region 12,New South Wales,NSW,142.48,-36.81,168,3.9
+2011-10-01,2011,WA Region 8,Western Australia,WA,117.35,-31.42,126,4.3
+2011-10-01,2011,VIC Region 7,Victoria,VIC,146.57,-37.29,63,4.1
+2011-10-01,2011,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,23,4.0
+2011-10-01,2011,TAS Region 2,Tasmania,TAS,147.61,-43.05,29,4.8
+2011-10-01,2011,VIC Region 10,Victoria,VIC,141.57,-38.55,37,3.9
+2011-10-01,2011,QLD Region 12,Queensland,QLD,148.09,-14.98,292,4.6
+2011-10-01,2011,NSW Region 2,New South Wales,NSW,145.87,-31.23,243,4.7
+2011-10-01,2011,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,68,3.6
+2011-10-01,2011,NSW Region 13,New South Wales,NSW,145.92,-35.82,163,4.2
+2012-01-01,2012,TAS Region 5,Tasmania,TAS,146.04,-42.19,34,5.0
+2012-01-01,2012,TAS Region 1,Tasmania,TAS,144.98,-41.18,14,4.6
+2012-01-01,2012,NSW Region 7,New South Wales,NSW,146.09,-29.31,74,4.2
+2012-01-01,2012,NSW Region 11,New South Wales,NSW,149.58,-36.68,71,4.6
+2012-01-01,2012,NT Region 2,Northern Territory,NT,129.68,-25.0,5,4.7
+2012-01-01,2012,WA Region 5,Western Australia,WA,113.99,-18.42,82,3.9
+2012-01-01,2012,NSW Region 4,New South Wales,NSW,143.72,-37.13,103,4.5
+2012-01-01,2012,VIC Region 2,Victoria,VIC,147.17,-37.78,47,4.0
+2012-01-01,2012,QLD Region 5,Queensland,QLD,147.0,-25.35,76,3.8
+2012-01-01,2012,VIC Region 8,Victoria,VIC,146.7,-37.99,137,4.4
+2012-01-01,2012,WA Region 7,Western Australia,WA,118.77,-16.45,252,4.0
+2012-01-01,2012,NSW Region 14,New South Wales,NSW,152.12,-36.68,88,4.4
+2012-01-01,2012,TAS Region 2,Tasmania,TAS,147.61,-43.05,38,4.0
+2012-01-01,2012,QLD Region 8,Queensland,QLD,152.36,-22.4,19,4.6
+2012-01-01,2012,VIC Region 5,Victoria,VIC,141.4,-38.69,125,4.3
+2012-01-01,2012,QLD Region 12,Queensland,QLD,148.09,-14.98,511,4.1
+2012-01-01,2012,SA Region 4,South Australia,SA,131.02,-30.3,88,4.2
+2012-01-01,2012,NSW Region 13,New South Wales,NSW,145.92,-35.82,149,3.9
+2012-01-01,2012,NSW Region 6,New South Wales,NSW,144.12,-32.31,49,3.8
+2012-01-01,2012,NSW Region 5,New South Wales,NSW,148.2,-35.82,50,4.2
+2012-04-01,2012,NT Region 2,Northern Territory,NT,129.68,-25.0,8,4.6
+2012-04-01,2012,QLD Region 4,Queensland,QLD,150.82,-23.9,252,5.1
+2012-04-01,2012,NSW Region 8,New South Wales,NSW,142.53,-30.93,127,4.4
+2012-04-01,2012,NSW Region 9,New South Wales,NSW,151.53,-34.25,280,4.2
+2012-04-01,2012,SA Region 1,South Australia,SA,129.64,-34.41,110,4.5
+2012-04-01,2012,NSW Region 6,New South Wales,NSW,144.12,-32.31,65,4.0
+2012-04-01,2012,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,16,3.5
+2012-04-01,2012,QLD Region 10,Queensland,QLD,143.89,-17.34,153,4.1
+2012-04-01,2012,NSW Region 3,New South Wales,NSW,143.67,-30.11,87,4.0
+2012-04-01,2012,WA Region 7,Western Australia,WA,118.77,-16.45,203,3.8
+2012-04-01,2012,TAS Region 3,Tasmania,TAS,147.69,-41.3,19,4.0
+2012-04-01,2012,NSW Region 12,New South Wales,NSW,142.48,-36.81,149,4.2
+2012-04-01,2012,QLD Region 1,Queensland,QLD,141.26,-15.33,142,4.0
+2012-04-01,2012,TAS Region 4,Tasmania,TAS,147.2,-41.53,49,3.9
+2012-04-01,2012,VIC Region 3,Victoria,VIC,144.14,-36.65,68,4.4
+2012-04-01,2012,VIC Region 9,Victoria,VIC,145.34,-36.4,68,4.5
+2012-04-01,2012,QLD Region 6,Queensland,QLD,142.73,-20.46,290,4.7
+2012-04-01,2012,VIC Region 6,Victoria,VIC,148.91,-36.24,121,4.0
+2012-04-01,2012,QLD Region 11,Queensland,QLD,146.38,-15.86,246,4.6
+2012-04-01,2012,VIC Region 12,Victoria,VIC,143.6,-38.57,432,3.7
+2012-07-01,2012,WA Region 2,Western Australia,WA,119.41,-20.08,207,4.4
+2012-07-01,2012,VIC Region 9,Victoria,VIC,145.34,-36.4,111,4.5
+2012-07-01,2012,SA Region 7,South Australia,SA,134.49,-28.35,30,4.9
+2012-07-01,2012,QLD Region 8,Queensland,QLD,152.36,-22.4,31,4.0
+2012-07-01,2012,SA Region 6,South Australia,SA,134.79,-27.58,70,3.9
+2012-07-01,2012,NSW Region 12,New South Wales,NSW,142.48,-36.81,157,4.5
+2012-07-01,2012,SA Region 3,South Australia,SA,134.63,-30.95,132,4.3
+2012-07-01,2012,TAS Region 1,Tasmania,TAS,144.98,-41.18,21,4.8
+2012-07-01,2012,NSW Region 14,New South Wales,NSW,152.12,-36.68,87,3.7
+2012-07-01,2012,QLD Region 7,Queensland,QLD,139.37,-19.65,83,4.9
+2012-07-01,2012,VIC Region 3,Victoria,VIC,144.14,-36.65,47,4.5
+2012-07-01,2012,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,36,3.3
+2012-07-01,2012,VIC Region 11,Victoria,VIC,142.81,-37.16,161,3.8
+2012-07-01,2012,NSW Region 5,New South Wales,NSW,148.2,-35.82,49,3.9
+2012-07-01,2012,NSW Region 1,New South Wales,NSW,141.79,-34.17,105,3.5
+2012-07-01,2012,QLD Region 11,Queensland,QLD,146.38,-15.86,145,4.8
+2012-07-01,2012,NSW Region 10,New South Wales,NSW,141.44,-36.71,204,4.2
+2012-07-01,2012,NT Region 1,Northern Territory,NT,130.31,-21.64,6,4.4
+2012-07-01,2012,NSW Region 6,New South Wales,NSW,144.12,-32.31,63,4.5
+2012-07-01,2012,NSW Region 11,New South Wales,NSW,149.58,-36.68,59,4.6
+2012-10-01,2012,NT Region 5,Northern Territory,NT,132.33,-17.55,13,4.5
+2012-10-01,2012,SA Region 1,South Australia,SA,129.64,-34.41,118,4.7
+2012-10-01,2012,WA Region 8,Western Australia,WA,117.35,-31.42,147,4.6
+2012-10-01,2012,NSW Region 9,New South Wales,NSW,151.53,-34.25,287,4.6
+2012-10-01,2012,QLD Region 9,Queensland,QLD,149.01,-22.61,142,4.0
+2012-10-01,2012,VIC Region 2,Victoria,VIC,147.17,-37.78,62,4.0
+2012-10-01,2012,TAS Region 5,Tasmania,TAS,146.04,-42.19,37,4.9
+2012-10-01,2012,NSW Region 14,New South Wales,NSW,152.12,-36.68,72,4.3
+2012-10-01,2012,QLD Region 8,Queensland,QLD,152.36,-22.4,28,4.3
+2012-10-01,2012,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,23,4.0
+2012-10-01,2012,TAS Region 2,Tasmania,TAS,147.61,-43.05,37,4.5
+2012-10-01,2012,SA Region 2,South Australia,SA,130.96,-29.16,93,4.6
+2012-10-01,2012,NSW Region 7,New South Wales,NSW,146.09,-29.31,81,4.8
+2012-10-01,2012,SA Region 4,South Australia,SA,131.02,-30.3,104,4.5
+2012-10-01,2012,QLD Region 6,Queensland,QLD,142.73,-20.46,248,4.6
+2012-10-01,2012,NSW Region 5,New South Wales,NSW,148.2,-35.82,65,4.4
+2012-10-01,2012,WA Region 5,Western Australia,WA,113.99,-18.42,92,3.8
+2012-10-01,2012,VIC Region 4,Victoria,VIC,144.48,-36.78,79,3.8
+2012-10-01,2012,NT Region 4,Northern Territory,NT,129.77,-19.74,12,4.6
+2012-10-01,2012,SA Region 5,South Australia,SA,138.1,-35.83,150,4.5
+2013-01-01,2013,NT Region 4,Northern Territory,NT,129.77,-19.74,8,4.8
+2013-01-01,2013,NSW Region 5,New South Wales,NSW,148.2,-35.82,38,4.5
+2013-01-01,2013,TAS Region 3,Tasmania,TAS,147.69,-41.3,34,4.9
+2013-01-01,2013,QLD Region 1,Queensland,QLD,141.26,-15.33,107,3.9
+2013-01-01,2013,WA Region 4,Western Australia,WA,114.33,-27.32,222,4.2
+2013-01-01,2013,WA Region 5,Western Australia,WA,113.99,-18.42,71,4.7
+2013-01-01,2013,QLD Region 11,Queensland,QLD,146.38,-15.86,180,4.1
+2013-01-01,2013,NSW Region 12,New South Wales,NSW,142.48,-36.81,184,4.5
+2013-01-01,2013,TAS Region 4,Tasmania,TAS,147.2,-41.53,43,4.2
+2013-01-01,2013,QLD Region 8,Queensland,QLD,152.36,-22.4,27,4.4
+2013-01-01,2013,QLD Region 10,Queensland,QLD,143.89,-17.34,187,4.1
+2013-01-01,2013,VIC Region 5,Victoria,VIC,141.4,-38.69,156,3.8
+2013-01-01,2013,NT Region 1,Northern Territory,NT,130.31,-21.64,6,4.7
+2013-01-01,2013,VIC Region 1,Victoria,VIC,141.67,-37.19,206,4.1
+2013-01-01,2013,VIC Region 3,Victoria,VIC,144.14,-36.65,58,4.2
+2013-01-01,2013,SA Region 1,South Australia,SA,129.64,-34.41,112,4.1
+2013-01-01,2013,VIC Region 2,Victoria,VIC,147.17,-37.78,43,3.7
+2013-01-01,2013,QLD Region 3,Queensland,QLD,139.76,-22.66,111,4.3
+2013-01-01,2013,WA Region 2,Western Australia,WA,119.41,-20.08,211,4.5
+2013-01-01,2013,SA Region 4,South Australia,SA,131.02,-30.3,65,4.4
+2013-04-01,2013,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,17,4.3
+2013-04-01,2013,VIC Region 10,Victoria,VIC,141.57,-38.55,44,4.4
+2013-04-01,2013,TAS Region 1,Tasmania,TAS,144.98,-41.18,15,4.7
+2013-04-01,2013,SA Region 5,South Australia,SA,138.1,-35.83,133,3.8
+2013-04-01,2013,VIC Region 12,Victoria,VIC,143.6,-38.57,324,3.6
+2013-04-01,2013,QLD Region 2,Queensland,QLD,151.03,-11.52,111,4.3
+2013-04-01,2013,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,66,4.1
+2013-04-01,2013,NSW Region 14,New South Wales,NSW,152.12,-36.68,132,3.9
+2013-04-01,2013,SA Region 2,South Australia,SA,130.96,-29.16,63,4.8
+2013-04-01,2013,NT Region 5,Northern Territory,NT,132.33,-17.55,17,4.6
+2013-04-01,2013,NSW Region 8,New South Wales,NSW,142.53,-30.93,119,4.2
+2013-04-01,2013,NT Region 4,Northern Territory,NT,129.77,-19.74,11,4.4
+2013-04-01,2013,VIC Region 1,Victoria,VIC,141.67,-37.19,244,4.2
+2013-04-01,2013,TAS Region 3,Tasmania,TAS,147.69,-41.3,26,4.4
+2013-04-01,2013,NSW Region 5,New South Wales,NSW,148.2,-35.82,49,4.0
+2013-04-01,2013,SA Region 3,South Australia,SA,134.63,-30.95,139,3.9
+2013-04-01,2013,NT Region 1,Northern Territory,NT,130.31,-21.64,9,4.1
+2013-04-01,2013,NSW Region 12,New South Wales,NSW,142.48,-36.81,178,4.2
+2013-04-01,2013,QLD Region 10,Queensland,QLD,143.89,-17.34,131,4.2
+2013-04-01,2013,NSW Region 6,New South Wales,NSW,144.12,-32.31,44,3.6
+2013-07-01,2013,WA Region 1,Western Australia,WA,120.57,-28.81,100,3.9
+2013-07-01,2013,QLD Region 6,Queensland,QLD,142.73,-20.46,162,4.7
+2013-07-01,2013,QLD Region 10,Queensland,QLD,143.89,-17.34,179,4.6
+2013-07-01,2013,SA Region 1,South Australia,SA,129.64,-34.41,112,3.7
+2013-07-01,2013,VIC Region 11,Victoria,VIC,142.81,-37.16,154,3.8
+2013-07-01,2013,QLD Region 11,Queensland,QLD,146.38,-15.86,240,4.6
+2013-07-01,2013,NSW Region 12,New South Wales,NSW,142.48,-36.81,145,4.2
+2013-07-01,2013,WA Region 5,Western Australia,WA,113.99,-18.42,62,4.2
+2013-07-01,2013,QLD Region 9,Queensland,QLD,149.01,-22.61,80,4.8
+2013-07-01,2013,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,24,4.1
+2013-07-01,2013,NSW Region 11,New South Wales,NSW,149.58,-36.68,75,4.3
+2013-07-01,2013,NSW Region 7,New South Wales,NSW,146.09,-29.31,60,4.3
+2013-07-01,2013,NSW Region 6,New South Wales,NSW,144.12,-32.31,49,3.9
+2013-07-01,2013,NSW Region 5,New South Wales,NSW,148.2,-35.82,63,3.8
+2013-07-01,2013,NSW Region 1,New South Wales,NSW,141.79,-34.17,102,4.1
+2013-07-01,2013,VIC Region 5,Victoria,VIC,141.4,-38.69,88,4.4
+2013-07-01,2013,NT Region 5,Northern Territory,NT,132.33,-17.55,13,4.0
+2013-07-01,2013,NSW Region 13,New South Wales,NSW,145.92,-35.82,192,4.2
+2013-07-01,2013,TAS Region 2,Tasmania,TAS,147.61,-43.05,29,4.5
+2013-07-01,2013,QLD Region 2,Queensland,QLD,151.03,-11.52,193,4.1
+2013-10-01,2013,SA Region 2,South Australia,SA,130.96,-29.16,73,4.4
+2013-10-01,2013,NSW Region 9,New South Wales,NSW,151.53,-34.25,245,4.3
+2013-10-01,2013,NT Region 3,Northern Territory,NT,130.85,-14.99,29,4.6
+2013-10-01,2013,QLD Region 4,Queensland,QLD,150.82,-23.9,227,4.2
+2013-10-01,2013,NSW Region 4,New South Wales,NSW,143.72,-37.13,107,3.8
+2013-10-01,2013,VIC Region 12,Victoria,VIC,143.6,-38.57,397,3.6
+2013-10-01,2013,WA Region 5,Western Australia,WA,113.99,-18.42,116,3.8
+2013-10-01,2013,QLD Region 1,Queensland,QLD,141.26,-15.33,159,4.4
+2013-10-01,2013,NT Region 1,Northern Territory,NT,130.31,-21.64,9,4.0
+2013-10-01,2013,TAS Region 4,Tasmania,TAS,147.2,-41.53,38,4.6
+2013-10-01,2013,NT Region 5,Northern Territory,NT,132.33,-17.55,15,4.7
+2013-10-01,2013,NSW Region 11,New South Wales,NSW,149.58,-36.68,73,4.6
+2013-10-01,2013,QLD Region 7,Queensland,QLD,139.37,-19.65,140,4.8
+2013-10-01,2013,QLD Region 11,Queensland,QLD,146.38,-15.86,143,4.5
+2013-10-01,2013,WA Region 2,Western Australia,WA,119.41,-20.08,258,4.1
+2013-10-01,2013,WA Region 8,Western Australia,WA,117.35,-31.42,152,4.7
+2013-10-01,2013,VIC Region 10,Victoria,VIC,141.57,-38.55,34,3.6
+2013-10-01,2013,WA Region 7,Western Australia,WA,118.77,-16.45,127,4.0
+2013-10-01,2013,WA Region 3,Western Australia,WA,120.85,-22.44,65,4.1
+2013-10-01,2013,NSW Region 6,New South Wales,NSW,144.12,-32.31,68,3.7
+2014-01-01,2014,SA Region 4,South Australia,SA,131.02,-30.3,81,3.8
+2014-01-01,2014,VIC Region 3,Victoria,VIC,144.14,-36.65,44,4.3
+2014-01-01,2014,TAS Region 4,Tasmania,TAS,147.2,-41.53,67,4.7
+2014-01-01,2014,QLD Region 4,Queensland,QLD,150.82,-23.9,152,4.7
+2014-01-01,2014,QLD Region 9,Queensland,QLD,149.01,-22.61,85,4.0
+2014-01-01,2014,NT Region 4,Northern Territory,NT,129.77,-19.74,10,4.4
+2014-01-01,2014,WA Region 1,Western Australia,WA,120.57,-28.81,131,4.4
+2014-01-01,2014,NSW Region 11,New South Wales,NSW,149.58,-36.68,90,4.5
+2014-01-01,2014,WA Region 6,Western Australia,WA,127.24,-32.15,65,3.8
+2014-01-01,2014,VIC Region 11,Victoria,VIC,142.81,-37.16,164,3.6
+2014-01-01,2014,QLD Region 3,Queensland,QLD,139.76,-22.66,134,4.8
+2014-01-01,2014,TAS Region 3,Tasmania,TAS,147.69,-41.3,25,4.9
+2014-01-01,2014,NSW Region 14,New South Wales,NSW,152.12,-36.68,119,4.2
+2014-01-01,2014,TAS Region 5,Tasmania,TAS,146.04,-42.19,29,4.4
+2014-01-01,2014,NSW Region 6,New South Wales,NSW,144.12,-32.31,67,4.3
+2014-01-01,2014,NT Region 2,Northern Territory,NT,129.68,-25.0,6,4.4
+2014-01-01,2014,VIC Region 9,Victoria,VIC,145.34,-36.4,95,4.1
+2014-01-01,2014,NSW Region 12,New South Wales,NSW,142.48,-36.81,106,4.2
+2014-01-01,2014,QLD Region 8,Queensland,QLD,152.36,-22.4,33,4.6
+2014-01-01,2014,WA Region 2,Western Australia,WA,119.41,-20.08,280,4.4
+2014-04-01,2014,VIC Region 5,Victoria,VIC,141.4,-38.69,123,4.0
+2014-04-01,2014,TAS Region 4,Tasmania,TAS,147.2,-41.53,60,4.0
+2014-04-01,2014,NSW Region 2,New South Wales,NSW,145.87,-31.23,274,4.6
+2014-04-01,2014,NT Region 4,Northern Territory,NT,129.77,-19.74,9,4.3
+2014-04-01,2014,QLD Region 10,Queensland,QLD,143.89,-17.34,121,4.4
+2014-04-01,2014,WA Region 3,Western Australia,WA,120.85,-22.44,56,4.0
+2014-04-01,2014,VIC Region 1,Victoria,VIC,141.67,-37.19,178,4.6
+2014-04-01,2014,NSW Region 6,New South Wales,NSW,144.12,-32.31,61,3.8
+2014-04-01,2014,SA Region 4,South Australia,SA,131.02,-30.3,97,4.4
+2014-04-01,2014,SA Region 1,South Australia,SA,129.64,-34.41,97,4.7
+2014-04-01,2014,VIC Region 6,Victoria,VIC,148.91,-36.24,230,3.9
+2014-04-01,2014,NT Region 2,Northern Territory,NT,129.68,-25.0,7,5.1
+2014-04-01,2014,VIC Region 11,Victoria,VIC,142.81,-37.16,208,4.4
+2014-04-01,2014,WA Region 1,Western Australia,WA,120.57,-28.81,95,4.8
+2014-04-01,2014,WA Region 5,Western Australia,WA,113.99,-18.42,103,4.0
+2014-04-01,2014,SA Region 7,South Australia,SA,134.49,-28.35,31,4.4
+2014-04-01,2014,QLD Region 12,Queensland,QLD,148.09,-14.98,461,4.6
+2014-04-01,2014,QLD Region 5,Queensland,QLD,147.0,-25.35,42,4.6
+2014-04-01,2014,WA Region 7,Western Australia,WA,118.77,-16.45,247,3.8
+2014-04-01,2014,VIC Region 4,Victoria,VIC,144.48,-36.78,100,4.0
+2014-07-01,2014,NT Region 2,Northern Territory,NT,129.68,-25.0,5,4.8
+2014-07-01,2014,WA Region 4,Western Australia,WA,114.33,-27.32,125,4.7
+2014-07-01,2014,QLD Region 9,Queensland,QLD,149.01,-22.61,86,4.1
+2014-07-01,2014,NSW Region 12,New South Wales,NSW,142.48,-36.81,159,4.6
+2014-07-01,2014,NSW Region 3,New South Wales,NSW,143.67,-30.11,56,4.0
+2014-07-01,2014,VIC Region 2,Victoria,VIC,147.17,-37.78,61,4.1
+2014-07-01,2014,NSW Region 13,New South Wales,NSW,145.92,-35.82,118,3.9
+2014-07-01,2014,VIC Region 3,Victoria,VIC,144.14,-36.65,41,4.5
+2014-07-01,2014,NT Region 4,Northern Territory,NT,129.77,-19.74,7,4.8
+2014-07-01,2014,NSW Region 11,New South Wales,NSW,149.58,-36.68,76,4.5
+2014-07-01,2014,NSW Region 7,New South Wales,NSW,146.09,-29.31,65,4.3
+2014-07-01,2014,WA Region 2,Western Australia,WA,119.41,-20.08,302,3.9
+2014-07-01,2014,NSW Region 8,New South Wales,NSW,142.53,-30.93,153,4.2
+2014-07-01,2014,NSW Region 4,New South Wales,NSW,143.72,-37.13,119,4.5
+2014-07-01,2014,QLD Region 12,Queensland,QLD,148.09,-14.98,558,4.2
+2014-07-01,2014,QLD Region 7,Queensland,QLD,139.37,-19.65,81,4.8
+2014-07-01,2014,QLD Region 10,Queensland,QLD,143.89,-17.34,133,4.2
+2014-07-01,2014,NSW Region 14,New South Wales,NSW,152.12,-36.68,80,3.9
+2014-07-01,2014,VIC Region 4,Victoria,VIC,144.48,-36.78,60,3.5
+2014-07-01,2014,SA Region 6,South Australia,SA,134.79,-27.58,97,4.5
+2014-10-01,2014,VIC Region 10,Victoria,VIC,141.57,-38.55,37,4.1
+2014-10-01,2014,WA Region 8,Western Australia,WA,117.35,-31.42,116,4.1
+2014-10-01,2014,NSW Region 7,New South Wales,NSW,146.09,-29.31,97,3.9
+2014-10-01,2014,QLD Region 3,Queensland,QLD,139.76,-22.66,180,4.7
+2014-10-01,2014,WA Region 5,Western Australia,WA,113.99,-18.42,89,3.8
+2014-10-01,2014,SA Region 6,South Australia,SA,134.79,-27.58,68,4.8
+2014-10-01,2014,QLD Region 10,Queensland,QLD,143.89,-17.34,201,4.1
+2014-10-01,2014,VIC Region 8,Victoria,VIC,146.7,-37.99,146,4.5
+2014-10-01,2014,WA Region 1,Western Australia,WA,120.57,-28.81,80,4.8
+2014-10-01,2014,QLD Region 12,Queensland,QLD,148.09,-14.98,456,3.9
+2014-10-01,2014,NSW Region 12,New South Wales,NSW,142.48,-36.81,133,4.4
+2014-10-01,2014,VIC Region 3,Victoria,VIC,144.14,-36.65,42,3.7
+2014-10-01,2014,VIC Region 11,Victoria,VIC,142.81,-37.16,199,3.8
+2014-10-01,2014,NSW Region 1,New South Wales,NSW,141.79,-34.17,157,4.4
+2014-10-01,2014,QLD Region 4,Queensland,QLD,150.82,-23.9,286,4.1
+2014-10-01,2014,NSW Region 10,New South Wales,NSW,141.44,-36.71,190,4.1
+2014-10-01,2014,SA Region 4,South Australia,SA,131.02,-30.3,90,3.8
+2014-10-01,2014,SA Region 7,South Australia,SA,134.49,-28.35,30,4.0
+2014-10-01,2014,NSW Region 5,New South Wales,NSW,148.2,-35.82,70,4.2
+2014-10-01,2014,WA Region 2,Western Australia,WA,119.41,-20.08,254,4.3
+2015-01-01,2015,VIC Region 10,Victoria,VIC,141.57,-38.55,35,3.8
+2015-01-01,2015,SA Region 2,South Australia,SA,130.96,-29.16,59,4.8
+2015-01-01,2015,NT Region 4,Northern Territory,NT,129.77,-19.74,10,4.6
+2015-01-01,2015,TAS Region 4,Tasmania,TAS,147.2,-41.53,60,4.7
+2015-01-01,2015,QLD Region 2,Queensland,QLD,151.03,-11.52,134,4.0
+2015-01-01,2015,VIC Region 11,Victoria,VIC,142.81,-37.16,162,4.1
+2015-01-01,2015,QLD Region 7,Queensland,QLD,139.37,-19.65,84,4.5
+2015-01-01,2015,QLD Region 1,Queensland,QLD,141.26,-15.33,100,4.2
+2015-01-01,2015,VIC Region 3,Victoria,VIC,144.14,-36.65,50,4.4
+2015-01-01,2015,QLD Region 9,Queensland,QLD,149.01,-22.61,99,4.2
+2015-01-01,2015,TAS Region 5,Tasmania,TAS,146.04,-42.19,37,4.1
+2015-01-01,2015,NT Region 2,Northern Territory,NT,129.68,-25.0,5,4.7
+2015-01-01,2015,WA Region 2,Western Australia,WA,119.41,-20.08,224,4.2
+2015-01-01,2015,WA Region 8,Western Australia,WA,117.35,-31.42,154,4.7
+2015-01-01,2015,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,30,3.9
+2015-01-01,2015,QLD Region 11,Queensland,QLD,146.38,-15.86,188,4.2
+2015-01-01,2015,WA Region 7,Western Australia,WA,118.77,-16.45,250,4.1
+2015-01-01,2015,NSW Region 3,New South Wales,NSW,143.67,-30.11,86,4.6
+2015-01-01,2015,TAS Region 1,Tasmania,TAS,144.98,-41.18,22,4.5
+2015-01-01,2015,SA Region 1,South Australia,SA,129.64,-34.41,100,3.9
+2015-04-01,2015,NSW Region 14,New South Wales,NSW,152.12,-36.68,88,3.7
+2015-04-01,2015,NSW Region 7,New South Wales,NSW,146.09,-29.31,51,4.6
+2015-04-01,2015,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,45,4.1
+2015-04-01,2015,WA Region 2,Western Australia,WA,119.41,-20.08,351,4.6
+2015-04-01,2015,NSW Region 11,New South Wales,NSW,149.58,-36.68,59,3.8
+2015-04-01,2015,SA Region 5,South Australia,SA,138.1,-35.83,98,4.5
+2015-04-01,2015,QLD Region 12,Queensland,QLD,148.09,-14.98,299,4.3
+2015-04-01,2015,TAS Region 5,Tasmania,TAS,146.04,-42.19,42,4.5
+2015-04-01,2015,VIC Region 9,Victoria,VIC,145.34,-36.4,110,3.8
+2015-04-01,2015,SA Region 7,South Australia,SA,134.49,-28.35,33,4.5
+2015-04-01,2015,TAS Region 3,Tasmania,TAS,147.69,-41.3,20,4.2
+2015-04-01,2015,WA Region 3,Western Australia,WA,120.85,-22.44,82,4.8
+2015-04-01,2015,QLD Region 7,Queensland,QLD,139.37,-19.65,145,4.1
+2015-04-01,2015,VIC Region 7,Victoria,VIC,146.57,-37.29,107,4.3
+2015-04-01,2015,SA Region 3,South Australia,SA,134.63,-30.95,113,3.9
+2015-04-01,2015,QLD Region 8,Queensland,QLD,152.36,-22.4,21,4.6
+2015-04-01,2015,QLD Region 10,Queensland,QLD,143.89,-17.34,103,4.1
+2015-04-01,2015,NT Region 3,Northern Territory,NT,130.85,-14.99,25,4.7
+2015-04-01,2015,NSW Region 2,New South Wales,NSW,145.87,-31.23,166,4.0
+2015-04-01,2015,QLD Region 11,Queensland,QLD,146.38,-15.86,175,4.4
+2015-07-01,2015,NSW Region 9,New South Wales,NSW,151.53,-34.25,294,4.1
+2015-07-01,2015,QLD Region 7,Queensland,QLD,139.37,-19.65,84,4.0
+2015-07-01,2015,VIC Region 11,Victoria,VIC,142.81,-37.16,179,4.0
+2015-07-01,2015,QLD Region 10,Queensland,QLD,143.89,-17.34,106,4.6
+2015-07-01,2015,WA Region 1,Western Australia,WA,120.57,-28.81,99,4.7
+2015-07-01,2015,TAS Region 4,Tasmania,TAS,147.2,-41.53,68,3.9
+2015-07-01,2015,QLD Region 11,Queensland,QLD,146.38,-15.86,140,4.4
+2015-07-01,2015,WA Region 3,Western Australia,WA,120.85,-22.44,56,4.3
+2015-07-01,2015,VIC Region 12,Victoria,VIC,143.6,-38.57,475,3.8
+2015-07-01,2015,NT Region 5,Northern Territory,NT,132.33,-17.55,10,4.6
+2015-07-01,2015,VIC Region 4,Victoria,VIC,144.48,-36.78,64,4.4
+2015-07-01,2015,NSW Region 10,New South Wales,NSW,141.44,-36.71,266,4.5
+2015-07-01,2015,QLD Region 4,Queensland,QLD,150.82,-23.9,230,4.4
+2015-07-01,2015,TAS Region 2,Tasmania,TAS,147.61,-43.05,46,4.1
+2015-07-01,2015,NSW Region 12,New South Wales,NSW,142.48,-36.81,168,3.9
+2015-07-01,2015,VIC Region 10,Victoria,VIC,141.57,-38.55,23,4.5
+2015-07-01,2015,QLD Region 3,Queensland,QLD,139.76,-22.66,200,5.0
+2015-07-01,2015,NSW Region 5,New South Wales,NSW,148.2,-35.82,51,3.9
+2015-07-01,2015,SA Region 5,South Australia,SA,138.1,-35.83,152,4.0
+2015-07-01,2015,VIC Region 6,Victoria,VIC,148.91,-36.24,218,4.4
+2015-10-01,2015,VIC Region 8,Victoria,VIC,146.7,-37.99,99,4.5
+2015-10-01,2015,NSW Region 5,New South Wales,NSW,148.2,-35.82,74,4.4
+2015-10-01,2015,SA Region 2,South Australia,SA,130.96,-29.16,63,4.7
+2015-10-01,2015,NSW Region 3,New South Wales,NSW,143.67,-30.11,65,3.7
+2015-10-01,2015,VIC Region 11,Victoria,VIC,142.81,-37.16,120,3.8
+2015-10-01,2015,TAS Region 2,Tasmania,TAS,147.61,-43.05,48,4.6
+2015-10-01,2015,WA Region 5,Western Australia,WA,113.99,-18.42,119,4.6
+2015-10-01,2015,NSW Region 6,New South Wales,NSW,144.12,-32.31,58,4.0
+2015-10-01,2015,QLD Region 5,Queensland,QLD,147.0,-25.35,63,4.7
+2015-10-01,2015,QLD Region 1,Queensland,QLD,141.26,-15.33,115,4.5
+2015-10-01,2015,NT Region 4,Northern Territory,NT,129.77,-19.74,9,4.0
+2015-10-01,2015,QLD Region 9,Queensland,QLD,149.01,-22.61,113,4.7
+2015-10-01,2015,VIC Region 3,Victoria,VIC,144.14,-36.65,55,4.0
+2015-10-01,2015,NSW Region 1,New South Wales,NSW,141.79,-34.17,128,3.9
+2015-10-01,2015,SA Region 6,South Australia,SA,134.79,-27.58,99,4.3
+2015-10-01,2015,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,48,3.6
+2015-10-01,2015,NSW Region 8,New South Wales,NSW,142.53,-30.93,105,3.9
+2015-10-01,2015,WA Region 8,Western Australia,WA,117.35,-31.42,153,3.9
+2015-10-01,2015,NSW Region 12,New South Wales,NSW,142.48,-36.81,142,4.2
+2015-10-01,2015,WA Region 4,Western Australia,WA,114.33,-27.32,168,4.6
+2016-01-01,2016,VIC Region 5,Victoria,VIC,141.4,-38.69,90,3.7
+2016-01-01,2016,NT Region 5,Northern Territory,NT,132.33,-17.55,16,4.2
+2016-01-01,2016,TAS Region 3,Tasmania,TAS,147.69,-41.3,36,5.0
+2016-01-01,2016,WA Region 4,Western Australia,WA,114.33,-27.32,136,4.2
+2016-01-01,2016,QLD Region 10,Queensland,QLD,143.89,-17.34,139,4.9
+2016-01-01,2016,QLD Region 6,Queensland,QLD,142.73,-20.46,292,4.3
+2016-01-01,2016,WA Region 3,Western Australia,WA,120.85,-22.44,57,4.2
+2016-01-01,2016,SA Region 4,South Australia,SA,131.02,-30.3,113,4.1
+2016-01-01,2016,TAS Region 4,Tasmania,TAS,147.2,-41.53,58,4.6
+2016-01-01,2016,NSW Region 8,New South Wales,NSW,142.53,-30.93,123,4.3
+2016-01-01,2016,NSW Region 11,New South Wales,NSW,149.58,-36.68,83,4.6
+2016-01-01,2016,VIC Region 10,Victoria,VIC,141.57,-38.55,35,3.6
+2016-01-01,2016,VIC Region 9,Victoria,VIC,145.34,-36.4,88,4.4
+2016-01-01,2016,QLD Region 3,Queensland,QLD,139.76,-22.66,193,4.3
+2016-01-01,2016,SA Region 6,South Australia,SA,134.79,-27.58,85,4.6
+2016-01-01,2016,QLD Region 12,Queensland,QLD,148.09,-14.98,435,4.0
+2016-01-01,2016,NSW Region 2,New South Wales,NSW,145.87,-31.23,222,4.7
+2016-01-01,2016,TAS Region 2,Tasmania,TAS,147.61,-43.05,49,4.4
+2016-01-01,2016,NT Region 1,Northern Territory,NT,130.31,-21.64,8,4.6
+2016-01-01,2016,VIC Region 7,Victoria,VIC,146.57,-37.29,86,4.1
+2016-04-01,2016,QLD Region 1,Queensland,QLD,141.26,-15.33,87,4.4
+2016-04-01,2016,SA Region 4,South Australia,SA,131.02,-30.3,94,3.9
+2016-04-01,2016,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,40,3.9
+2016-04-01,2016,VIC Region 11,Victoria,VIC,142.81,-37.16,126,4.3
+2016-04-01,2016,NT Region 5,Northern Territory,NT,132.33,-17.55,14,4.6
+2016-04-01,2016,WA Region 3,Western Australia,WA,120.85,-22.44,60,4.7
+2016-04-01,2016,QLD Region 8,Queensland,QLD,152.36,-22.4,29,4.0
+2016-04-01,2016,WA Region 4,Western Australia,WA,114.33,-27.32,200,3.9
+2016-04-01,2016,SA Region 1,South Australia,SA,129.64,-34.41,101,4.4
+2016-04-01,2016,QLD Region 12,Queensland,QLD,148.09,-14.98,520,4.5
+2016-04-01,2016,WA Region 6,Western Australia,WA,127.24,-32.15,50,3.9
+2016-04-01,2016,VIC Region 4,Victoria,VIC,144.48,-36.78,92,4.1
+2016-04-01,2016,TAS Region 5,Tasmania,TAS,146.04,-42.19,39,4.8
+2016-04-01,2016,NSW Region 13,New South Wales,NSW,145.92,-35.82,173,4.6
+2016-04-01,2016,VIC Region 12,Victoria,VIC,143.6,-38.57,402,3.6
+2016-04-01,2016,VIC Region 8,Victoria,VIC,146.7,-37.99,115,3.7
+2016-04-01,2016,QLD Region 4,Queensland,QLD,150.82,-23.9,262,4.8
+2016-04-01,2016,TAS Region 1,Tasmania,TAS,144.98,-41.18,11,4.5
+2016-04-01,2016,VIC Region 6,Victoria,VIC,148.91,-36.24,185,3.8
+2016-04-01,2016,NT Region 3,Northern Territory,NT,130.85,-14.99,32,4.4
+2016-07-01,2016,QLD Region 6,Queensland,QLD,142.73,-20.46,276,4.0
+2016-07-01,2016,WA Region 4,Western Australia,WA,114.33,-27.32,145,3.8
+2016-07-01,2016,NSW Region 9,New South Wales,NSW,151.53,-34.25,284,3.9
+2016-07-01,2016,VIC Region 5,Victoria,VIC,141.4,-38.69,102,4.2
+2016-07-01,2016,SA Region 5,South Australia,SA,138.1,-35.83,163,4.2
+2016-07-01,2016,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,49,3.8
+2016-07-01,2016,NSW Region 3,New South Wales,NSW,143.67,-30.11,91,4.4
+2016-07-01,2016,QLD Region 4,Queensland,QLD,150.82,-23.9,177,4.5
+2016-07-01,2016,SA Region 3,South Australia,SA,134.63,-30.95,156,4.1
+2016-07-01,2016,VIC Region 6,Victoria,VIC,148.91,-36.24,166,3.8
+2016-07-01,2016,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,28,3.6
+2016-07-01,2016,NSW Region 14,New South Wales,NSW,152.12,-36.68,128,3.7
+2016-07-01,2016,QLD Region 8,Queensland,QLD,152.36,-22.4,31,4.0
+2016-07-01,2016,QLD Region 5,Queensland,QLD,147.0,-25.35,55,3.9
+2016-07-01,2016,VIC Region 3,Victoria,VIC,144.14,-36.65,39,3.7
+2016-07-01,2016,NSW Region 5,New South Wales,NSW,148.2,-35.82,48,4.4
+2016-07-01,2016,NT Region 4,Northern Territory,NT,129.77,-19.74,8,4.5
+2016-07-01,2016,WA Region 3,Western Australia,WA,120.85,-22.44,54,4.2
+2016-07-01,2016,VIC Region 4,Victoria,VIC,144.48,-36.78,85,4.3
+2016-07-01,2016,VIC Region 11,Victoria,VIC,142.81,-37.16,197,4.0
+2016-10-01,2016,WA Region 1,Western Australia,WA,120.57,-28.81,109,4.5
+2016-10-01,2016,QLD Region 6,Queensland,QLD,142.73,-20.46,279,4.5
+2016-10-01,2016,QLD Region 9,Queensland,QLD,149.01,-22.61,115,4.0
+2016-10-01,2016,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,67,3.4
+2016-10-01,2016,NSW Region 11,New South Wales,NSW,149.58,-36.68,75,4.4
+2016-10-01,2016,NSW Region 4,New South Wales,NSW,143.72,-37.13,139,3.6
+2016-10-01,2016,SA Region 4,South Australia,SA,131.02,-30.3,122,4.7
+2016-10-01,2016,VIC Region 4,Victoria,VIC,144.48,-36.78,111,4.0
+2016-10-01,2016,VIC Region 11,Victoria,VIC,142.81,-37.16,121,4.4
+2016-10-01,2016,NT Region 1,Northern Territory,NT,130.31,-21.64,6,4.5
+2016-10-01,2016,NSW Region 6,New South Wales,NSW,144.12,-32.31,44,4.5
+2016-10-01,2016,WA Region 2,Western Australia,WA,119.41,-20.08,243,4.3
+2016-10-01,2016,QLD Region 10,Queensland,QLD,143.89,-17.34,159,4.3
+2016-10-01,2016,SA Region 7,South Australia,SA,134.49,-28.35,20,4.9
+2016-10-01,2016,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,16,3.7
+2016-10-01,2016,TAS Region 1,Tasmania,TAS,144.98,-41.18,17,4.8
+2016-10-01,2016,NT Region 4,Northern Territory,NT,129.77,-19.74,6,4.0
+2016-10-01,2016,WA Region 4,Western Australia,WA,114.33,-27.32,159,4.0
+2016-10-01,2016,QLD Region 2,Queensland,QLD,151.03,-11.52,153,4.3
+2016-10-01,2016,SA Region 3,South Australia,SA,134.63,-30.95,143,4.2
+2017-01-01,2017,VIC Region 11,Victoria,VIC,142.81,-37.16,200,3.9
+2017-01-01,2017,QLD Region 7,Queensland,QLD,139.37,-19.65,141,4.2
+2017-01-01,2017,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,25,3.5
+2017-01-01,2017,VIC Region 1,Victoria,VIC,141.67,-37.19,207,3.9
+2017-01-01,2017,QLD Region 6,Queensland,QLD,142.73,-20.46,250,4.5
+2017-01-01,2017,VIC Region 2,Victoria,VIC,147.17,-37.78,35,3.7
+2017-01-01,2017,SA Region 1,South Australia,SA,129.64,-34.41,114,3.8
+2017-01-01,2017,WA Region 2,Western Australia,WA,119.41,-20.08,341,3.9
+2017-01-01,2017,WA Region 7,Western Australia,WA,118.77,-16.45,132,4.2
+2017-01-01,2017,VIC Region 5,Victoria,VIC,141.4,-38.69,124,4.1
+2017-01-01,2017,QLD Region 4,Queensland,QLD,150.82,-23.9,160,4.4
+2017-01-01,2017,SA Region 5,South Australia,SA,138.1,-35.83,148,3.7
+2017-01-01,2017,QLD Region 1,Queensland,QLD,141.26,-15.33,169,4.2
+2017-01-01,2017,VIC Region 7,Victoria,VIC,146.57,-37.29,94,4.5
+2017-01-01,2017,NSW Region 13,New South Wales,NSW,145.92,-35.82,166,4.2
+2017-01-01,2017,NSW Region 12,New South Wales,NSW,142.48,-36.81,118,4.3
+2017-01-01,2017,QLD Region 5,Queensland,QLD,147.0,-25.35,44,4.6
+2017-01-01,2017,VIC Region 4,Victoria,VIC,144.48,-36.78,67,3.9
+2017-01-01,2017,SA Region 3,South Australia,SA,134.63,-30.95,112,4.7
+2017-01-01,2017,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,55,4.4
+2017-04-01,2017,WA Region 5,Western Australia,WA,113.99,-18.42,120,3.8
+2017-04-01,2017,QLD Region 4,Queensland,QLD,150.82,-23.9,212,4.4
+2017-04-01,2017,NSW Region 4,New South Wales,NSW,143.72,-37.13,156,3.8
+2017-04-01,2017,VIC Region 9,Victoria,VIC,145.34,-36.4,86,4.0
+2017-04-01,2017,NSW Region 11,New South Wales,NSW,149.58,-36.68,92,4.5
+2017-04-01,2017,TAS Region 3,Tasmania,TAS,147.69,-41.3,36,4.6
+2017-04-01,2017,TAS Region 1,Tasmania,TAS,144.98,-41.18,16,3.9
+2017-04-01,2017,NSW Region 9,New South Wales,NSW,151.53,-34.25,302,4.1
+2017-04-01,2017,NT Region 1,Northern Territory,NT,130.31,-21.64,7,4.8
+2017-04-01,2017,QLD Region 2,Queensland,QLD,151.03,-11.52,159,3.9
+2017-04-01,2017,WA Region 2,Western Australia,WA,119.41,-20.08,279,4.4
+2017-04-01,2017,NT Region 2,Northern Territory,NT,129.68,-25.0,4,4.7
+2017-04-01,2017,VIC Region 1,Victoria,VIC,141.67,-37.19,256,4.3
+2017-04-01,2017,NSW Region 12,New South Wales,NSW,142.48,-36.81,179,4.3
+2017-04-01,2017,WA Region 8,Western Australia,WA,117.35,-31.42,102,4.8
+2017-04-01,2017,VIC Region 8,Victoria,VIC,146.7,-37.99,111,3.8
+2017-04-01,2017,NT Region 5,Northern Territory,NT,132.33,-17.55,14,4.4
+2017-04-01,2017,VIC Region 7,Victoria,VIC,146.57,-37.29,106,3.8
+2017-04-01,2017,QLD Region 5,Queensland,QLD,147.0,-25.35,49,4.6
+2017-04-01,2017,WA Region 7,Western Australia,WA,118.77,-16.45,165,4.3
+2017-07-01,2017,NT Region 1,Northern Territory,NT,130.31,-21.64,7,4.5
+2017-07-01,2017,TAS Region 5,Tasmania,TAS,146.04,-42.19,45,4.8
+2017-07-01,2017,SA Region 1,South Australia,SA,129.64,-34.41,121,4.4
+2017-07-01,2017,SA Region 7,South Australia,SA,134.49,-28.35,32,4.3
+2017-07-01,2017,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,27,3.8
+2017-07-01,2017,SA Region 5,South Australia,SA,138.1,-35.83,165,4.3
+2017-07-01,2017,WA Region 4,Western Australia,WA,114.33,-27.32,134,4.1
+2017-07-01,2017,QLD Region 1,Queensland,QLD,141.26,-15.33,99,4.9
+2017-07-01,2017,TAS Region 3,Tasmania,TAS,147.69,-41.3,37,4.5
+2017-07-01,2017,WA Region 1,Western Australia,WA,120.57,-28.81,132,4.6
+2017-07-01,2017,NSW Region 5,New South Wales,NSW,148.2,-35.82,48,4.3
+2017-07-01,2017,SA Region 4,South Australia,SA,131.02,-30.3,121,4.1
+2017-07-01,2017,WA Region 5,Western Australia,WA,113.99,-18.42,116,4.6
+2017-07-01,2017,VIC Region 3,Victoria,VIC,144.14,-36.65,62,4.2
+2017-07-01,2017,TAS Region 2,Tasmania,TAS,147.61,-43.05,33,4.0
+2017-07-01,2017,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,22,3.5
+2017-07-01,2017,VIC Region 10,Victoria,VIC,141.57,-38.55,29,3.5
+2017-07-01,2017,NT Region 2,Northern Territory,NT,129.68,-25.0,8,4.8
+2017-07-01,2017,WA Region 3,Western Australia,WA,120.85,-22.44,95,4.1
+2017-07-01,2017,QLD Region 5,Queensland,QLD,147.0,-25.35,52,4.8
+2017-10-01,2017,TAS Region 4,Tasmania,TAS,147.2,-41.53,73,4.7
+2017-10-01,2017,NSW Region 9,New South Wales,NSW,151.53,-34.25,297,4.0
+2017-10-01,2017,NT Region 3,Northern Territory,NT,130.85,-14.99,32,4.2
+2017-10-01,2017,NT Region 2,Northern Territory,NT,129.68,-25.0,5,4.1
+2017-10-01,2017,TAS Region 5,Tasmania,TAS,146.04,-42.19,32,4.2
+2017-10-01,2017,TAS Region 1,Tasmania,TAS,144.98,-41.18,20,4.1
+2017-10-01,2017,NSW Region 10,New South Wales,NSW,141.44,-36.71,152,4.6
+2017-10-01,2017,NSW Region 8,New South Wales,NSW,142.53,-30.93,163,4.0
+2017-10-01,2017,QLD Region 6,Queensland,QLD,142.73,-20.46,294,5.0
+2017-10-01,2017,NSW Region 3,New South Wales,NSW,143.67,-30.11,55,4.5
+2017-10-01,2017,QLD Region 8,Queensland,QLD,152.36,-22.4,30,4.3
+2017-10-01,2017,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,28,3.8
+2017-10-01,2017,NT Region 5,Northern Territory,NT,132.33,-17.55,17,3.9
+2017-10-01,2017,SA Region 6,South Australia,SA,134.79,-27.58,85,4.1
+2017-10-01,2017,TAS Region 2,Tasmania,TAS,147.61,-43.05,40,4.1
+2017-10-01,2017,VIC Region 1,Victoria,VIC,141.67,-37.19,255,4.4
+2017-10-01,2017,NSW Region 13,New South Wales,NSW,145.92,-35.82,177,3.9
+2017-10-01,2017,VIC Region 8,Victoria,VIC,146.7,-37.99,165,4.4
+2017-10-01,2017,NSW Region 5,New South Wales,NSW,148.2,-35.82,69,4.0
+2017-10-01,2017,WA Region 8,Western Australia,WA,117.35,-31.42,132,4.3
+2018-01-01,2018,TAS Region 2,Tasmania,TAS,147.61,-43.05,26,4.1
+2018-01-01,2018,VIC Region 11,Victoria,VIC,142.81,-37.16,168,4.4
+2018-01-01,2018,NSW Region 13,New South Wales,NSW,145.92,-35.82,154,3.8
+2018-01-01,2018,NSW Region 10,New South Wales,NSW,141.44,-36.71,196,3.9
+2018-01-01,2018,VIC Region 7,Victoria,VIC,146.57,-37.29,102,4.2
+2018-01-01,2018,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,29,3.9
+2018-01-01,2018,NT Region 4,Northern Territory,NT,129.77,-19.74,7,4.7
+2018-01-01,2018,QLD Region 3,Queensland,QLD,139.76,-22.66,160,4.9
+2018-01-01,2018,NSW Region 14,New South Wales,NSW,152.12,-36.68,132,4.4
+2018-01-01,2018,NT Region 3,Northern Territory,NT,130.85,-14.99,18,4.6
+2018-01-01,2018,NSW Region 5,New South Wales,NSW,148.2,-35.82,64,3.8
+2018-01-01,2018,VIC Region 3,Victoria,VIC,144.14,-36.65,64,4.5
+2018-01-01,2018,NSW Region 3,New South Wales,NSW,143.67,-30.11,73,4.1
+2018-01-01,2018,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,23,3.6
+2018-01-01,2018,TAS Region 5,Tasmania,TAS,146.04,-42.19,32,4.6
+2018-01-01,2018,TAS Region 3,Tasmania,TAS,147.69,-41.3,22,4.7
+2018-01-01,2018,WA Region 6,Western Australia,WA,127.24,-32.15,47,4.3
+2018-01-01,2018,WA Region 4,Western Australia,WA,114.33,-27.32,217,4.0
+2018-01-01,2018,QLD Region 2,Queensland,QLD,151.03,-11.52,190,4.7
+2018-01-01,2018,NSW Region 4,New South Wales,NSW,143.72,-37.13,101,4.2
+2018-04-01,2018,WA Region 4,Western Australia,WA,114.33,-27.32,173,3.9
+2018-04-01,2018,WA Region 3,Western Australia,WA,120.85,-22.44,73,4.5
+2018-04-01,2018,QLD Region 11,Queensland,QLD,146.38,-15.86,261,4.5
+2018-04-01,2018,QLD Region 3,Queensland,QLD,139.76,-22.66,140,4.7
+2018-04-01,2018,QLD Region 7,Queensland,QLD,139.37,-19.65,144,4.7
+2018-04-01,2018,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,52,3.7
+2018-04-01,2018,QLD Region 6,Queensland,QLD,142.73,-20.46,246,4.3
+2018-04-01,2018,WA Region 1,Western Australia,WA,120.57,-28.81,76,4.4
+2018-04-01,2018,NSW Region 4,New South Wales,NSW,143.72,-37.13,88,4.1
+2018-04-01,2018,VIC Region 6,Victoria,VIC,148.91,-36.24,206,4.2
+2018-04-01,2018,QLD Region 10,Queensland,QLD,143.89,-17.34,194,4.2
+2018-04-01,2018,NSW Region 14,New South Wales,NSW,152.12,-36.68,125,4.5
+2018-04-01,2018,SA Region 7,South Australia,SA,134.49,-28.35,22,4.4
+2018-04-01,2018,QLD Region 2,Queensland,QLD,151.03,-11.52,202,4.3
+2018-04-01,2018,NSW Region 8,New South Wales,NSW,142.53,-30.93,90,4.2
+2018-04-01,2018,VIC Region 1,Victoria,VIC,141.67,-37.19,238,3.8
+2018-04-01,2018,VIC Region 4,Victoria,VIC,144.48,-36.78,100,3.7
+2018-04-01,2018,SA Region 1,South Australia,SA,129.64,-34.41,121,4.7
+2018-04-01,2018,NSW Region 13,New South Wales,NSW,145.92,-35.82,117,4.6
+2018-04-01,2018,TAS Region 2,Tasmania,TAS,147.61,-43.05,32,4.9
+2018-07-01,2018,SA Region 7,South Australia,SA,134.49,-28.35,28,4.6
+2018-07-01,2018,WA Region 4,Western Australia,WA,114.33,-27.32,190,4.3
+2018-07-01,2018,VIC Region 11,Victoria,VIC,142.81,-37.16,190,4.0
+2018-07-01,2018,NT Region 5,Northern Territory,NT,132.33,-17.55,9,4.4
+2018-07-01,2018,NSW Region 7,New South Wales,NSW,146.09,-29.31,84,4.5
+2018-07-01,2018,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,18,4.0
+2018-07-01,2018,NT Region 3,Northern Territory,NT,130.85,-14.99,34,5.0
+2018-07-01,2018,QLD Region 4,Queensland,QLD,150.82,-23.9,283,4.1
+2018-07-01,2018,WA Region 8,Western Australia,WA,117.35,-31.42,160,4.8
+2018-07-01,2018,NSW Region 1,New South Wales,NSW,141.79,-34.17,118,4.4
+2018-07-01,2018,NSW Region 6,New South Wales,NSW,144.12,-32.31,67,4.3
+2018-07-01,2018,QLD Region 1,Queensland,QLD,141.26,-15.33,130,4.7
+2018-07-01,2018,QLD Region 2,Queensland,QLD,151.03,-11.52,119,4.8
+2018-07-01,2018,VIC Region 2,Victoria,VIC,147.17,-37.78,40,3.6
+2018-07-01,2018,QLD Region 9,Queensland,QLD,149.01,-22.61,113,4.2
+2018-07-01,2018,QLD Region 8,Queensland,QLD,152.36,-22.4,30,4.4
+2018-07-01,2018,SA Region 4,South Australia,SA,131.02,-30.3,69,4.3
+2018-07-01,2018,QLD Region 7,Queensland,QLD,139.37,-19.65,123,4.5
+2018-07-01,2018,TAS Region 5,Tasmania,TAS,146.04,-42.19,28,4.6
+2018-07-01,2018,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,25,3.7
+2018-10-01,2018,SA Region 7,South Australia,SA,134.49,-28.35,20,4.5
+2018-10-01,2018,QLD Region 12,Queensland,QLD,148.09,-14.98,292,4.0
+2018-10-01,2018,QLD Region 6,Queensland,QLD,142.73,-20.46,239,4.8
+2018-10-01,2018,SA Region 6,South Australia,SA,134.79,-27.58,54,4.3
+2018-10-01,2018,NSW Region 9,New South Wales,NSW,151.53,-34.25,309,4.3
+2018-10-01,2018,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,55,4.4
+2018-10-01,2018,VIC Region 2,Victoria,VIC,147.17,-37.78,40,4.3
+2018-10-01,2018,QLD Region 11,Queensland,QLD,146.38,-15.86,245,3.9
+2018-10-01,2018,NSW Region 3,New South Wales,NSW,143.67,-30.11,79,4.4
+2018-10-01,2018,QLD Region 3,Queensland,QLD,139.76,-22.66,145,4.8
+2018-10-01,2018,QLD Region 2,Queensland,QLD,151.03,-11.52,147,4.4
+2018-10-01,2018,VIC Region 7,Victoria,VIC,146.57,-37.29,113,4.3
+2018-10-01,2018,QLD Region 4,Queensland,QLD,150.82,-23.9,202,4.2
+2018-10-01,2018,NSW Region 1,New South Wales,NSW,141.79,-34.17,118,4.1
+2018-10-01,2018,VIC Region 6,Victoria,VIC,148.91,-36.24,226,4.4
+2018-10-01,2018,NT Region 1,Northern Territory,NT,130.31,-21.64,7,4.5
+2018-10-01,2018,QLD Region 5,Queensland,QLD,147.0,-25.35,45,4.0
+2018-10-01,2018,TAS Region 4,Tasmania,TAS,147.2,-41.53,41,4.1
+2018-10-01,2018,NSW Region 13,New South Wales,NSW,145.92,-35.82,156,4.4
+2018-10-01,2018,WA Region 3,Western Australia,WA,120.85,-22.44,64,4.0
+2019-01-01,2019,NSW Region 3,New South Wales,NSW,143.67,-30.11,62,4.3
+2019-01-01,2019,TAS Region 3,Tasmania,TAS,147.69,-41.3,31,4.1
+2019-01-01,2019,WA Region 8,Western Australia,WA,117.35,-31.42,151,4.4
+2019-01-01,2019,SA Region 3,South Australia,SA,134.63,-30.95,160,4.2
+2019-01-01,2019,NSW Region 1,New South Wales,NSW,141.79,-34.17,162,3.9
+2019-01-01,2019,VIC Region 6,Victoria,VIC,148.91,-36.24,144,3.6
+2019-01-01,2019,VIC Region 9,Victoria,VIC,145.34,-36.4,73,4.5
+2019-01-01,2019,NSW Region 6,New South Wales,NSW,144.12,-32.31,61,4.6
+2019-01-01,2019,SA Region 5,South Australia,SA,138.1,-35.83,117,4.1
+2019-01-01,2019,SA Region 2,South Australia,SA,130.96,-29.16,63,4.0
+2019-01-01,2019,VIC Region 3,Victoria,VIC,144.14,-36.65,50,4.0
+2019-01-01,2019,WA Region 4,Western Australia,WA,114.33,-27.32,134,4.4
+2019-01-01,2019,QLD Region 6,Queensland,QLD,142.73,-20.46,198,4.5
+2019-01-01,2019,VIC Region 12,Victoria,VIC,143.6,-38.57,323,3.8
+2019-01-01,2019,NT Region 4,Northern Territory,NT,129.77,-19.74,8,4.5
+2019-01-01,2019,NT Region 2,Northern Territory,NT,129.68,-25.0,7,4.7
+2019-01-01,2019,TAS Region 5,Tasmania,TAS,146.04,-42.19,25,4.9
+2019-01-01,2019,NT Region 5,Northern Territory,NT,132.33,-17.55,16,4.0
+2019-01-01,2019,QLD Region 1,Queensland,QLD,141.26,-15.33,149,4.1
+2019-01-01,2019,NSW Region 14,New South Wales,NSW,152.12,-36.68,75,4.4
+2019-04-01,2019,NSW Region 1,New South Wales,NSW,141.79,-34.17,110,4.0
+2019-04-01,2019,QLD Region 8,Queensland,QLD,152.36,-22.4,26,4.6
+2019-04-01,2019,VIC Region 2,Victoria,VIC,147.17,-37.78,41,4.1
+2019-04-01,2019,WA Region 4,Western Australia,WA,114.33,-27.32,201,3.8
+2019-04-01,2019,QLD Region 5,Queensland,QLD,147.0,-25.35,56,4.5
+2019-04-01,2019,VIC Region 3,Victoria,VIC,144.14,-36.65,64,3.9
+2019-04-01,2019,NT Region 1,Northern Territory,NT,130.31,-21.64,8,4.3
+2019-04-01,2019,WA Region 5,Western Australia,WA,113.99,-18.42,105,4.8
+2019-04-01,2019,VIC Region 6,Victoria,VIC,148.91,-36.24,160,4.2
+2019-04-01,2019,NSW Region 7,New South Wales,NSW,146.09,-29.31,93,3.9
+2019-04-01,2019,VIC Region 12,Victoria,VIC,143.6,-38.57,267,4.0
+2019-04-01,2019,QLD Region 2,Queensland,QLD,151.03,-11.52,107,4.0
+2019-04-01,2019,WA Region 3,Western Australia,WA,120.85,-22.44,89,3.8
+2019-04-01,2019,SA Region 4,South Australia,SA,131.02,-30.3,106,4.5
+2019-04-01,2019,QLD Region 11,Queensland,QLD,146.38,-15.86,183,4.7
+2019-04-01,2019,NSW Region 5,New South Wales,NSW,148.2,-35.82,59,4.1
+2019-04-01,2019,NT Region 4,Northern Territory,NT,129.77,-19.74,7,4.3
+2019-04-01,2019,VIC Region 11,Victoria,VIC,142.81,-37.16,138,3.9
+2019-04-01,2019,QLD Region 12,Queensland,QLD,148.09,-14.98,524,4.1
+2019-04-01,2019,QLD Region 6,Queensland,QLD,142.73,-20.46,288,4.2
+2019-07-01,2019,NSW Region 12,New South Wales,NSW,142.48,-36.81,131,4.7
+2019-07-01,2019,NSW Region 3,New South Wales,NSW,143.67,-30.11,77,4.3
+2019-07-01,2019,WA Region 2,Western Australia,WA,119.41,-20.08,290,4.2
+2019-07-01,2019,QLD Region 11,Queensland,QLD,146.38,-15.86,243,4.2
+2019-07-01,2019,VIC Region 3,Victoria,VIC,144.14,-36.65,66,4.1
+2019-07-01,2019,SA Region 7,South Australia,SA,134.49,-28.35,27,4.7
+2019-07-01,2019,VIC Region 11,Victoria,VIC,142.81,-37.16,135,4.3
+2019-07-01,2019,VIC Region 2,Victoria,VIC,147.17,-37.78,38,4.0
+2019-07-01,2019,WA Region 1,Western Australia,WA,120.57,-28.81,118,4.7
+2019-07-01,2019,QLD Region 2,Queensland,QLD,151.03,-11.52,182,4.6
+2019-07-01,2019,SA Region 6,South Australia,SA,134.79,-27.58,83,4.1
+2019-07-01,2019,QLD Region 9,Queensland,QLD,149.01,-22.61,95,4.8
+2019-07-01,2019,QLD Region 6,Queensland,QLD,142.73,-20.46,180,4.8
+2019-07-01,2019,NSW Region 6,New South Wales,NSW,144.12,-32.31,61,4.5
+2019-07-01,2019,QLD Region 1,Queensland,QLD,141.26,-15.33,146,4.9
+2019-07-01,2019,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,38,4.4
+2019-07-01,2019,VIC Region 7,Victoria,VIC,146.57,-37.29,118,4.1
+2019-07-01,2019,NT Region 3,Northern Territory,NT,130.85,-14.99,22,4.8
+2019-07-01,2019,TAS Region 5,Tasmania,TAS,146.04,-42.19,23,4.1
+2019-07-01,2019,NSW Region 13,New South Wales,NSW,145.92,-35.82,164,4.0
+2019-10-01,2019,NSW Region 1,New South Wales,NSW,141.79,-34.17,106,3.7
+2019-10-01,2019,NSW Region 3,New South Wales,NSW,143.67,-30.11,51,4.1
+2019-10-01,2019,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,28,3.8
+2019-10-01,2019,QLD Region 12,Queensland,QLD,148.09,-14.98,441,3.9
+2019-10-01,2019,WA Region 6,Western Australia,WA,127.24,-32.15,55,4.6
+2019-10-01,2019,VIC Region 5,Victoria,VIC,141.4,-38.69,159,4.2
+2019-10-01,2019,SA Region 3,South Australia,SA,134.63,-30.95,138,4.3
+2019-10-01,2019,NSW Region 9,New South Wales,NSW,151.53,-34.25,242,4.8
+2019-10-01,2019,VIC Region 8,Victoria,VIC,146.7,-37.99,91,4.1
+2019-10-01,2019,WA Region 8,Western Australia,WA,117.35,-31.42,107,4.2
+2019-10-01,2019,TAS Region 4,Tasmania,TAS,147.2,-41.53,46,4.7
+2019-10-01,2019,QLD Region 7,Queensland,QLD,139.37,-19.65,121,4.9
+2019-10-01,2019,SA Region 1,South Australia,SA,129.64,-34.41,85,4.6
+2019-10-01,2019,QLD Region 9,Queensland,QLD,149.01,-22.61,145,4.4
+2019-10-01,2019,NT Region 1,Northern Territory,NT,130.31,-21.64,8,4.7
+2019-10-01,2019,WA Region 7,Western Australia,WA,118.77,-16.45,231,4.1
+2019-10-01,2019,NSW Region 10,New South Wales,NSW,141.44,-36.71,207,4.1
+2019-10-01,2019,QLD Region 4,Queensland,QLD,150.82,-23.9,200,4.7
+2019-10-01,2019,NSW Region 13,New South Wales,NSW,145.92,-35.82,138,4.2
+2019-10-01,2019,TAS Region 1,Tasmania,TAS,144.98,-41.18,13,4.0
+2020-01-01,2020,ACT Region 1,Australian Capital Territory,ACT,148.96,-35.52,31,3.9
+2020-01-01,2020,NSW Region 8,New South Wales,NSW,142.53,-30.93,135,3.9
+2020-01-01,2020,WA Region 5,Western Australia,WA,113.99,-18.42,82,3.9
+2020-01-01,2020,QLD Region 6,Queensland,QLD,142.73,-20.46,193,4.4
+2020-01-01,2020,WA Region 3,Western Australia,WA,120.85,-22.44,89,4.5
+2020-01-01,2020,WA Region 2,Western Australia,WA,119.41,-20.08,286,4.6
+2020-01-01,2020,SA Region 1,South Australia,SA,129.64,-34.41,123,4.3
+2020-01-01,2020,WA Region 7,Western Australia,WA,118.77,-16.45,131,4.4
+2020-01-01,2020,WA Region 6,Western Australia,WA,127.24,-32.15,67,4.0
+2020-01-01,2020,NT Region 3,Northern Territory,NT,130.85,-14.99,23,4.5
+2020-01-01,2020,NSW Region 14,New South Wales,NSW,152.12,-36.68,105,4.1
+2020-01-01,2020,VIC Region 10,Victoria,VIC,141.57,-38.55,39,4.5
+2020-01-01,2020,QLD Region 5,Queensland,QLD,147.0,-25.35,64,4.1
+2020-01-01,2020,SA Region 7,South Australia,SA,134.49,-28.35,36,4.0
+2020-01-01,2020,QLD Region 8,Queensland,QLD,152.36,-22.4,30,4.2
+2020-01-01,2020,TAS Region 1,Tasmania,TAS,144.98,-41.18,11,3.9
+2020-01-01,2020,TAS Region 5,Tasmania,TAS,146.04,-42.19,23,4.1
+2020-01-01,2020,SA Region 2,South Australia,SA,130.96,-29.16,99,3.9
+2020-01-01,2020,NSW Region 13,New South Wales,NSW,145.92,-35.82,104,4.6
+2020-01-01,2020,NSW Region 9,New South Wales,NSW,151.53,-34.25,189,4.6
+2020-04-01,2020,QLD Region 10,Queensland,QLD,143.89,-17.34,119,4.6
+2020-04-01,2020,WA Region 1,Western Australia,WA,120.57,-28.81,134,3.9
+2020-04-01,2020,TAS Region 5,Tasmania,TAS,146.04,-42.19,27,4.6
+2020-04-01,2020,NSW Region 14,New South Wales,NSW,152.12,-36.68,78,3.9
+2020-04-01,2020,TAS Region 3,Tasmania,TAS,147.69,-41.3,35,4.2
+2020-04-01,2020,SA Region 3,South Australia,SA,134.63,-30.95,153,3.9
+2020-04-01,2020,NSW Region 2,New South Wales,NSW,145.87,-31.23,231,4.0
+2020-04-01,2020,VIC Region 6,Victoria,VIC,148.91,-36.24,227,3.8
+2020-04-01,2020,WA Region 6,Western Australia,WA,127.24,-32.15,61,4.2
+2020-04-01,2020,QLD Region 2,Queensland,QLD,151.03,-11.52,192,4.7
+2020-04-01,2020,NT Region 4,Northern Territory,NT,129.77,-19.74,10,4.4
+2020-04-01,2020,QLD Region 3,Queensland,QLD,139.76,-22.66,123,4.9
+2020-04-01,2020,QLD Region 8,Queensland,QLD,152.36,-22.4,31,3.9
+2020-04-01,2020,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,47,4.1
+2020-04-01,2020,SA Region 5,South Australia,SA,138.1,-35.83,137,4.5
+2020-04-01,2020,NSW Region 7,New South Wales,NSW,146.09,-29.31,71,4.3
+2020-04-01,2020,WA Region 3,Western Australia,WA,120.85,-22.44,85,4.8
+2020-04-01,2020,QLD Region 7,Queensland,QLD,139.37,-19.65,84,4.4
+2020-04-01,2020,VIC Region 4,Victoria,VIC,144.48,-36.78,75,3.8
+2020-04-01,2020,TAS Region 1,Tasmania,TAS,144.98,-41.18,15,4.1
+2020-07-01,2020,TAS Region 2,Tasmania,TAS,147.61,-43.05,40,4.0
+2020-07-01,2020,QLD Region 2,Queensland,QLD,151.03,-11.52,112,4.2
+2020-07-01,2020,VIC Region 5,Victoria,VIC,141.4,-38.69,115,3.7
+2020-07-01,2020,NT Region 3,Northern Territory,NT,130.85,-14.99,21,4.6
+2020-07-01,2020,NSW Region 10,New South Wales,NSW,141.44,-36.71,177,4.1
+2020-07-01,2020,NT Region 2,Northern Territory,NT,129.68,-25.0,5,4.3
+2020-07-01,2020,QLD Region 1,Queensland,QLD,141.26,-15.33,136,4.5
+2020-07-01,2020,WA Region 1,Western Australia,WA,120.57,-28.81,96,4.5
+2020-07-01,2020,TAS Region 4,Tasmania,TAS,147.2,-41.53,62,4.5
+2020-07-01,2020,VIC Region 3,Victoria,VIC,144.14,-36.65,51,3.6
+2020-07-01,2020,VIC Region 12,Victoria,VIC,143.6,-38.57,458,3.7
+2020-07-01,2020,NSW Region 13,New South Wales,NSW,145.92,-35.82,142,4.6
+2020-07-01,2020,NSW Region 2,New South Wales,NSW,145.87,-31.23,200,4.0
+2020-07-01,2020,QLD Region 3,Queensland,QLD,139.76,-22.66,141,4.6
+2020-07-01,2020,SA Region 4,South Australia,SA,131.02,-30.3,72,4.0
+2020-07-01,2020,TAS Region 1,Tasmania,TAS,144.98,-41.18,20,4.5
+2020-07-01,2020,VIC Region 7,Victoria,VIC,146.57,-37.29,99,4.3
+2020-07-01,2020,TAS Region 5,Tasmania,TAS,146.04,-42.19,24,4.2
+2020-07-01,2020,QLD Region 6,Queensland,QLD,142.73,-20.46,189,4.4
+2020-07-01,2020,VIC Region 1,Victoria,VIC,141.67,-37.19,146,3.7
+2020-10-01,2020,QLD Region 3,Queensland,QLD,139.76,-22.66,125,4.5
+2020-10-01,2020,SA Region 3,South Australia,SA,134.63,-30.95,153,4.7
+2020-10-01,2020,QLD Region 7,Queensland,QLD,139.37,-19.65,89,4.0
+2020-10-01,2020,WA Region 2,Western Australia,WA,119.41,-20.08,195,4.2
+2020-10-01,2020,QLD Region 10,Queensland,QLD,143.89,-17.34,114,4.2
+2020-10-01,2020,TAS Region 5,Tasmania,TAS,146.04,-42.19,25,4.4
+2020-10-01,2020,QLD Region 6,Queensland,QLD,142.73,-20.46,261,4.8
+2020-10-01,2020,NSW Region 9,New South Wales,NSW,151.53,-34.25,256,4.7
+2020-10-01,2020,NSW Region 12,New South Wales,NSW,142.48,-36.81,106,4.3
+2020-10-01,2020,SA Region 5,South Australia,SA,138.1,-35.83,118,4.2
+2020-10-01,2020,NT Region 1,Northern Territory,NT,130.31,-21.64,7,4.2
+2020-10-01,2020,QLD Region 9,Queensland,QLD,149.01,-22.61,154,4.6
+2020-10-01,2020,NT Region 4,Northern Territory,NT,129.77,-19.74,8,4.1
+2020-10-01,2020,VIC Region 10,Victoria,VIC,141.57,-38.55,31,4.0
+2020-10-01,2020,WA Region 6,Western Australia,WA,127.24,-32.15,45,3.8
+2020-10-01,2020,VIC Region 1,Victoria,VIC,141.67,-37.19,228,4.5
+2020-10-01,2020,VIC Region 3,Victoria,VIC,144.14,-36.65,69,4.0
+2020-10-01,2020,NSW Region 8,New South Wales,NSW,142.53,-30.93,116,4.6
+2020-10-01,2020,NT Region 2,Northern Territory,NT,129.68,-25.0,6,5.0
+2020-10-01,2020,VIC Region 12,Victoria,VIC,143.6,-38.57,313,4.3
+2021-01-01,2021,VIC Region 2,Victoria,VIC,147.17,-37.78,45,4.5
+2021-01-01,2021,NSW Region 14,New South Wales,NSW,152.12,-36.68,79,4.0
+2021-01-01,2021,NSW Region 12,New South Wales,NSW,142.48,-36.81,149,4.2
+2021-01-01,2021,NSW Region 10,New South Wales,NSW,141.44,-36.71,225,3.9
+2021-01-01,2021,NSW Region 13,New South Wales,NSW,145.92,-35.82,161,4.2
+2021-01-01,2021,SA Region 5,South Australia,SA,138.1,-35.83,174,4.6
+2021-01-01,2021,WA Region 6,Western Australia,WA,127.24,-32.15,43,4.0
+2021-01-01,2021,VIC Region 5,Victoria,VIC,141.4,-38.69,84,3.9
+2021-01-01,2021,NSW Region 5,New South Wales,NSW,148.2,-35.82,65,3.6
+2021-01-01,2021,NSW Region 11,New South Wales,NSW,149.58,-36.68,75,4.1
+2021-01-01,2021,SA Region 2,South Australia,SA,130.96,-29.16,100,4.6
+2021-01-01,2021,VIC Region 8,Victoria,VIC,146.7,-37.99,169,4.2
+2021-01-01,2021,QLD Region 7,Queensland,QLD,139.37,-19.65,127,4.0
+2021-01-01,2021,NSW Region 6,New South Wales,NSW,144.12,-32.31,47,4.2
+2021-01-01,2021,TAS Region 2,Tasmania,TAS,147.61,-43.05,37,4.4
+2021-01-01,2021,VIC Region 6,Victoria,VIC,148.91,-36.24,228,3.8
+2021-01-01,2021,NT Region 3,Northern Territory,NT,130.85,-14.99,22,5.1
+2021-01-01,2021,QLD Region 4,Queensland,QLD,150.82,-23.9,201,5.1
+2021-01-01,2021,NSW Region 2,New South Wales,NSW,145.87,-31.23,211,4.4
+2021-01-01,2021,TAS Region 1,Tasmania,TAS,144.98,-41.18,20,4.7
+2021-04-01,2021,QLD Region 9,Queensland,QLD,149.01,-22.61,125,4.8
+2021-04-01,2021,NT Region 1,Northern Territory,NT,130.31,-21.64,5,4.3
+2021-04-01,2021,VIC Region 6,Victoria,VIC,148.91,-36.24,203,4.0
+2021-04-01,2021,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,47,3.8
+2021-04-01,2021,NT Region 2,Northern Territory,NT,129.68,-25.0,7,4.5
+2021-04-01,2021,QLD Region 4,Queensland,QLD,150.82,-23.9,185,4.3
+2021-04-01,2021,NSW Region 8,New South Wales,NSW,142.53,-30.93,104,3.7
+2021-04-01,2021,VIC Region 4,Victoria,VIC,144.48,-36.78,66,3.9
+2021-04-01,2021,SA Region 4,South Australia,SA,131.02,-30.3,65,4.5
+2021-04-01,2021,WA Region 4,Western Australia,WA,114.33,-27.32,152,4.3
+2021-04-01,2021,NT Region 3,Northern Territory,NT,130.85,-14.99,27,4.6
+2021-04-01,2021,NSW Region 7,New South Wales,NSW,146.09,-29.31,53,4.7
+2021-04-01,2021,QLD Region 11,Queensland,QLD,146.38,-15.86,138,4.1
+2021-04-01,2021,TAS Region 5,Tasmania,TAS,146.04,-42.19,27,4.2
+2021-04-01,2021,QLD Region 6,Queensland,QLD,142.73,-20.46,157,4.3
+2021-04-01,2021,WA Region 3,Western Australia,WA,120.85,-22.44,70,4.0
+2021-04-01,2021,NSW Region 13,New South Wales,NSW,145.92,-35.82,151,3.7
+2021-04-01,2021,QLD Region 7,Queensland,QLD,139.37,-19.65,80,4.7
+2021-04-01,2021,NSW Region 5,New South Wales,NSW,148.2,-35.82,50,4.3
+2021-04-01,2021,NSW Region 9,New South Wales,NSW,151.53,-34.25,258,4.0
+2021-07-01,2021,NSW Region 3,New South Wales,NSW,143.67,-30.11,61,4.6
+2021-07-01,2021,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,27,3.6
+2021-07-01,2021,WA Region 7,Western Australia,WA,118.77,-16.45,249,4.2
+2021-07-01,2021,QLD Region 8,Queensland,QLD,152.36,-22.4,24,4.5
+2021-07-01,2021,WA Region 6,Western Australia,WA,127.24,-32.15,47,4.5
+2021-07-01,2021,QLD Region 12,Queensland,QLD,148.09,-14.98,527,4.7
+2021-07-01,2021,VIC Region 1,Victoria,VIC,141.67,-37.19,165,4.0
+2021-07-01,2021,VIC Region 5,Victoria,VIC,141.4,-38.69,110,3.5
+2021-07-01,2021,NSW Region 7,New South Wales,NSW,146.09,-29.31,80,4.0
+2021-07-01,2021,QLD Region 7,Queensland,QLD,139.37,-19.65,120,4.6
+2021-07-01,2021,NSW Region 9,New South Wales,NSW,151.53,-34.25,260,4.0
+2021-07-01,2021,VIC Region 4,Victoria,VIC,144.48,-36.78,63,3.5
+2021-07-01,2021,VIC Region 10,Victoria,VIC,141.57,-38.55,43,3.6
+2021-07-01,2021,SA Region 7,South Australia,SA,134.49,-28.35,30,4.3
+2021-07-01,2021,SA Region 2,South Australia,SA,130.96,-29.16,71,4.2
+2021-07-01,2021,NSW Region 5,New South Wales,NSW,148.2,-35.82,73,3.7
+2021-07-01,2021,WA Region 3,Western Australia,WA,120.85,-22.44,55,4.2
+2021-07-01,2021,VIC Region 12,Victoria,VIC,143.6,-38.57,360,4.2
+2021-07-01,2021,NSW Region 10,New South Wales,NSW,141.44,-36.71,198,3.9
+2021-07-01,2021,WA Region 8,Western Australia,WA,117.35,-31.42,143,4.2
+2021-10-01,2021,TAS Region 3,Tasmania,TAS,147.69,-41.3,20,4.2
+2021-10-01,2021,TAS Region 5,Tasmania,TAS,146.04,-42.19,42,4.6
+2021-10-01,2021,WA Region 8,Western Australia,WA,117.35,-31.42,148,4.5
+2021-10-01,2021,NSW Region 9,New South Wales,NSW,151.53,-34.25,251,4.6
+2021-10-01,2021,NSW Region 1,New South Wales,NSW,141.79,-34.17,164,3.5
+2021-10-01,2021,NSW Region 10,New South Wales,NSW,141.44,-36.71,254,3.9
+2021-10-01,2021,NSW Region 13,New South Wales,NSW,145.92,-35.82,197,4.1
+2021-10-01,2021,SA Region 6,South Australia,SA,134.79,-27.58,52,4.2
+2021-10-01,2021,WA Region 5,Western Australia,WA,113.99,-18.42,94,4.2
+2021-10-01,2021,VIC Region 11,Victoria,VIC,142.81,-37.16,140,4.3
+2021-10-01,2021,NSW Region 4,New South Wales,NSW,143.72,-37.13,89,3.7
+2021-10-01,2021,QLD Region 6,Queensland,QLD,142.73,-20.46,186,4.5
+2021-10-01,2021,QLD Region 5,Queensland,QLD,147.0,-25.35,50,4.1
+2021-10-01,2021,SA Region 1,South Australia,SA,129.64,-34.41,134,4.1
+2021-10-01,2021,WA Region 6,Western Australia,WA,127.24,-32.15,74,4.6
+2021-10-01,2021,WA Region 2,Western Australia,WA,119.41,-20.08,229,4.3
+2021-10-01,2021,WA Region 4,Western Australia,WA,114.33,-27.32,186,4.1
+2021-10-01,2021,NSW Region 2,New South Wales,NSW,145.87,-31.23,165,3.9
+2021-10-01,2021,QLD Region 7,Queensland,QLD,139.37,-19.65,79,4.7
+2021-10-01,2021,SA Region 5,South Australia,SA,138.1,-35.83,123,4.6
+2022-01-01,2022,NT Region 3,Northern Territory,NT,130.85,-14.99,24,5.1
+2022-01-01,2022,SA Region 5,South Australia,SA,138.1,-35.83,162,4.1
+2022-01-01,2022,WA Region 4,Western Australia,WA,114.33,-27.32,198,3.8
+2022-01-01,2022,QLD Region 7,Queensland,QLD,139.37,-19.65,80,4.8
+2022-01-01,2022,WA Region 6,Western Australia,WA,127.24,-32.15,73,4.2
+2022-01-01,2022,QLD Region 5,Queensland,QLD,147.0,-25.35,73,4.3
+2022-01-01,2022,VIC Region 7,Victoria,VIC,146.57,-37.29,118,4.5
+2022-01-01,2022,WA Region 5,Western Australia,WA,113.99,-18.42,63,3.9
+2022-01-01,2022,TAS Region 5,Tasmania,TAS,146.04,-42.19,32,4.9
+2022-01-01,2022,WA Region 7,Western Australia,WA,118.77,-16.45,181,4.3
+2022-01-01,2022,TAS Region 3,Tasmania,TAS,147.69,-41.3,23,4.4
+2022-01-01,2022,NSW Region 13,New South Wales,NSW,145.92,-35.82,180,3.7
+2022-01-01,2022,WA Region 1,Western Australia,WA,120.57,-28.81,88,4.7
+2022-01-01,2022,VIC Region 11,Victoria,VIC,142.81,-37.16,109,3.9
+2022-01-01,2022,NSW Region 3,New South Wales,NSW,143.67,-30.11,83,3.7
+2022-01-01,2022,QLD Region 4,Queensland,QLD,150.82,-23.9,289,4.5
+2022-01-01,2022,VIC Region 3,Victoria,VIC,144.14,-36.65,51,4.2
+2022-01-01,2022,VIC Region 4,Victoria,VIC,144.48,-36.78,72,3.9
+2022-01-01,2022,QLD Region 2,Queensland,QLD,151.03,-11.52,145,4.5
+2022-01-01,2022,SA Region 4,South Australia,SA,131.02,-30.3,70,3.8
+2022-04-01,2022,VIC Region 7,Victoria,VIC,146.57,-37.29,105,3.7
+2022-04-01,2022,NSW Region 3,New South Wales,NSW,143.67,-30.11,76,4.3
+2022-04-01,2022,QLD Region 12,Queensland,QLD,148.09,-14.98,346,4.8
+2022-04-01,2022,VIC Region 12,Victoria,VIC,143.6,-38.57,487,3.6
+2022-04-01,2022,VIC Region 9,Victoria,VIC,145.34,-36.4,77,4.1
+2022-04-01,2022,NSW Region 5,New South Wales,NSW,148.2,-35.82,50,4.1
+2022-04-01,2022,VIC Region 5,Victoria,VIC,141.4,-38.69,111,4.1
+2022-04-01,2022,QLD Region 10,Queensland,QLD,143.89,-17.34,116,4.2
+2022-04-01,2022,VIC Region 8,Victoria,VIC,146.7,-37.99,115,4.0
+2022-04-01,2022,NSW Region 1,New South Wales,NSW,141.79,-34.17,170,4.4
+2022-04-01,2022,TAS Region 4,Tasmania,TAS,147.2,-41.53,39,4.2
+2022-04-01,2022,NSW Region 13,New South Wales,NSW,145.92,-35.82,193,3.9
+2022-04-01,2022,NSW Region 12,New South Wales,NSW,142.48,-36.81,125,4.7
+2022-04-01,2022,NSW Region 8,New South Wales,NSW,142.53,-30.93,94,3.9
+2022-04-01,2022,NSW Region 6,New South Wales,NSW,144.12,-32.31,52,4.2
+2022-04-01,2022,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,63,3.8
+2022-04-01,2022,WA Region 2,Western Australia,WA,119.41,-20.08,360,4.2
+2022-04-01,2022,NSW Region 9,New South Wales,NSW,151.53,-34.25,324,4.6
+2022-04-01,2022,QLD Region 8,Queensland,QLD,152.36,-22.4,24,4.1
+2022-04-01,2022,QLD Region 4,Queensland,QLD,150.82,-23.9,179,4.1
+2022-07-01,2022,SA Region 3,South Australia,SA,134.63,-30.95,127,4.0
+2022-07-01,2022,NSW Region 1,New South Wales,NSW,141.79,-34.17,92,4.1
+2022-07-01,2022,TAS Region 2,Tasmania,TAS,147.61,-43.05,39,4.5
+2022-07-01,2022,SA Region 7,South Australia,SA,134.49,-28.35,35,4.9
+2022-07-01,2022,QLD Region 6,Queensland,QLD,142.73,-20.46,187,4.7
+2022-07-01,2022,ACT Region 3,Australian Capital Territory,ACT,148.86,-35.71,30,4.0
+2022-07-01,2022,NSW Region 14,New South Wales,NSW,152.12,-36.68,102,3.7
+2022-07-01,2022,VIC Region 2,Victoria,VIC,147.17,-37.78,38,3.8
+2022-07-01,2022,TAS Region 3,Tasmania,TAS,147.69,-41.3,36,4.0
+2022-07-01,2022,NSW Region 11,New South Wales,NSW,149.58,-36.68,88,4.4
+2022-07-01,2022,QLD Region 8,Queensland,QLD,152.36,-22.4,28,4.0
+2022-07-01,2022,NSW Region 10,New South Wales,NSW,141.44,-36.71,174,4.5
+2022-07-01,2022,QLD Region 3,Queensland,QLD,139.76,-22.66,138,4.0
+2022-07-01,2022,NT Region 1,Northern Territory,NT,130.31,-21.64,7,4.7
+2022-07-01,2022,TAS Region 5,Tasmania,TAS,146.04,-42.19,33,4.3
+2022-07-01,2022,QLD Region 1,Queensland,QLD,141.26,-15.33,108,4.0
+2022-07-01,2022,NT Region 3,Northern Territory,NT,130.85,-14.99,23,4.7
+2022-07-01,2022,QLD Region 5,Queensland,QLD,147.0,-25.35,48,3.8
+2022-07-01,2022,NSW Region 12,New South Wales,NSW,142.48,-36.81,145,4.3
+2022-07-01,2022,QLD Region 10,Queensland,QLD,143.89,-17.34,117,4.6
+2022-10-01,2022,QLD Region 11,Queensland,QLD,146.38,-15.86,173,4.9
+2022-10-01,2022,NSW Region 2,New South Wales,NSW,145.87,-31.23,278,4.6
+2022-10-01,2022,NSW Region 14,New South Wales,NSW,152.12,-36.68,76,4.0
+2022-10-01,2022,VIC Region 2,Victoria,VIC,147.17,-37.78,37,3.7
+2022-10-01,2022,TAS Region 5,Tasmania,TAS,146.04,-42.19,26,4.8
+2022-10-01,2022,ACT Region 2,Australian Capital Territory,ACT,149.28,-35.68,60,3.4
+2022-10-01,2022,SA Region 1,South Australia,SA,129.64,-34.41,114,4.4
+2022-10-01,2022,WA Region 5,Western Australia,WA,113.99,-18.42,95,4.1
+2022-10-01,2022,SA Region 6,South Australia,SA,134.79,-27.58,102,4.8
+2022-10-01,2022,SA Region 2,South Australia,SA,130.96,-29.16,95,4.5
+2022-10-01,2022,VIC Region 3,Victoria,VIC,144.14,-36.65,69,4.4
+2022-10-01,2022,WA Region 7,Western Australia,WA,118.77,-16.45,219,3.8
+2022-10-01,2022,QLD Region 3,Queensland,QLD,139.76,-22.66,113,4.2
+2022-10-01,2022,NT Region 1,Northern Territory,NT,130.31,-21.64,6,4.0
+2022-10-01,2022,SA Region 4,South Australia,SA,131.02,-30.3,62,4.3
+2022-10-01,2022,VIC Region 12,Victoria,VIC,143.6,-38.57,382,4.4
+2022-10-01,2022,VIC Region 4,Victoria,VIC,144.48,-36.78,69,4.2
+2022-10-01,2022,QLD Region 8,Queensland,QLD,152.36,-22.4,33,3.9
+2022-10-01,2022,TAS Region 3,Tasmania,TAS,147.69,-41.3,28,4.9
+2022-10-01,2022,NSW Region 6,New South Wales,NSW,144.12,-32.31,37,4.4

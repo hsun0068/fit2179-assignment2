@@ -1,0 +1,107 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Lifestyle Patterns by Age and Sex",
+    "subtitle": "Select a health or lifestyle indicator to compare demographic groups",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 720,
+  "height": 260,
+  "data": {
+    "url": "data/age_sex_metrics.csv"
+  },
+  "params": [
+    {
+      "name": "Metric_selection",
+      "value": "Mental health condition",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Physical activity",
+          "Obesity",
+          "Smoking",
+          "Alcohol risk",
+          "Mental health condition"
+        ],
+        "name": "Indicator: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.metric == Metric_selection"
+    }
+  ],
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "age_group",
+      "type": "ordinal",
+      "sort": [
+        "18-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65+"
+      ],
+      "title": "Age group"
+    },
+    "y": {
+      "field": "sex",
+      "type": "nominal",
+      "title": ""
+    },
+    "color": {
+      "field": "rate",
+      "type": "quantitative",
+      "title": "Rate (%)",
+      "scale": {
+        "scheme": "tealblues"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "metric",
+        "type": "nominal",
+        "title": "Indicator"
+      },
+      {
+        "field": "age_group",
+        "type": "ordinal",
+        "title": "Age group"
+      },
+      {
+        "field": "sex",
+        "type": "nominal",
+        "title": "Sex"
+      },
+      {
+        "field": "rate",
+        "type": "quantitative",
+        "format": ".1f",
+        "title": "Rate (%)"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "grid": false,
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 11
+    }
+  }
+}

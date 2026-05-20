@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 420,
+  "title": {
+    "text": "Composition of Lifestyle Risk Factors",
+    "subtitle": "Normalised stacked bars show how each state\u2019s risk profile is built",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "data/state_summary.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "obesity",
+        "smoking",
+        "inactive",
+        "alcohol",
+        "diabetes"
+      ],
+      "as": [
+        "factor",
+        "rate"
+      ]
+    },
+    {
+      "calculate": "datum.factor == 'obesity' ? 'Obesity' : datum.factor == 'smoking' ? 'Smoking' : datum.factor == 'inactive' ? 'Physical inactivity' : datum.factor == 'alcohol' ? 'Alcohol risk' : 'Diabetes'",
+      "as": "Risk factor"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "abbr",
+      "type": "nominal",
+      "title": "State/Territory"
+    },
+    "y": {
+      "field": "rate",
+      "type": "quantitative",
+      "stack": "normalize",
+      "axis": {
+        "format": "%"
+      },
+      "title": "Share of combined risk profile"
+    },
+    "color": {
+      "field": "Risk factor",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal"
+      },
+      {
+        "field": "Risk factor",
+        "type": "nominal"
+      },
+      {
+        "field": "rate",
+        "type": "quantitative",
+        "format": ".1f"
+      }
+    ]
+  }
+}

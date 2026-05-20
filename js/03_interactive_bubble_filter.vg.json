@@ -1,0 +1,176 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 780,
+  "height": 500,
+  "title": {
+    "text": "Interactive Obesity and Diabetes View",
+    "subtitle": "Use the dropdown and slider to filter Australian health regions",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "data/health_regions.csv"
+  },
+  "params": [
+    {
+      "name": "State_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "NSW",
+          "VIC",
+          "QLD",
+          "SA",
+          "WA",
+          "TAS",
+          "NT",
+          "ACT"
+        ],
+        "labels": [
+          "Show All",
+          "NSW",
+          "VIC",
+          "QLD",
+          "SA",
+          "WA",
+          "TAS",
+          "NT",
+          "ACT"
+        ],
+        "name": "State: "
+      }
+    },
+    {
+      "name": "Population_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 3000000,
+        "step": 50000,
+        "name": "Minimum population: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "State_selection == null || datum.abbr == State_selection"
+    },
+    {
+      "filter": "datum.population > Population_Above"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "opacity": 0.72,
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "obesity",
+          "type": "quantitative",
+          "title": "Obesity rate (%)",
+          "scale": {
+            "domain": [
+              20,
+              42
+            ]
+          }
+        },
+        "y": {
+          "field": "diabetes",
+          "type": "quantitative",
+          "title": "Diabetes prevalence (%)",
+          "scale": {
+            "domain": [
+              3,
+              8.5
+            ]
+          }
+        },
+        "color": {
+          "field": "inactive",
+          "type": "quantitative",
+          "title": "Insufficient activity (%)",
+          "scale": {
+            "scheme": "blues"
+          }
+        },
+        "size": {
+          "field": "population",
+          "type": "quantitative",
+          "title": "Population",
+          "scale": {
+            "range": [
+              20,
+              800
+            ]
+          },
+          "legend": {
+            "format": ".1s"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "area",
+            "type": "nominal"
+          },
+          {
+            "field": "state",
+            "type": "nominal"
+          },
+          {
+            "field": "obesity",
+            "type": "quantitative",
+            "format": ".1f"
+          },
+          {
+            "field": "diabetes",
+            "type": "quantitative",
+            "format": ".1f"
+          },
+          {
+            "field": "population",
+            "type": "quantitative",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dx": 8,
+        "dy": -8,
+        "fontSize": 11,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "x": {
+          "field": "obesity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "diabetes",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "abbr",
+          "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum.risk_index > 25.5",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    }
+  ]
+}

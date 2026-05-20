@@ -1,0 +1,270 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Coordinated Australian Health Events View",
+    "subtitle": "Map and stacked temporal chart respond to the timeline brush",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "data/health_events.csv"
+  },
+  "vconcat": [
+    {
+      "width": 820,
+      "height": 360,
+      "layer": [
+        {
+          "data": {
+            "values": [
+              {
+                "lon": 112,
+                "lat": -44
+              },
+              {
+                "lon": 154,
+                "lat": -44
+              },
+              {
+                "lon": 154,
+                "lat": -10
+              },
+              {
+                "lon": 112,
+                "lat": -10
+              }
+            ]
+          },
+          "mark": {
+            "type": "point",
+            "opacity": 0
+          },
+          "encoding": {
+            "x": {
+              "field": "lon",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  112,
+                  154
+                ]
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "lat",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  -44,
+                  -10
+                ]
+              },
+              "axis": null
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": {
+                "param": "time_brush"
+              }
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "opacity": 0.55,
+            "stroke": "white",
+            "strokeWidth": 0.8
+          },
+          "encoding": {
+            "x": {
+              "field": "lon",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  112,
+                  154
+                ]
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "lat",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  -44,
+                  -10
+                ]
+              },
+              "axis": null
+            },
+            "color": {
+              "field": "severity",
+              "type": "quantitative",
+              "title": "Severity",
+              "scale": {
+                "scheme": "oranges"
+              }
+            },
+            "size": {
+              "field": "risk_events",
+              "type": "quantitative",
+              "title": "Risk events",
+              "scale": {
+                "range": [
+                  20,
+                  450
+                ]
+              }
+            },
+            "tooltip": [
+              {
+                "field": "area",
+                "type": "nominal"
+              },
+              {
+                "field": "state",
+                "type": "nominal"
+              },
+              {
+                "field": "date",
+                "type": "temporal"
+              },
+              {
+                "field": "risk_events",
+                "type": "quantitative"
+              },
+              {
+                "field": "severity",
+                "type": "quantitative",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_summary.csv"
+          },
+          "mark": {
+            "type": "text",
+            "fontWeight": "bold",
+            "fontSize": 12
+          },
+          "encoding": {
+            "x": {
+              "field": "lon",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  112,
+                  154
+                ]
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "lat",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  -44,
+                  -10
+                ]
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "abbr",
+              "type": "nominal"
+            },
+            "color": {
+              "value": "#444"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 820,
+      "height": 70,
+      "mark": {
+        "type": "line",
+        "color": "#2166ac"
+      },
+      "title": "Use this timeline to filter the data by time",
+      "params": [
+        {
+          "name": "time_brush",
+          "select": {
+            "type": "interval",
+            "encodings": [
+              "x"
+            ]
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "yearmonth",
+          "axis": {
+            "title": "",
+            "format": "%Y"
+          }
+        },
+        "y": {
+          "field": "risk_events",
+          "aggregate": "sum",
+          "axis": {
+            "tickCount": 3,
+            "grid": false
+          },
+          "title": "Events"
+        }
+      }
+    },
+    {
+      "width": 820,
+      "height": 170,
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "yearmonth",
+          "scale": {
+            "domain": {
+              "param": "time_brush"
+            }
+          },
+          "axis": {
+            "title": "",
+            "tickCount": 5,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "risk_events",
+          "aggregate": "sum",
+          "title": "Lifestyle risk events"
+        },
+        "color": {
+          "field": "abbr",
+          "type": "nominal",
+          "title": "State/Territory"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

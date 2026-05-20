@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 410,
+  "title": {
+    "text": "Healthy Behaviour Indicators by State/Territory",
+    "subtitle": "Grouped bars replacing the problematic small map view",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "data/state_summary.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "fruit",
+        "veg",
+        "inactive"
+      ],
+      "as": [
+        "indicator",
+        "rate"
+      ]
+    },
+    {
+      "calculate": "datum.indicator == 'fruit' ? 'Meets fruit guideline' : datum.indicator == 'veg' ? 'Meets vegetable guideline' : 'Insufficient physical activity'",
+      "as": "Indicator"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "abbr",
+      "type": "nominal",
+      "title": "State/Territory"
+    },
+    "xOffset": {
+      "field": "Indicator"
+    },
+    "y": {
+      "field": "rate",
+      "type": "quantitative",
+      "title": "Rate (%)"
+    },
+    "color": {
+      "field": "Indicator",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal"
+      },
+      {
+        "field": "Indicator",
+        "type": "nominal"
+      },
+      {
+        "field": "rate",
+        "type": "quantitative",
+        "format": ".1f"
+      }
+    ]
+  }
+}

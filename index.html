@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australia Health & Lifestyle - Revised Clean Version</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="tag">FIT3179 Data Visualisation 2</p>
+    <h1>Australia Health & Lifestyle</h1>
+    <p>
+      This interactive visualisation explores health and lifestyle patterns across Australia, focusing on state-level risk rankings, regional health outcomes, demographic differences, and national trends.
+    </p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Project overview</h2>
+      <p>
+        This visualisation explores health and lifestyle patterns across Australia by comparing state-level risk rankings,
+        regional health outcomes, demographic differences, and national trends. Through interactive charts, users can
+        examine how lifestyle factors such as obesity, smoking, physical activity, alcohol risk, and mental health vary
+        across Australian populations.
+      </p>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>01</span>
+        <div>
+          <h2>State lifestyle risk ranking</h2>
+          <p>A clear opening view comparing the composite lifestyle risk index across states and territories.</p>
+        </div>
+      </div>
+      <div id="vis1" class="vis"></div>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>02</span>
+        <div>
+          <h2>Regional risk burden and health outcomes</h2>
+          <p>Each bubble represents an Australian health region, with population shown by bubble size.</p>
+        </div>
+      </div>
+      <div id="vis2" class="vis"></div>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>03</span>
+        <div>
+          <h2>Interactive obesity and diabetes comparison</h2>
+          <p>Use the controls to filter regions and compare obesity, diabetes and physical inactivity.</p>
+        </div>
+      </div>
+      <div id="vis3" class="vis"></div>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>04</span>
+        <div>
+          <h2>Obesity and diabetes gap by state</h2>
+          <p>A lollipop chart compares two related health indicators for each state and territory.</p>
+        </div>
+      </div>
+      <div id="vis4" class="vis"></div>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>05</span>
+        <div>
+          <h2>National health trend explorer</h2>
+          <p>Brush the timeline to focus on specific years and compare long-term national trends.</p>
+        </div>
+      </div>
+      <div id="vis5" class="vis"></div>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>06</span>
+        <div>
+          <h2>Coordinated regional risk events</h2>
+          <p>A coordinated view linking regional risk event locations with a time-based trend.</p>
+        </div>
+      </div>
+      <div id="vis6" class="vis"></div>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>07</span>
+        <div>
+          <h2>Age and sex lifestyle heatmap</h2>
+          <p>Select one indicator and compare rates across age groups and sex.</p>
+        </div>
+      </div>
+      <div id="vis7" class="vis"></div>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>08</span>
+        <div>
+          <h2>Healthy behaviour indicators</h2>
+          <p>Grouped bars compare fruit, vegetable and physical activity indicators across states.</p>
+        </div>
+      </div>
+      <div id="vis8" class="vis"></div>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>09</span>
+        <div>
+          <h2>Lifestyle risk composition</h2>
+          <p>Stacked bars show how different lifestyle factors contribute to each state’s overall risk profile.</p>
+        </div>
+      </div>
+      <div id="vis9" class="vis"></div>
+    </section>
+
+
+    <section class="chart-card">
+      <div class="chart-title">
+        <span>10</span>
+        <div>
+          <h2>Summary dashboard</h2>
+          <p>A compact final summary of the key patterns across the visualisation.</p>
+        </div>
+      </div>
+      <div id="vis10" class="vis"></div>
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

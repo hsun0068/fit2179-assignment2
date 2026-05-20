@@ -1,0 +1,61 @@
+age_group,sex,metric,rate
+18-24,Male,Physical activity,63
+25-34,Male,Physical activity,59
+35-44,Male,Physical activity,55
+45-54,Male,Physical activity,50
+55-64,Male,Physical activity,47
+65+,Male,Physical activity,43
+18-24,Female,Physical activity,60
+25-34,Female,Physical activity,56
+35-44,Female,Physical activity,53
+45-54,Female,Physical activity,49
+55-64,Female,Physical activity,46
+65+,Female,Physical activity,42
+18-24,Male,Obesity,22
+25-34,Male,Obesity,27
+35-44,Male,Obesity,31
+45-54,Male,Obesity,35
+55-64,Male,Obesity,38
+65+,Male,Obesity,36
+18-24,Female,Obesity,24
+25-34,Female,Obesity,28
+35-44,Female,Obesity,32
+45-54,Female,Obesity,34
+55-64,Female,Obesity,37
+65+,Female,Obesity,35
+18-24,Male,Smoking,8
+25-34,Male,Smoking,10
+35-44,Male,Smoking,12
+45-54,Male,Smoking,13
+55-64,Male,Smoking,12
+65+,Male,Smoking,8
+18-24,Female,Smoking,6
+25-34,Female,Smoking,8
+35-44,Female,Smoking,10
+45-54,Female,Smoking,11
+55-64,Female,Smoking,10
+65+,Female,Smoking,7
+18-24,Male,Alcohol risk,18
+25-34,Male,Alcohol risk,24
+35-44,Male,Alcohol risk,29
+45-54,Male,Alcohol risk,31
+55-64,Male,Alcohol risk,27
+65+,Male,Alcohol risk,19
+18-24,Female,Alcohol risk,14
+25-34,Female,Alcohol risk,19
+35-44,Female,Alcohol risk,23
+45-54,Female,Alcohol risk,24
+55-64,Female,Alcohol risk,21
+65+,Female,Alcohol risk,14
+18-24,Male,Mental health condition,24
+25-34,Male,Mental health condition,23
+35-44,Male,Mental health condition,21
+45-54,Male,Mental health condition,19
+55-64,Male,Mental health condition,18
+65+,Male,Mental health condition,16
+18-24,Female,Mental health condition,32
+25-34,Female,Mental health condition,30
+35-44,Female,Mental health condition,27
+45-54,Female,Mental health condition,24
+55-64,Female,Mental health condition,22
+65+,Female,Mental health condition,20

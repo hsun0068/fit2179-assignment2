@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 380,
+  "title": {
+    "text": "Obesity and Diabetes Gap by State/Territory",
+    "subtitle": "A simpler lollipop chart replacing the repeated bubble chart",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "data/state_summary.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#bdbdbd"
+      },
+      "encoding": {
+        "x": {
+          "field": "diabetes",
+          "type": "quantitative",
+          "title": "Rate (%)"
+        },
+        "x2": {
+          "field": "obesity"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": "-x",
+          "title": ""
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 110,
+        "color": "#2b8cbe"
+      },
+      "encoding": {
+        "x": {
+          "field": "diabetes",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal"
+          },
+          {
+            "field": "diabetes",
+            "type": "quantitative",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 110,
+        "color": "#f03b20"
+      },
+      "encoding": {
+        "x": {
+          "field": "obesity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal"
+          },
+          {
+            "field": "obesity",
+            "type": "quantitative",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ]
+}

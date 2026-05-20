@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 380,
+  "title": {
+    "text": "Lifestyle Risk Index by State and Territory",
+    "subtitle": "Simple ranking chart used as a clear overview before detailed views",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "data/state_summary.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 4
+  },
+  "encoding": {
+    "x": {
+      "field": "risk_index",
+      "type": "quantitative",
+      "title": "Composite lifestyle risk index"
+    },
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": "-x",
+      "title": ""
+    },
+    "color": {
+      "field": "risk_index",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "oranges"
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal"
+      },
+      {
+        "field": "risk_index",
+        "type": "quantitative",
+        "format": ".1f"
+      },
+      {
+        "field": "obesity",
+        "type": "quantitative",
+        "format": ".1f"
+      },
+      {
+        "field": "smoking",
+        "type": "quantitative",
+        "format": ".1f"
+      },
+      {
+        "field": "inactive",
+        "type": "quantitative",
+        "format": ".1f"
+      }
+    ]
+  }
+}

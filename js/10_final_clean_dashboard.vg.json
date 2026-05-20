@@ -1,0 +1,224 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Summary of Australia Health and Lifestyle Insights",
+    "subtitle": "A compact overview of state risk ranking, national trends, demographic patterns and risk composition",
+    "fontSize": 22,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "width": 380,
+          "height": 280,
+          "data": {
+            "url": "data/state_summary.csv"
+          },
+          "mark": "bar",
+          "encoding": {
+            "x": {
+              "field": "risk_index",
+              "type": "quantitative",
+              "title": "Risk index"
+            },
+            "y": {
+              "field": "abbr",
+              "type": "nominal",
+              "sort": "-x",
+              "title": ""
+            },
+            "color": {
+              "field": "risk_index",
+              "type": "quantitative",
+              "scale": {
+                "scheme": "oranges"
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "state",
+                "type": "nominal"
+              },
+              {
+                "field": "risk_index",
+                "type": "quantitative",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "width": 380,
+          "height": 280,
+          "data": {
+            "url": "data/national_trends.csv"
+          },
+          "mark": {
+            "type": "line",
+            "point": true
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "ordinal",
+              "title": "Year"
+            },
+            "y": {
+              "field": "rate",
+              "type": "quantitative",
+              "title": "Rate (%)"
+            },
+            "color": {
+              "field": "metric",
+              "type": "nominal",
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "metric",
+                "type": "nominal"
+              },
+              {
+                "field": "year",
+                "type": "ordinal"
+              },
+              {
+                "field": "rate",
+                "type": "quantitative",
+                "format": ".1f"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "width": 380,
+          "height": 240,
+          "data": {
+            "url": "data/age_sex_metrics.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.metric == 'Mental health condition'"
+            }
+          ],
+          "mark": {
+            "type": "rect",
+            "stroke": "white"
+          },
+          "encoding": {
+            "x": {
+              "field": "age_group",
+              "type": "ordinal",
+              "sort": [
+                "18-24",
+                "25-34",
+                "35-44",
+                "45-54",
+                "55-64",
+                "65+"
+              ],
+              "title": "Age group"
+            },
+            "y": {
+              "field": "sex",
+              "type": "nominal",
+              "title": ""
+            },
+            "color": {
+              "field": "rate",
+              "type": "quantitative",
+              "scale": {
+                "scheme": "purples"
+              },
+              "title": "Mental health (%)"
+            },
+            "tooltip": [
+              {
+                "field": "age_group",
+                "type": "ordinal"
+              },
+              {
+                "field": "sex",
+                "type": "nominal"
+              },
+              {
+                "field": "rate",
+                "type": "quantitative",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "width": 380,
+          "height": 240,
+          "data": {
+            "url": "data/state_summary.csv"
+          },
+          "transform": [
+            {
+              "fold": [
+                "obesity",
+                "smoking",
+                "inactive",
+                "alcohol"
+              ],
+              "as": [
+                "factor",
+                "rate"
+              ]
+            }
+          ],
+          "mark": "bar",
+          "encoding": {
+            "x": {
+              "field": "abbr",
+              "type": "nominal",
+              "title": "State/Territory"
+            },
+            "y": {
+              "field": "rate",
+              "type": "quantitative",
+              "title": "Rate (%)"
+            },
+            "color": {
+              "field": "factor",
+              "type": "nominal",
+              "title": "Factor"
+            },
+            "tooltip": [
+              {
+                "field": "abbr",
+                "type": "nominal"
+              },
+              {
+                "field": "factor",
+                "type": "nominal"
+              },
+              {
+                "field": "rate",
+                "type": "quantitative",
+                "format": ".1f"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "gridOpacity": 0.25
+    }
+  }
+}

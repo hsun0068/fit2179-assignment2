@@ -1,0 +1,113 @@
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef3f6;
+  color: #14213d;
+}
+
+.hero {
+  padding: 64px 8%;
+  color: white;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(255,255,255,0.22), transparent 26%),
+    linear-gradient(135deg, #073b4c, #118ab2 55%, #06d6a0);
+}
+
+.tag {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.hero h1 {
+  margin: 8px 0 16px;
+  font-size: 52px;
+  line-height: 1.05;
+}
+
+.hero p {
+  max-width: 940px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+main {
+  width: min(1120px, 96vw);
+  margin: 0 auto;
+  padding: 34px 0 80px;
+}
+
+.intro,
+.chart-card {
+  background: white;
+  border-radius: 18px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 12px 30px rgba(8, 31, 44, 0.10);
+}
+
+.intro {
+  border-left: 7px solid #06d6a0;
+}
+
+.chart-title {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.chart-title span {
+  min-width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  background: #073b4c;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+p {
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+.vis {
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.vega-bindings {
+  margin: 4px 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 14px;
+}
+
+.vega-bind input,
+.vega-bind select {
+  margin-left: 6px;
+}
+
+canvas,
+svg {
+  max-width: none;
+}
+
+@media (max-width: 760px) {
+  .hero h1 { font-size: 34px; }
+  .intro, .chart-card { padding: 22px; }
+}

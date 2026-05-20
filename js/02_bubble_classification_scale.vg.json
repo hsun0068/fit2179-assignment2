@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 780,
+  "height": 500,
+  "title": {
+    "text": "Australian Health Region Risk Burden",
+    "subtitle": "Bubble chart with log scales, colour categories and population-size classification",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "data/health_regions.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "opacity": 0.72,
+    "stroke": "white",
+    "strokeWidth": 0.8
+  },
+  "encoding": {
+    "x": {
+      "field": "risk_burden",
+      "type": "quantitative",
+      "title": "Lifestyle risk burden",
+      "scale": {
+        "type": "log"
+      },
+      "axis": {
+        "tickCount": 7
+      }
+    },
+    "y": {
+      "field": "severe_outcomes",
+      "type": "quantitative",
+      "title": "Severe health outcomes",
+      "scale": {
+        "type": "log"
+      },
+      "axis": {
+        "tickCount": 7
+      }
+    },
+    "color": {
+      "field": "abbr",
+      "type": "nominal",
+      "title": "State/Territory"
+    },
+    "size": {
+      "field": "population",
+      "type": "quantitative",
+      "title": "Population",
+      "scale": {
+        "type": "threshold",
+        "domain": [
+          100000,
+          250000,
+          500000,
+          1000000,
+          3000000
+        ],
+        "range": [
+          10,
+          50,
+          150,
+          220,
+          320,
+          430
+        ]
+      },
+      "legend": {
+        "format": ".1s"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "area",
+        "type": "nominal"
+      },
+      {
+        "field": "state",
+        "type": "nominal"
+      },
+      {
+        "field": "risk_burden",
+        "type": "quantitative",
+        "format": ","
+      },
+      {
+        "field": "severe_outcomes",
+        "type": "quantitative",
+        "format": ","
+      },
+      {
+        "field": "population",
+        "type": "quantitative",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "gridOpacity": 0.35
+    }
+  }
+}
