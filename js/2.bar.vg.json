@@ -1,0 +1,270 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Year-selectable ranked lollipop-style bar chart showing adult overweight and obesity rates by Australian state and territory.",
+  "width": 330,
+  "height": 315,
+
+  "title": {
+    "text": "States Ranked by Overweight and Obesity Rate",
+    "subtitle": "Select a survey year to compare state-level differences",
+    "color": "#eaf2ff",
+    "subtitleColor": "#9fb6da",
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "subtitleFont": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": 14,
+    "subtitleFontSize": 11,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "offset": 8
+  },
+
+  "params": [
+    {
+      "name": "Year_selection_bar",
+      "value": "2022",
+      "bind": {
+        "input": "select",
+        "options": [
+          "2007-08",
+          "2011-12",
+          "2014-15",
+          "2017-18",
+          "2022"
+        ],
+        "labels": [
+          "2007-08",
+          "2011-12",
+          "2014-15",
+          "2017-18",
+          "2022"
+        ],
+        "name": "Survey year: "
+      }
+    }
+  ],
+
+  "data": {
+    "url": "data/2.bmi_by_state_year.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.year == Year_selection_bar"
+    },
+    {
+      "calculate": "format(datum.overweight_obese, '.1f') + '%'",
+      "as": "rate_label"
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "overweight_obese",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "reverse_rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "overweight_obese",
+          "order": "ascending"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.rank == 1 ? 'Highest' : datum.reverse_rank == 1 ? 'Lowest' : 'Other states'",
+      "as": "highlight_group"
+    }
+  ],
+
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": {
+        "field": "overweight_obese",
+        "order": "descending"
+      },
+      "axis": {
+        "title": null,
+        "labelColor": "#d9e7ff",
+        "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+        "labelFontSize": 10.8,
+        "labelFontWeight": "normal",
+        "labelLimit": 190,
+        "labelPadding": 6,
+        "domain": false,
+        "ticks": false
+      }
+    },
+
+    "x": {
+      "field": "overweight_obese",
+      "type": "quantitative",
+      "title": "Overweight and obesity rate (%)",
+      "scale": {
+        "domain": [0, 85]
+      },
+      "axis": {
+        "labelColor": "#d9e7ff",
+        "titleColor": "#eaf2ff",
+        "grid": true,
+        "gridColor": "rgba(220, 230, 245, 0.22)",
+        "tickColor": "rgba(220, 230, 245, 0.38)",
+        "domainColor": "rgba(220, 230, 245, 0.38)",
+        "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+        "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+        "labelFontSize": 11,
+        "titleFontSize": 12,
+        "titleFontWeight": "bold",
+        "tickCount": 6
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "height": 3,
+        "opacity": 0.82
+      },
+      "encoding": {
+        "color": {
+          "condition": [
+            {
+              "test": "datum.highlight_group == 'Highest'",
+              "value": "#ff7468"
+            },
+            {
+              "test": "datum.highlight_group == 'Lowest'",
+              "value": "#7fb4ee"
+            }
+          ],
+          "value": "#56d3cf"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 105,
+        "opacity": 0.98,
+        "stroke": "rgba(234, 242, 255, 0.32)",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "color": {
+          "condition": [
+            {
+              "test": "datum.highlight_group == 'Highest'",
+              "value": "#ff7468"
+            },
+            {
+              "test": "datum.highlight_group == 'Lowest'",
+              "value": "#7fb4ee"
+            }
+          ],
+          "value": "#56d3cf"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "abbr",
+            "type": "nominal",
+            "title": "Abbreviation"
+          },
+          {
+            "field": "year",
+            "type": "nominal",
+            "title": "Survey Year"
+          },
+          {
+            "field": "overweight_obese",
+            "type": "quantitative",
+            "title": "Overweight / Obese (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "highlight_group",
+            "type": "nominal",
+            "title": "Ranking note"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 7,
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "rate_label",
+          "type": "nominal"
+        },
+        "color": {
+          "condition": [
+            {
+              "test": "datum.highlight_group == 'Highest'",
+              "value": "#ff9b8f"
+            },
+            {
+              "test": "datum.highlight_group == 'Lowest'",
+              "value": "#a9ccff"
+            }
+          ],
+          "value": "#eaf2ff"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null
+    },
+
+    "axis": {
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff",
+      "gridColor": "rgba(220, 230, 245, 0.22)",
+      "domainColor": "rgba(220, 230, 245, 0.38)",
+      "tickColor": "rgba(220, 230, 245, 0.38)",
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif"
+    },
+
+    "title": {
+      "font": "Inter, Segoe UI, Arial, sans-serif",
+      "color": "#eaf2ff",
+      "subtitleColor": "#9fb6da"
+    }
+  }
+}

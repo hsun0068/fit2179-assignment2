@@ -1,0 +1,279 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Dumbbell chart comparing male and female overweight and obesity rates in Australia.",
+  "background": "transparent",
+
+  "title": {
+    "text": "Gender Gap in Overweight and Obesity",
+    "anchor": "middle",
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "color": "#eaf2ff"
+  },
+
+  "width": 760,
+  "height": 220,
+
+  "data": {
+    "url": "data/5.gender_bmi_gap.csv"
+  },
+
+  "transform": [
+    {
+      "pivot": "gender",
+      "value": "percentage",
+      "groupby": ["category"]
+    },
+    {
+      "calculate": "datum.Male - datum.Female",
+      "as": "gap"
+    },
+    {
+      "calculate": "(datum.Male + datum.Female) / 2",
+      "as": "midpoint"
+    },
+    {
+      "calculate": "format(datum.Female, '.1f') + '%'",
+      "as": "female_label"
+    },
+    {
+      "calculate": "format(datum.Male, '.1f') + '%'",
+      "as": "male_label"
+    },
+    {
+      "calculate": "'Gap: ' + format(datum.gap, '.1f') + ' pts'",
+      "as": "gap_label"
+    }
+  ],
+
+  "encoding": {
+    "y": {
+      "field": "category",
+      "type": "nominal",
+      "sort": ["Overweight or obese", "Overweight", "Obese"],
+      "title": null,
+      "axis": {
+        "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+        "labelFontSize": 13,
+        "labelFontWeight": "normal",
+        "labelColor": "#d9e7ff",
+        "domainColor": "rgba(220, 230, 245, 0.35)",
+        "tickColor": "rgba(220, 230, 245, 0.35)"
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "rgba(220, 230, 245, 0.42)",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "Female",
+          "type": "quantitative",
+          "title": "Share of adults (%)",
+          "scale": {
+            "domain": [0, 80]
+          },
+          "axis": {
+            "grid": true,
+            "tickCount": 9,
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "titleFontWeight": "bold",
+            "labelColor": "#d9e7ff",
+            "titleColor": "#eaf2ff",
+            "gridColor": "rgba(220, 230, 245, 0.22)",
+            "domainColor": "rgba(220, 230, 245, 0.38)",
+            "tickColor": "rgba(220, 230, 245, 0.38)"
+          }
+        },
+        "x2": {
+          "field": "Male"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 220,
+        "color": "#ff7468",
+        "stroke": "#eaf2ff",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "Female",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "category",
+            "type": "nominal",
+            "title": "Category"
+          },
+          {
+            "field": "Female",
+            "type": "quantitative",
+            "title": "Female (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "Male",
+            "type": "quantitative",
+            "title": "Male (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "gap",
+            "type": "quantitative",
+            "title": "Gap (pts)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 220,
+        "color": "#56d3cf",
+        "stroke": "#eaf2ff",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "Male",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "category",
+            "type": "nominal",
+            "title": "Category"
+          },
+          {
+            "field": "Female",
+            "type": "quantitative",
+            "title": "Female (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "Male",
+            "type": "quantitative",
+            "title": "Male (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "gap",
+            "type": "quantitative",
+            "title": "Gap (pts)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -10,
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#ff9b8f"
+      },
+      "encoding": {
+        "x": {
+          "field": "Female",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "female_label",
+          "type": "nominal"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#56d3cf"
+      },
+      "encoding": {
+        "x": {
+          "field": "Male",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "male_label",
+          "type": "nominal"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "dy": -14,
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#d9e7ff"
+      },
+      "encoding": {
+        "x": {
+          "field": "midpoint",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "gap_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null,
+      "fill": "transparent"
+    },
+
+    "axis": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "grid": false,
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff",
+      "domainColor": "rgba(220, 230, 245, 0.38)",
+      "tickColor": "rgba(220, 230, 245, 0.38)"
+    },
+
+    "title": {
+      "font": "Inter, Segoe UI, Arial, sans-serif",
+      "fontSize": 18,
+      "fontWeight": "bold",
+      "color": "#eaf2ff",
+      "anchor": "middle"
+    }
+  }
+}

@@ -1,159 +1,1226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Australia Health & Lifestyle - Revised Clean Version</title>
+  <title>Australia Health & Lifestyle</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --bg: #071426;
+      --bg2: #0b1d35;
+      --panel: rgba(11, 29, 53, 0.62);
+      --panel2: rgba(15, 36, 72, 0.52);
+      --card: rgba(9, 24, 46, 0.58);
+      --card2: rgba(13, 32, 64, 0.54);
+      --ink: #eef5ff;
+      --soft: #d9e7ff;
+      --muted: #9fb6da;
+      --line: rgba(220, 230, 245, 0.22);
+      --teal: #56d3cf;
+      --teal2: #87e5df;
+      --coral: #ff7468;
+      --gold: #f3ca63;
+      --blue: #a9ccff;
+      --deep: #081426;
+      --figure: #eaf2ff;
+      --ground: #9fb6da;
+      --source: #d8cfb8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 18% 6%, rgba(86, 211, 207, 0.10), transparent 30%),
+        radial-gradient(circle at 82% 10%, rgba(169, 204, 255, 0.10), transparent 32%),
+        linear-gradient(180deg, #08182d 0%, #0a1d36 46%, #071426 100%);
+      color: var(--ink);
+    }
+
+    .shell {
+      max-width: 1160px;
+      width: min(1160px, calc(100% - 80px));
+      margin: 0 auto;
+      padding: 26px 0 76px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 18px;
+      margin-bottom: 22px;
+      background: rgba(8, 22, 42, 0.74);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(220, 230, 245, 0.16);
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    .logo {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: #f4f8ff;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #d9e7ff;
+      opacity: 0.9;
+    }
+
+    .nav a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 570px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(circle at 72% 38%, rgba(86, 211, 207, 0.10), transparent 32%),
+        linear-gradient(135deg, rgba(13, 34, 69, 0.92), rgba(10, 27, 56, 0.94) 55%, rgba(8, 20, 40, 0.98));
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.30);
+      border: 1px solid rgba(220, 230, 245, 0.18);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.03fr 0.97fr;
+      min-height: 570px;
+    }
+
+    .hero-text {
+      padding: 62px 56px 48px;
+      position: relative;
+      z-index: 4;
+    }
+
+    .byline {
+      font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(52px, 5.6vw, 78px);
+      line-height: 0.96;
+      margin: 0 0 24px;
+      letter-spacing: 0.005em;
+      font-weight: 700;
+      max-width: 760px;
+      color: #eaf2ff;
+      text-shadow: 0 2px 22px rgba(169, 204, 255, 0.18);
+    }
+
+    .intro-block {
+      max-width: 640px;
+      border-left: 3px solid var(--blue);
+      padding-left: 22px;
+      margin-top: 18px;
+    }
+
+    .intro-block h2 {
+      font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 12px;
+      border: none;
+      padding: 0;
+    }
+
+    .intro-block p {
+      font-size: 18px;
+      line-height: 1.72;
+      color: #e5efff;
+      margin: 0;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 570px;
+    }
+
+    .ring {
+      position: absolute;
+      right: 66px;
+      top: 82px;
+      width: 410px;
+      height: 410px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 235deg,
+        rgba(84, 207, 211, 0.82) 0 34%,
+        rgba(142, 190, 255, 0.78) 34% 62%,
+        rgba(255, 125, 112, 0.82) 62% 100%
+      );
+      opacity: 0.95;
+      filter: saturate(1.02);
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.32),
+        0 0 46px rgba(169, 204, 255, 0.18);
+    }
+
+    .ring::after {
+      content: "";
+      position: absolute;
+      inset: 72px;
+      border-radius: 50%;
+      background: #0b1d35;
+      box-shadow: inset 0 0 0 1px rgba(169, 204, 255, 0.24);
+    }
+
+    .person {
+      position: absolute;
+      right: 195px;
+      top: 210px;
+      width: 154px;
+      height: 154px;
+      z-index: 2;
+    }
+
+    .person .head {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #e7f0ff;
+      margin: 0 auto;
+      box-shadow: 0 0 24px rgba(231, 240, 255, 0.24);
+    }
+
+    .person .body {
+      width: 150px;
+      height: 82px;
+      border-radius: 80px 80px 28px 28px;
+      background: #e7f0ff;
+      margin: 12px auto 0;
+      box-shadow: 0 0 24px rgba(231, 240, 255, 0.18);
+    }
+
+    .float-card {
+      position: absolute;
+      width: 160px;
+      border-radius: 8px;
+      background: rgba(7, 18, 35, 0.78);
+      border: 1px solid rgba(142, 190, 255, 0.22);
+      padding: 14px 15px 13px;
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(12px);
+      z-index: 3;
+    }
+
+    .float-card .num {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 950;
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .float-card .cap {
+      font-size: 12px;
+      color: var(--soft);
+      line-height: 1.4;
+      margin-top: 8px;
+    }
+
+    .fc1 {
+      right: 330px;
+      top: 108px;
+    }
+
+    .fc2 {
+      right: 42px;
+      top: 126px;
+    }
+
+    .story-path {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: 22px;
+      background: rgba(13, 34, 69, 0.78);
+      border: 1px solid rgba(169, 204, 255, 0.18);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .story-path .step {
+      color: #eaf2ff;
+      border-right: 1px solid rgba(169, 204, 255, 0.16);
+      padding: 18px 20px;
+      min-height: 104px;
+    }
+
+    .story-path .step:last-child {
+      border-right: none;
+    }
+
+    .story-path .step b {
+      display: block;
+      font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      color: #a9ccff;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .story-path .step span {
+      font-size: 15px;
+      line-height: 1.45;
+      color: #d4e2f8;
+    }
+
+    .act {
+      margin-top: 56px;
+      background: rgba(10, 27, 56, 0.34);
+      border-radius: 10px;
+      overflow: visible;
+      border: 1px solid rgba(220, 230, 245, 0.14);
+      box-shadow: 0 30px 75px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(6px);
+    }
+
+    .act-head {
+      display: grid;
+      grid-template-columns: 128px 1fr 310px;
+      gap: 28px;
+      padding: 34px 38px 20px;
+      align-items: start;
+    }
+
+    .act-label {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #a9ccff;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding-top: 9px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 32px;
+      line-height: 1.12;
+      letter-spacing: 0.01em;
+      font-weight: 700;
+      margin: 0;
+      color: #eaf2ff;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(243, 202, 99, 0.46);
+    }
+
+    .try {
+      background: rgba(7, 18, 35, 0.34);
+      color: #d9e7ff;
+      border: 1px solid rgba(220, 230, 245, 0.12);
+      border-radius: 8px;
+      padding: 16px 17px;
+      font-size: 14px;
+      line-height: 1.55;
+      backdrop-filter: blur(8px);
+    }
+
+    .try b {
+      color: #f2c85b;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .vis {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: visible;
+    }
+
+    .act1-layout {
+      padding: 18px 34px 34px;
+    }
+
+    .act1-intro {
+      color: #e4edff;
+      font-size: 17px;
+      line-height: 1.75;
+      margin: 0 0 28px;
+    }
+
+    .act1-two-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .act1-panel {
+      min-width: 0;
+      overflow: visible;
+    }
+
+    .act1-panel h3 {
+      font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      font-size: 22px;
+      line-height: 1.32;
+      color: #eaf2ff;
+      margin: 0 0 10px;
+      min-height: 62px;
+      letter-spacing: 0.01em;
+      font-weight: 850;
+    }
+
+    .act1-panel .panel-text {
+      color: #b9c9e6;
+      font-size: 15px;
+      line-height: 1.65;
+      font-style: italic;
+      margin: 0 0 18px;
+      min-height: 92px;
+    }
+
+    .act1-chart-frame {
+      width: 100%;
+      height: 410px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      border-radius: 8px;
+    }
+
+    .act1-chart-frame .vis {
+      width: 100%;
+      height: 410px;
+      min-width: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+    }
+
+    .act1-chart-frame .vega-embed {
+      max-width: 100%;
+      overflow: visible;
+    }
+
+    .act1-chart-frame canvas,
+    .act1-chart-frame svg {
+      overflow: visible;
+    }
+
+    .takeaway {
+      margin: 0 34px 34px;
+      background: rgba(7, 18, 35, 0.38);
+      color: #eaf2ff;
+      border: 1px solid rgba(220, 230, 245, 0.14);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 20px 22px;
+      font-size: 17px;
+      line-height: 1.62;
+      backdrop-filter: blur(6px);
+    }
+
+    .takeaway b {
+      color: var(--gold);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .act2-layout {
+      padding: 18px 34px 34px;
+    }
+
+    .act2-intro {
+      color: #e4edff;
+      font-size: 17px;
+      line-height: 1.75;
+      margin: 0 0 40px;
+      max-width: 1000px;
+    }
+
+    .act2-block {
+      margin-top: 54px;
+    }
+
+    .act2-block:first-of-type {
+      margin-top: 0;
+    }
+
+    .act2-block h3 {
+      font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      font-size: 27px;
+      line-height: 1.25;
+      letter-spacing: 0.01em;
+      color: #eaf2ff;
+      margin: 0 0 10px;
+      text-align: center;
+      font-weight: 850;
+    }
+
+    .act2-block p {
+      color: #b9c9e6;
+      font-size: 16px;
+      line-height: 1.75;
+      font-style: italic;
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto 22px;
+    }
+
+    .act2-chart-frame {
+      width: 100%;
+      min-height: 430px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      border-radius: 10px;
+      background: rgba(7, 18, 35, 0.12);
+      border: 1px solid rgba(220, 230, 245, 0.05);
+      padding: 14px 0;
+    }
+
+    .act2-donut-frame {
+      min-height: 630px;
+    }
+
+    .act2-heatmap-frame {
+      min-height: 440px;
+    }
+
+    .act2-gap-frame {
+      min-height: 420px;
+    }
+
+    .act2-chart-frame .vis {
+      width: 100%;
+      min-width: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+    }
+
+    .act2-chart-frame .vega-embed {
+      max-width: 100%;
+      overflow: visible;
+    }
+
+    .act2-chart-frame canvas,
+    .act2-chart-frame svg {
+      overflow: visible;
+    }
+
+
+
+    .act3-scatter-frame {
+      min-height: 520px;
+    }
+
+    .act3-dashboard-frame {
+      min-height: 840px;
+      align-items: flex-start;
+      padding-top: 26px;
+    }
+
+    .act4-flu-frame {
+      min-height: 520px;
+    }
+
+    .act5-parallel-frame {
+      min-height: 520px;
+    }
+
+    .act5-quadrant-frame {
+      min-height: 540px;
+    }
+
+    .act3-scatter-frame .vis,
+    .act3-dashboard-frame .vis,
+    .act4-flu-frame .vis,
+    .act5-parallel-frame .vis,
+    .act5-quadrant-frame .vis {
+      width: 100%;
+      min-width: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+    }
+
+    .act3-scatter-frame .vega-embed,
+    .act3-dashboard-frame .vega-embed,
+    .act4-flu-frame .vega-embed,
+    .act5-parallel-frame .vega-embed,
+    .act5-quadrant-frame .vega-embed {
+      max-width: 100%;
+      overflow: visible;
+    }
+
+    .info-section {
+      background: rgba(10, 27, 56, 0.36);
+      border: 1px solid rgba(220, 230, 245, 0.14);
+      border-radius: 8px;
+      color: #c4d5f2;
+      margin: 42px 0 0;
+      padding: 28px 30px;
+      font-size: 15px;
+      line-height: 1.7;
+      backdrop-filter: blur(6px);
+    }
+
+
+
+    .vega-embed,
+    .vega-embed > div,
+    .vega-embed svg,
+    .vega-embed canvas {
+      background: transparent !important;
+    }
+
+    .info-section h2 {
+      border: none;
+      padding: 0;
+      margin: 0 0 20px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 30px;
+      color: #d4e6ff;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      column-gap: 22px;
+      row-gap: 12px;
+      align-items: start;
+    }
+
+    .meta-grid .label {
+      color: #f4f8ff;
+      font-weight: 800;
+      font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+    }
+
+    .meta-grid ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .meta-grid li {
+      margin-bottom: 10px;
+    }
+
+    .ai-block h3 {
+      font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      color: #f4f8ff;
+      margin: 22px 0 8px;
+    }
+
+    .ai-block p {
+      margin: 0 0 14px;
+      color: #c4d5f2;
+      max-width: 920px;
+    }
+
+    .placeholder-link {
+      color: #ffb1a9;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-style: italic;
+    }
+
+
+
+    .chart-source {
+      max-width: 940px;
+      margin: 14px auto 4px;
+      text-align: center;
+      font-size: 12.5px;
+      line-height: 1.5;
+      font-style: italic;
+      letter-spacing: 0.035em;
+      color: rgba(216, 207, 184, 0.88);
+    }
+
+    .chart-source strong {
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .chart-source a {
+      color: rgba(216, 207, 184, 0.92);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .chart-source a:hover {
+      color: #ffffff;
+    }
+
+    @media(max-width: 940px) {
+      .shell {
+        width: min(92%, calc(100% - 32px));
+      }
+
+      .hero-inner,
+      .act-head,
+      .act1-two-columns {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .story-path {
+        grid-template-columns: 1fr;
+      }
+
+      .story-path .step {
+        border-right: none;
+        border-bottom: 1px solid rgba(142, 190, 255, 0.16);
+      }
+
+      .act1-panel h3,
+      .act1-panel .panel-text {
+        min-height: auto;
+      }
+
+      .act1-chart-frame,
+      .act1-chart-frame .vis {
+        height: auto;
+        min-height: 380px;
+      }
+
+      .act2-chart-frame,
+      .act2-donut-frame,
+      .act2-heatmap-frame,
+      .act2-gap-frame {
+        min-height: 360px;
+      }
+
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .act1-chart-frame .vis {
+        min-width: 0;
+      }
+    }
+  </style>
 </head>
-<body>
-  <header class="hero">
-    <p class="tag">FIT3179 Data Visualisation 2</p>
-    <h1>Australia Health & Lifestyle</h1>
-    <p>
-      This interactive visualisation explores health and lifestyle patterns across Australia, focusing on state-level risk rankings, regional health outcomes, demographic differences, and national trends.
-    </p>
-  </header>
 
-  <main>
-    <section class="intro">
-      <h2>Project overview</h2>
+<body>
+
+  <div class="shell">
+
+    <div class="topbar">
+      <div class="logo">Australia Health & Lifestyle</div>
+      <nav class="nav">
+        <a href="#act1">Act 1</a>
+        <a href="#act2">Act 2</a>
+        <a href="#act3">Act 3</a>
+        <a href="#act4">Act 4</a>
+        <a href="#act5">Act 5</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="hero-inner">
+
+        <div class="hero-text">
+          <div class="byline">A DATA VISUALISATION BY HEMING SUN · MONASH UNIVERSITY · FIT2179, 2026</div>
+
+          <h1>Australia Health &amp; Lifestyle</h1>
+
+          <div class="intro-block">
+            <h2>Introduction</h2>
+            <p>
+              Australia is often imagined as active, outdoorsy and health-conscious. However, health data suggests a more complex story. Weight-related risk has changed over time, varies across states and territories, differs between population groups, and is linked with lifestyle behaviours such as inactivity and sedentary time.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="ring"></div>
+
+          <div class="person">
+            <div class="head"></div>
+            <div class="body"></div>
+          </div>
+
+          <div class="float-card fc1">
+            <div class="num" style="color: var(--coral);">70.5%</div>
+            <div class="cap">Tasmania recorded the highest adult overweight and obesity rate in 2022</div>
+          </div>
+
+          <div class="float-card fc2">
+            <div class="num" style="color: var(--teal2);">+8.0</div>
+            <div class="cap">Queensland had the largest long-term rise from 2007–08 to 2022</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="story-path" aria-label="Story path">
+      <div class="step"><b>Act 1 · Place + Time</b><span>Are Australians really healthy?</span></div>
+      <div class="step"><b>Act 2 · People</b><span>Who is affected by the BMI problem?</span></div>
+      <div class="step"><b>Act 3 · Lifestyle</b><span>Which lifestyle factors help explain the risk?</span></div>
+      <div class="step"><b>Act 4 · Season</b><span>How does winter create extra health pressure?</span></div>
+      <div class="step"><b>Act 5 · Combine</b><span>How do multiple risks combine across states?</span></div>
+    </section>
+
+    <section class="act" id="act1">
+
+      <div class="act-head">
+        <div class="act-label">Act 1</div>
+
+        <div>
+          <h2>Are Australians really healthy? Tracking overweight and obesity across states</h2>
+        </div>
+
+        <div class="try">
+          <b>Reading guide:</b>
+          Select a survey year to compare changes across Australian states and territories. The map gives the spatial pattern, while the ranking chart shows which states sit higher or lower in that year.
+        </div>
+      </div>
+
+      <div class="act1-layout">
+
+        <p class="act1-intro">
+          Adult overweight and obesity rates have risen across most Australian states and territories from 2007–08 to 2022. The increase is not identical everywhere: Queensland shows the largest long-term rise, Tasmania remains consistently high, and several states reached their highest point around 2017–18 before easing slightly in 2022.
+        </p>
+
+        <div class="act1-two-columns">
+
+          <div class="act1-panel">
+            <h3>Overweight and Obesity Rates Across Australian States (2007–2022)</h3>
+            <p class="panel-text">
+              Tasmania stays among the highest-rate states throughout the period, reaching above 70% in 2017–18 and 2022. Queensland becomes more prominent over time, rising from 60.8% in 2007–08 to 68.8% in 2022.
+            </p>
+
+            <div class="act1-chart-frame">
+              <div class="vis" id="map"></div>
+            </div>
+            <p class="chart-source">
+              <strong>Sources:</strong> <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey/latest-release" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - National Health Survey 2022</a>; <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/latest-release" target="_blank" rel="noopener noreferrer">ABS - National Health Survey: State and territory findings 2022</a>; <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/2017-18" target="_blank" rel="noopener noreferrer">ABS - National Health Survey: State and territory findings 2017-18</a><br>
+              <a href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files" target="_blank" rel="noopener noreferrer">ABS - Australian Statistical Geography Standard (ASGS) Edition 3 digital boundary files</a>
+            </p>
+          </div>
+
+          <div class="act1-panel">
+            <h3>State Ranking by Overweight and Obesity Rate</h3>
+            <p class="panel-text">
+              In 2022, Tasmania records the highest rate at 70.5%, followed by Queensland at 68.8%. New South Wales records the lowest value at 63.1%, creating a 7.4 percentage-point gap between the highest and lowest states.
+            </p>
+
+            <div class="act1-chart-frame">
+              <div class="vis" id="bar"></div>
+            </div>
+            <p class="chart-source">
+              <strong>Sources:</strong> <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey/latest-release" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - National Health Survey 2022</a><br>
+              <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/latest-release" target="_blank" rel="noopener noreferrer">ABS - National Health Survey: State and territory findings 2022</a>; <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/2017-18" target="_blank" rel="noopener noreferrer">ABS - National Health Survey: State and territory findings 2017-18</a>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="takeaway">
+        <b>Takeaway:</b>
+        Overall, adult overweight and obesity rates have increased across Australia from 2007–08 to 2022. Although some states eased slightly after their 2017–18 peak, the long-term trend is clearly upward. Now, let’s look at which groups of people are most likely to be affected.
+      </div>
+
+    </section>
+
+    <section class="act" id="act2">
+
+      <div class="act-head">
+        <div class="act-label">Act 2</div>
+
+        <div>
+          <h2>Who is Most Affected by Overweight and Obesity?</h2>
+        </div>
+
+        <div class="try">
+          <b>Reading guide:</b>
+          Read the three charts from top to bottom. First, the BMI composition chart gives an overview of population groups. Then, the age and gender profile shows where risk becomes stronger. Finally, the gender gap chart focuses directly on the difference between male and female rates.
+        </div>
+      </div>
+
+      <div class="act2-layout">
+
+        <p class="act2-intro">
+          Act 1 showed that overweight and obesity have increased across Australian states and territories. Act 2 shifts the focus from place to people. The question is no longer only where the rates are higher, but who is more likely to be affected.
+        </p>
+
+        <div class="act2-block">
+          <h3>BMI Composition Across Australian Population Groups</h3>
+
+          <p>
+            The BMI composition chart gives an overview of how weight categories are distributed across different population groups. It shows that overweight and obesity become more visible in older age groups, while younger adults have a larger healthy-weight share.
+          </p>
+
+          <div class="act2-chart-frame act2-donut-frame">
+            <div class="vis" id="bmi-composition"></div>
+          </div>
+          <p class="chart-source">
+            <strong>Source:</strong> <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/waist-circumference-and-bmi/latest-release" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - Waist circumference and BMI, 2022</a>
+          </p>
+        </div>
+
+        <div class="act2-block">
+          <h3>Age and Gender Risk Profile</h3>
+
+          <p>
+            The heatmap makes the age pattern clearer. Overweight and obesity rates rise from young adulthood into middle and older age groups. The darker cells show that weight-related risk becomes stronger as age increases.
+          </p>
+
+          <div class="act2-chart-frame act2-heatmap-frame">
+            <div class="vis" id="age-gender-bmi"></div>
+          </div>
+          <p class="chart-source">
+            <strong>Source:</strong> <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/waist-circumference-and-bmi/latest-release" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - Waist circumference and BMI, 2022</a>
+          </p>
+        </div>
+
+        <div class="act2-block">
+          <h3>Gender Gap in Overweight and Obesity</h3>
+
+          <p>
+            The gender gap chart focuses directly on the difference between male and female rates. It highlights that males often record higher overweight and obesity rates than females, especially in several adult age groups.
+          </p>
+
+          <div class="act2-chart-frame act2-gap-frame">
+            <div class="vis" id="gender-gap"></div>
+          </div>
+          <p class="chart-source">
+            <strong>Source:</strong> <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/waist-circumference-and-bmi/latest-release" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - Waist circumference and BMI, 2022</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="takeaway">
+        <b>Takeaway:</b>
+        Overweight and obesity are not evenly spread across the Australian population. The risk becomes stronger in older age groups and is often higher among males. This means Australia’s obesity problem is not only about where people live, but also about who they are.
+      </div>
+
+    </section>
+
+
+    <section class="act" id="act3">
+
+      <div class="act-head">
+        <div class="act-label">Act 3</div>
+
+        <div>
+          <h2>Does Inactivity Help Explain Obesity Risk?</h2>
+        </div>
+
+        <div class="try">
+          <b>Reading guide:</b>
+          Start with the scatter plot to compare physical inactivity and overweight or obesity across states. Then use the sedentary-time dashboard to look more closely at how BMI groups overlap with daily sitting time.
+        </div>
+      </div>
+
+      <div class="act2-layout">
+
+        <p class="act2-intro">
+          After identifying where overweight and obesity are higher and who is more affected, Act 3 looks at lifestyle behaviour. The aim is not to prove causation, but to see whether physical inactivity and sedentary routines appear alongside higher BMI risk.
+        </p>
+
+        <div class="act2-block">
+          <h3>Physical Inactivity and Obesity Move Together</h3>
+
+          <p>
+            The scatter plot compares physical inactivity with overweight and obesity across Australian states and territories. States further to the right have higher physical inactivity, while states higher on the chart have higher overweight or obesity rates. The upward pattern suggests that inactive routines may be part of the broader obesity risk story.
+          </p>
+
+          <div class="act2-chart-frame act3-scatter-frame">
+            <div class="vis" id="lifestyle-scatter"></div>
+          </div>
+          <p class="chart-source">
+            <strong>Sources:</strong> <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey/latest-release" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - National Health Survey 2022</a><br>
+            <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/latest-release" target="_blank" rel="noopener noreferrer">ABS - National Health Survey: State and territory findings 2022</a>
+          </p>
+        </div>
+
+        <div class="act2-block">
+          <h3>Where Do BMI and Sedentary Time Overlap?</h3>
+
+          <p>
+            The sedentary-time dashboard shifts from state-level comparison to participant-level distribution. The heatmap shows where BMI groups and sedentary-time ranges overlap. Darker cells indicate more participants, helping reveal whether higher BMI groups are also associated with longer sitting time.
+          </p>
+
+          <div class="act2-chart-frame act3-dashboard-frame">
+            <div class="vis" id="sedentary-dashboard"></div>
+          </div>
+          <p class="chart-source">
+            <strong>Source:</strong> <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey/latest-release" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - National Health Survey 2022</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="takeaway">
+        <b>Takeaway:</b>
+        Inactivity is one of the clearest lifestyle signals in this story. At the state level, higher physical inactivity often appears alongside higher overweight and obesity rates. At the participant level, sedentary-time patterns add a second layer, showing how daily routines may contribute to broader BMI risk.
+      </div>
+
+    </section>
+
+    <section class="act" id="act4">
+
+      <div class="act-head">
+        <div class="act-label">Act 4</div>
+
+        <div>
+          <h2>How Does Winter Add Extra Health Pressure?</h2>
+        </div>
+
+        <div class="try">
+          <b>Reading guide:</b>
+          Follow the monthly pattern to identify when influenza pressure rises. This section does not claim that flu causes obesity; instead, it adds a seasonal layer to the wider health story.
+        </div>
+      </div>
+
+      <div class="act2-layout">
+
+        <p class="act2-intro">
+          Health behaviour does not happen in isolation. Seasonal illness can disrupt daily routines, reduce outdoor activity and place extra pressure on individuals and the health system. Act 4 adds this seasonal context to the lifestyle story.
+        </p>
+
+        <div class="act2-block">
+          <h3>Influenza Records Rise During the Colder Months</h3>
+
+          <p>
+            The flu chart shows how influenza-related records change across the year. When illness pressure rises, maintaining active and healthy routines can become more difficult. This makes winter an important background condition in the broader health-risk story.
+          </p>
+
+          <div class="act2-chart-frame act4-flu-frame">
+            <div class="vis" id="flu-spike"></div>
+          </div>
+          <p class="chart-source">
+            <strong>Sources:</strong> <a href="https://www.cdc.gov.au/resources/publications/nndss-dataset-influenza" target="_blank" rel="noopener noreferrer">Australian Centre for Disease Control - NNDSS public dataset - influenza (laboratory confirmed)</a><br>
+            <a href="https://www.abs.gov.au/statistics/health/causes-death/deaths-due-acute-respiratory-infections-australia/latest-release" target="_blank" rel="noopener noreferrer">ABS - Deaths due to acute respiratory infections in Australia</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="takeaway">
+        <b>Takeaway:</b>
+        Winter adds another layer to Australia’s health story. Seasonal illness does not cause obesity, but it can place extra pressure on routines that are already difficult to maintain, especially physical activity and time spent outdoors.
+      </div>
+
+    </section>
+
+    <section class="act" id="act5">
+
+      <div class="act-head">
+        <div class="act-label">Act 5</div>
+
+        <div>
+          <h2>How Do Multiple Risks Combine Across States?</h2>
+        </div>
+
+        <div class="try">
+          <b>Reading guide:</b>
+          The parallel profile chart compares several health indicators at once. The final quadrant chart then separates states that are already high from states that have increased more quickly over time.
+        </div>
+      </div>
+
+      <div class="act2-layout">
+
+        <p class="act2-intro">
+          The final act brings the separate parts of the story together. Overweight and obesity are important, but they are not the only health risks. By comparing several indicators together, we can see whether some states face a broader combined burden.
+        </p>
+
+        <div class="act2-block">
+          <h3>Health Risk Profiles Across Australian States</h3>
+
+          <p>
+            Each line represents one Australian state or territory. Each indicator is normalised from low to high risk, so a higher position means that state ranks higher for that risk compared with other states. This view shows whether some states remain high across multiple indicators, rather than only one.
+          </p>
+
+          <div class="act2-chart-frame act5-parallel-frame">
+            <div class="vis" id="state-risk-parallel"></div>
+          </div>
+          <p class="chart-source">
+            <strong>Sources:</strong> <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey/latest-release" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - National Health Survey 2022</a><br>
+            <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/latest-release" target="_blank" rel="noopener noreferrer">ABS - National Health Survey: State and territory findings 2022</a>
+          </p>
+        </div>
+
+        <div class="act2-block">
+          <h3>High Now or Rising Fast?</h3>
+
+          <p>
+            A high current rate and a fast increase do not mean the same thing. This final chart separates states that are already high from states that have increased more quickly over time. This helps distinguish persistent burden from emerging risk.
+          </p>
+
+          <div class="act2-chart-frame act5-quadrant-frame">
+            <div class="vis" id="current-vs-change"></div>
+          </div>
+          <p class="chart-source">
+            <strong>Sources:</strong> <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey/latest-release" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - National Health Survey 2022</a><br>
+            <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/latest-release" target="_blank" rel="noopener noreferrer">ABS - National Health Survey: State and territory findings 2022</a>; <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/2017-18" target="_blank" rel="noopener noreferrer">ABS - National Health Survey: State and territory findings 2017-18</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="takeaway">
+        <b>Final takeaway:</b>
+        Australia’s health challenge is not one-dimensional. Overweight and obesity vary by state, age, gender, lifestyle behaviour and seasonal pressure. Some places need immediate attention because current rates are high, while others need earlier prevention because the increase has been faster.
+      </div>
+
+    </section>
+
+
+    <section class="info-section" id="about">
+      <h2>About this visualisation</h2>
+      <div class="meta-grid">
+        <div class="label">Author</div>
+        <div>Heming Sun, Monash University</div>
+
+        <div class="label">Date</div>
+        <div>June 2026</div>
+
+        <div class="label">Unit</div>
+        <div>FIT2179 Data Visualisation</div>
+
+        <div class="label">Data sources</div>
+        <div>
+          <ul>
+            <li>Australian Bureau of Statistics, <a class="placeholder-link" href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey/latest-release" target="_blank" rel="noopener noreferrer">National Health Survey 2022</a>: BMI, age, gender, physical activity, smoking, alcohol and other health-risk data.</li>
+            <li>Australian Bureau of Statistics, <a class="placeholder-link" href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/waist-circumference-and-bmi/latest-release" target="_blank" rel="noopener noreferrer">Waist circumference and BMI, 2022</a>: BMI category, age, sex, overweight and obesity data.</li>
+            <li>Australian Bureau of Statistics, <a class="placeholder-link" href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/latest-release" target="_blank" rel="noopener noreferrer">National Health Survey: State and territory findings, 2022</a>: state-level health behaviours, conditions prevalence and risk factors.</li>
+            <li>Australian Bureau of Statistics, <a class="placeholder-link" href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey-state-and-territory-findings/2017-18" target="_blank" rel="noopener noreferrer">National Health Survey: State and territory findings, 2017–18</a>: historical state-level overweight and obesity and health-risk data.</li>
+            <li>Australian Centre for Disease Control, <a class="placeholder-link" href="https://www.cdc.gov.au/resources/publications/nndss-dataset-influenza" target="_blank" rel="noopener noreferrer">NNDSS public dataset – influenza (laboratory confirmed)</a>: monthly influenza notification records.</li>
+            <li>Australian Bureau of Statistics, <a class="placeholder-link" href="https://www.abs.gov.au/statistics/health/causes-death/deaths-due-acute-respiratory-infections-australia/latest-release" target="_blank" rel="noopener noreferrer">Deaths due to acute respiratory infections in Australia</a>: influenza-related mortality context.</li>
+            <li>Australian Bureau of Statistics, <a class="placeholder-link" href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files" target="_blank" rel="noopener noreferrer">ASGS Edition 3 digital boundary files</a>: geographic boundaries used for the choropleth map.</li>
+          </ul>
+        </div>
+
+        <div class="label">Tools</div>
+        <div>Vega-Lite v5, HTML, CSS and JavaScript.</div>
+      </div>
+    </section>
+
+    <section class="info-section ai-block" id="ai-declaration">
+      <h2>AI Declaration</h2>
+
+      <h3>AI acknowledgement</h3>
       <p>
-        This visualisation explores health and lifestyle patterns across Australia by comparing state-level risk rankings,
-        regional health outcomes, demographic differences, and national trends. Through interactive charts, users can
-        examine how lifestyle factors such as obesity, smoking, physical activity, alcohol risk, and mental health vary
-        across Australian populations.
+        Generative AI was used to support research, wording, layout refinement and debugging during the development of this visualisation. The final design decisions, chart selection, data interpretation and submitted webpage were reviewed and modified by the author.
+      </p>
+
+      <h3>Part A: Assessment information</h3>
+      <p>
+        Assessment title: FIT2179 Data Visualisation 2<br>
+        Student name: Heming Sun<br>
+        Date: June 2026
+      </p>
+
+      <h3>Part B: Generative AI declaration</h3>
+      <p>
+        I acknowledge that I used generative AI for this assessment.
+      </p>
+
+      <h3>Part C: Process overview</h3>
+      <p>
+        I used generative AI to help draft and refine written descriptions, annotations and story structure so that the narrative was clearer and more connected to the data. I revised the generated wording where it did not match my intended message or where it needed to be more specific to my visualisation.
+      </p>
+      <p>
+        I also used generative AI to assist with HTML, CSS and Vega-Lite troubleshooting, including layout adjustments, chart embedding, colour palette refinement, typography, and fixing visualisations that overflowed their containers. I checked and modified the outputs manually to ensure the webpage displayed correctly and followed the intended visual style.
+      </p>
+      <p>
+        Source citations and final data references are to be added and checked manually before submission.
       </p>
     </section>
 
+  </div>
 
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>01</span>
-        <div>
-          <h2>State lifestyle risk ranking</h2>
-          <p>A clear opening view comparing the composite lifestyle risk index across states and territories.</p>
-        </div>
-      </div>
-      <div id="vis1" class="vis"></div>
-    </section>
+  <script>
+    const transparentEmbedOptions = {
+      actions: false,
+      renderer: "svg",
+      config: {
+        background: "transparent",
+        view: { stroke: null }
+      }
+    };
 
+    vegaEmbed("#map", "js/1.map.vg.json", transparentEmbedOptions).catch(console.error);
+    vegaEmbed("#bar", "js/2.bar.vg.json", transparentEmbedOptions).catch(console.error);
 
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>02</span>
-        <div>
-          <h2>Regional risk burden and health outcomes</h2>
-          <p>Each bubble represents an Australian health region, with population shown by bubble size.</p>
-        </div>
-      </div>
-      <div id="vis2" class="vis"></div>
-    </section>
+    vegaEmbed("#bmi-composition", "js/3.bmi_composition.vg.json", transparentEmbedOptions).catch(console.error);
+    vegaEmbed("#age-gender-bmi", "js/4.age_gender_bmi.vg.json", transparentEmbedOptions).catch(console.error);
+    vegaEmbed("#gender-gap", "js/5.gender_gap.vg.json", transparentEmbedOptions).catch(console.error);
 
+    vegaEmbed("#lifestyle-scatter", "js/6.lifestyle_scatter.vg.json", transparentEmbedOptions).catch(console.error);
+    vegaEmbed("#sedentary-dashboard", "js/7.bmi_sedentary_dashboard.vg.json", transparentEmbedOptions).catch(console.error);
+    vegaEmbed("#flu-spike", "js/8.flu_spike.vg.json", transparentEmbedOptions).catch(console.error);
+    vegaEmbed("#state-risk-parallel", "js/9.state_risk_parallel.vg.json", transparentEmbedOptions).catch(console.error);
+    vegaEmbed("#current-vs-change", "js/10.current_vs_change.vg.json", transparentEmbedOptions).catch(console.error);
+  </script>
 
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>03</span>
-        <div>
-          <h2>Interactive obesity and diabetes comparison</h2>
-          <p>Use the controls to filter regions and compare obesity, diabetes and physical inactivity.</p>
-        </div>
-      </div>
-      <div id="vis3" class="vis"></div>
-    </section>
-
-
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>04</span>
-        <div>
-          <h2>Obesity and diabetes gap by state</h2>
-          <p>A lollipop chart compares two related health indicators for each state and territory.</p>
-        </div>
-      </div>
-      <div id="vis4" class="vis"></div>
-    </section>
-
-
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>05</span>
-        <div>
-          <h2>National health trend explorer</h2>
-          <p>Brush the timeline to focus on specific years and compare long-term national trends.</p>
-        </div>
-      </div>
-      <div id="vis5" class="vis"></div>
-    </section>
-
-
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>06</span>
-        <div>
-          <h2>Coordinated regional risk events</h2>
-          <p>A coordinated view linking regional risk event locations with a time-based trend.</p>
-        </div>
-      </div>
-      <div id="vis6" class="vis"></div>
-    </section>
-
-
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>07</span>
-        <div>
-          <h2>Age and sex lifestyle heatmap</h2>
-          <p>Select one indicator and compare rates across age groups and sex.</p>
-        </div>
-      </div>
-      <div id="vis7" class="vis"></div>
-    </section>
-
-
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>08</span>
-        <div>
-          <h2>Healthy behaviour indicators</h2>
-          <p>Grouped bars compare fruit, vegetable and physical activity indicators across states.</p>
-        </div>
-      </div>
-      <div id="vis8" class="vis"></div>
-    </section>
-
-
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>09</span>
-        <div>
-          <h2>Lifestyle risk composition</h2>
-          <p>Stacked bars show how different lifestyle factors contribute to each state’s overall risk profile.</p>
-        </div>
-      </div>
-      <div id="vis9" class="vis"></div>
-    </section>
-
-
-    <section class="chart-card">
-      <div class="chart-title">
-        <span>10</span>
-        <div>
-          <h2>Summary dashboard</h2>
-          <p>A compact final summary of the key patterns across the visualisation.</p>
-        </div>
-      </div>
-      <div id="vis10" class="vis"></div>
-    </section>
-
-  </main>
-
-  <script src="js/main.js"></script>
 </body>
+
 </html>

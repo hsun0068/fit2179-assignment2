@@ -1,0 +1,221 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Heatmap showing overweight and obesity rate by age group and gender among Australian adults.",
+  "background": "transparent",
+
+  "title": {
+    "text": "Age and Gender Risk Profile",
+    "anchor": "middle",
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "color": "#eaf2ff"
+  },
+
+  "width": 760,
+  "height": 260,
+
+  "data": {
+    "url": "data/4.age_gender_bmi.csv"
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "rgba(234, 242, 255, 0.72)",
+        "strokeWidth": 1.5,
+        "cornerRadius": 6
+      },
+
+      "encoding": {
+        "x": {
+          "field": "age_group",
+          "type": "ordinal",
+          "title": "Age group",
+          "sort": [
+            "18-24",
+            "25-34",
+            "35-44",
+            "45-54",
+            "55-64",
+            "65-74",
+            "75+"
+          ],
+          "axis": {
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "titleFontWeight": "bold",
+            "labelAngle": 0,
+            "labelColor": "#d9e7ff",
+            "titleColor": "#eaf2ff",
+            "domainColor": "rgba(220, 230, 245, 0.35)",
+            "tickColor": "rgba(220, 230, 245, 0.35)",
+            "grid": false
+          }
+        },
+
+        "y": {
+          "field": "gender",
+          "type": "nominal",
+          "title": "Gender",
+          "sort": ["Male", "Female", "Persons"],
+          "axis": {
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 13,
+            "titleFontSize": 13,
+            "titleFontWeight": "bold",
+            "labelColor": "#d9e7ff",
+            "titleColor": "#eaf2ff",
+            "domainColor": "rgba(220, 230, 245, 0.35)",
+            "tickColor": "rgba(220, 230, 245, 0.35)",
+            "grid": false
+          }
+        },
+
+        "color": {
+          "field": "overweight_obese",
+          "type": "quantitative",
+          "title": "Overweight / obese (%)",
+          "scale": {
+            "domain": [40, 85],
+            "range": [
+              "#d7f4f0",
+              "#9ee0da",
+              "#56d3cf",
+              "#2286a5",
+              "#0c5278"
+            ]
+          },
+          "legend": {
+            "orient": "right",
+            "titleColor": "#eaf2ff",
+            "labelColor": "#d9e7ff",
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "titleFontWeight": "bold",
+            "gradientLength": 150,
+            "gradientThickness": 14
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age group"
+          },
+          {
+            "field": "gender",
+            "type": "nominal",
+            "title": "Gender"
+          },
+          {
+            "field": "overweight_obese",
+            "type": "quantitative",
+            "title": "Overweight / obese (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#092033"
+      },
+
+      "encoding": {
+        "x": {
+          "field": "age_group",
+          "type": "ordinal",
+          "sort": [
+            "18-24",
+            "25-34",
+            "35-44",
+            "45-54",
+            "55-64",
+            "65-74",
+            "75+"
+          ]
+        },
+
+        "y": {
+          "field": "gender",
+          "type": "nominal",
+          "sort": ["Male", "Female", "Persons"]
+        },
+
+        "text": {
+          "field": "overweight_obese",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+
+        "tooltip": [
+          {
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age group"
+          },
+          {
+            "field": "gender",
+            "type": "nominal",
+            "title": "Gender"
+          },
+          {
+            "field": "overweight_obese",
+            "type": "quantitative",
+            "title": "Overweight / obese (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null,
+      "fill": "transparent"
+    },
+
+    "axis": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "grid": false,
+      "domain": false,
+      "ticks": false,
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff"
+    },
+
+    "legend": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff"
+    },
+
+    "title": {
+      "font": "Inter, Segoe UI, Arial, sans-serif",
+      "fontSize": 20,
+      "fontWeight": "bold",
+      "color": "#eaf2ff",
+      "anchor": "middle"
+    }
+  }
+}

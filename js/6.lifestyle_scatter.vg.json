@@ -1,0 +1,259 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Interactive scatter plot showing the relationship between physical inactivity and overweight/obesity across Australian states and territories.",
+  "background": "transparent",
+
+  "title": {
+    "text": "Inactivity and Obesity Move Together",
+    "subtitle": "Each point represents an Australian state or territory",
+    "anchor": "start",
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "subtitleFont": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": 23,
+    "subtitleFontSize": 13,
+    "fontWeight": "bold",
+    "color": "#eaf2ff",
+    "subtitleColor": "#9fb6da",
+    "offset": 15
+  },
+
+  "width": 620,
+  "height": 420,
+
+  "data": {
+    "url": "data/6.lifestyle_scatter.csv"
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "text",
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 72,
+        "fontWeight": "bold",
+        "color": "#eaf2ff",
+        "opacity": 0.14
+      },
+      "encoding": {
+        "x": {
+          "value": 310
+        },
+        "y": {
+          "value": 210
+        },
+        "text": {
+          "value": "Australia"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "opacity": 0.92,
+        "stroke": "#eaf2ff",
+        "strokeWidth": 1.5
+      },
+
+      "encoding": {
+        "x": {
+          "field": "inactivity",
+          "type": "quantitative",
+          "title": "Physical inactivity (%)",
+          "scale": {
+            "domain": [25, 38]
+          },
+          "axis": {
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 12,
+            "titleFontSize": 14,
+            "titleFontWeight": "bold",
+            "grid": true,
+            "gridColor": "rgba(220, 230, 245, 0.24)",
+            "domainColor": "rgba(220, 230, 245, 0.45)",
+            "tickColor": "rgba(220, 230, 245, 0.45)",
+            "labelColor": "#d9e7ff",
+            "titleColor": "#eaf2ff"
+          }
+        },
+
+        "y": {
+          "field": "overweight_obese",
+          "type": "quantitative",
+          "title": "Overweight or obesity (%)",
+          "scale": {
+            "domain": [58, 71]
+          },
+          "axis": {
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 12,
+            "titleFontSize": 14,
+            "titleFontWeight": "bold",
+            "grid": true,
+            "gridColor": "rgba(220, 230, 245, 0.24)",
+            "domainColor": "rgba(220, 230, 245, 0.45)",
+            "tickColor": "rgba(220, 230, 245, 0.45)",
+            "labelColor": "#d9e7ff",
+            "titleColor": "#eaf2ff"
+          }
+        },
+
+        "size": {
+          "field": "smoking",
+          "type": "quantitative",
+          "title": "Smoking (%)",
+          "scale": {
+            "range": [180, 1000]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "titleFontWeight": "bold",
+            "titleColor": "#eaf2ff",
+            "labelColor": "#d9e7ff",
+            "symbolFillColor": "rgba(234, 242, 255, 0.12)",
+            "symbolStrokeColor": "rgba(234, 242, 255, 0.75)",
+            "symbolStrokeWidth": 1.4,
+            "symbolOpacity": 1
+          }
+        },
+
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "title": "State / Territory",
+          "scale": {
+            "domain": [
+              "ACT",
+              "NSW",
+              "NT",
+              "QLD",
+              "SA",
+              "TAS",
+              "VIC",
+              "WA"
+            ],
+            "range": [
+              "#7fb4ee",
+              "#f28e2b",
+              "#e15759",
+              "#76b7b2",
+              "#59a14f",
+              "#f3ca63",
+              "#b07aa1",
+              "#ff9da7"
+            ]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "titleFontWeight": "bold",
+            "titleColor": "#eaf2ff",
+            "labelColor": "#d9e7ff",
+            "symbolStrokeColor": "#eaf2ff",
+            "symbolStrokeWidth": 1.2,
+            "symbolSize": 110
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "inactivity",
+            "type": "quantitative",
+            "title": "Physical inactivity (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "overweight_obese",
+            "type": "quantitative",
+            "title": "Overweight or obesity (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "smoking",
+            "type": "quantitative",
+            "title": "Smoking (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "alcohol_risk",
+            "type": "quantitative",
+            "title": "Alcohol risk (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "dy": -12,
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#eaf2ff"
+      },
+      "encoding": {
+        "x": {
+          "field": "inactivity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "overweight_obese",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null,
+      "fill": "transparent"
+    },
+
+    "axis": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff",
+      "domainColor": "rgba(220, 230, 245, 0.45)",
+      "tickColor": "rgba(220, 230, 245, 0.45)",
+      "gridColor": "rgba(220, 230, 245, 0.24)"
+    },
+
+    "legend": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff"
+    },
+
+    "title": {
+      "font": "Inter, Segoe UI, Arial, sans-serif",
+      "color": "#eaf2ff",
+      "subtitleColor": "#9fb6da"
+    }
+  }
+}

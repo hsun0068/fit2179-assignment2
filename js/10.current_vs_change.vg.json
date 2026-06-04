@@ -1,0 +1,326 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Quadrant scatter plot comparing current overweight and obesity rate with long-term change.",
+  "background": "transparent",
+
+  "title": {
+    "text": "High Now or Rising Fast?",
+    "subtitle": "Current overweight and obesity rate compared with change from 2007–08 to 2022",
+    "anchor": "start",
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": 23,
+    "fontWeight": "bold",
+    "subtitleFont": "Inter, Segoe UI, Arial, sans-serif",
+    "subtitleFontSize": 13,
+    "color": "#eaf2ff",
+    "subtitleColor": "#9fb6da",
+    "offset": 14
+  },
+
+  "data": {
+    "url": "data/10.csv"
+  },
+
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "mean",
+          "field": "rate_2022",
+          "as": "mean_current"
+        },
+        {
+          "op": "mean",
+          "field": "change",
+          "as": "mean_change"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.rate_2022 >= datum.mean_current && datum.change >= datum.mean_change ? 'High now + rising fast' : datum.rate_2022 >= datum.mean_current && datum.change < datum.mean_change ? 'High now + slower rise' : datum.rate_2022 < datum.mean_current && datum.change >= datum.mean_change ? 'Lower now + rising fast' : 'Lower now + slower rise'",
+      "as": "risk_type"
+    }
+  ],
+
+  "width": 760,
+  "height": 420,
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#d9e7ff",
+        "strokeDash": [6, 6],
+        "strokeWidth": 1.4,
+        "opacity": 0.55
+      },
+      "encoding": {
+        "x": {
+          "aggregate": "mean",
+          "field": "rate_2022",
+          "type": "quantitative"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#d9e7ff",
+        "strokeDash": [6, 6],
+        "strokeWidth": 1.4,
+        "opacity": 0.55
+      },
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "change",
+          "type": "quantitative"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 270,
+        "opacity": 0.92,
+        "stroke": "#eef5ff",
+        "strokeWidth": 1.6
+      },
+      "encoding": {
+        "x": {
+          "field": "rate_2022",
+          "type": "quantitative",
+          "title": "Overweight and obesity rate in 2022 (%)",
+          "scale": {
+            "domain": [62, 72],
+            "zero": false
+          },
+          "axis": {
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 13,
+            "labelColor": "#d9e7ff",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFontSize": 14,
+            "titleFontWeight": "bold",
+            "titleColor": "#eaf2ff",
+            "grid": true,
+            "gridColor": "rgba(220, 230, 245, 0.22)",
+            "domain": false,
+            "tickColor": "rgba(220, 230, 245, 0.35)"
+          }
+        },
+
+        "y": {
+          "field": "change",
+          "type": "quantitative",
+          "title": "Change from 2007–08 to 2022 (percentage points)",
+          "scale": {
+            "domain": [1, 9],
+            "zero": false
+          },
+          "axis": {
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 13,
+            "labelColor": "#d9e7ff",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFontSize": 14,
+            "titleFontWeight": "bold",
+            "titleColor": "#eaf2ff",
+            "grid": true,
+            "gridColor": "rgba(220, 230, 245, 0.22)",
+            "domain": false,
+            "tickColor": "rgba(220, 230, 245, 0.35)"
+          }
+        },
+
+        "color": {
+          "field": "risk_type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "High now + rising fast",
+              "High now + slower rise",
+              "Lower now + rising fast",
+              "Lower now + slower rise"
+            ],
+            "range": [
+              "#ff7468",
+              "#f3ca63",
+              "#56d3cf",
+              "#a9ccff"
+            ]
+          },
+          "legend": {
+            "title": "Risk pattern",
+            "orient": "right",
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 12,
+            "labelColor": "#d9e7ff",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFontSize": 13,
+            "titleFontWeight": "bold",
+            "titleColor": "#eaf2ff",
+            "symbolType": "circle",
+            "symbolSize": 110,
+            "symbolStrokeColor": "#eaf2ff",
+            "symbolStrokeWidth": 1.1
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "id",
+            "type": "quantitative",
+            "title": "ID"
+          },
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State / Territory"
+          },
+          {
+            "field": "rate_2007_08",
+            "type": "quantitative",
+            "title": "2007–08 rate (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "rate_2022",
+            "type": "quantitative",
+            "title": "2022 rate (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "change",
+            "type": "quantitative",
+            "title": "Change (percentage points)",
+            "format": ".1f"
+          },
+          {
+            "field": "risk_type",
+            "type": "nominal",
+            "title": "Risk pattern"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 9,
+        "dy": -7,
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#eaf2ff"
+      },
+      "encoding": {
+        "x": {
+          "field": "rate_2022",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "change",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "label": "High now + rising fast",
+            "x": 70.0,
+            "y": 8.5
+          },
+          {
+            "label": "High now + slower rise",
+            "x": 69.8,
+            "y": 1.5
+          },
+          {
+            "label": "Lower now + rising fast",
+            "x": 62.4,
+            "y": 8.5
+          },
+          {
+            "label": "Lower now + slower rise",
+            "x": 62.4,
+            "y": 1.5
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#9fb6da",
+        "opacity": 0.9
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [62, 72]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [1, 9]
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null,
+      "fill": "transparent"
+    },
+
+    "axis": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff",
+      "domainColor": "rgba(220, 230, 245, 0.45)",
+      "tickColor": "rgba(220, 230, 245, 0.35)",
+      "gridColor": "rgba(220, 230, 245, 0.22)"
+    },
+
+    "legend": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff"
+    },
+
+    "title": {
+      "font": "Inter, Segoe UI, Arial, sans-serif",
+      "color": "#eaf2ff",
+      "subtitleColor": "#9fb6da"
+    }
+  }
+}

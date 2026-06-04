@@ -1,0 +1,323 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Parallel coordinates plot showing health risk profiles across Australian states and territories.",
+  "background": "transparent",
+
+  "title": {
+    "text": "Health Risk Profiles Across Australian States",
+    "subtitle": "Each line represents one state or territory; each indicator is normalised within its own range",
+    "anchor": "start",
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "subtitleFont": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": 23,
+    "subtitleFontSize": 13,
+    "fontWeight": "bold",
+    "color": "#eaf2ff",
+    "subtitleColor": "#9fb6da",
+    "offset": 15
+  },
+
+  "width": 760,
+  "height": 330,
+
+  "data": {
+    "url": "data/9.state_risk_parallel.csv"
+  },
+
+  "transform": [
+    {
+      "fold": [
+        "overweight_obese",
+        "inactivity",
+        "smoking",
+        "alcohol_risk"
+      ],
+      "as": [
+        "metric",
+        "value"
+      ]
+    },
+    {
+      "calculate": "datum.metric == 'overweight_obese' ? 'Overweight / Obesity' : datum.metric == 'inactivity' ? 'Physical Inactivity' : datum.metric == 'smoking' ? 'Smoking' : 'Alcohol Risk'",
+      "as": "metric_label"
+    },
+    {
+      "calculate": "datum.metric == 'overweight_obese' ? 59.4 : datum.metric == 'inactivity' ? 27.6 : datum.metric == 'smoking' ? 9.7 : 25.1",
+      "as": "metric_min"
+    },
+    {
+      "calculate": "datum.metric == 'overweight_obese' ? 69.1 : datum.metric == 'inactivity' ? 36.0 : datum.metric == 'smoking' ? 14.1 : 31.0",
+      "as": "metric_max"
+    },
+    {
+      "calculate": "(datum.value - datum.metric_min) / (datum.metric_max - datum.metric_min) * 100",
+      "as": "normalised_value"
+    }
+  ],
+
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.6,
+        "opacity": 0.82,
+        "clip": false
+      },
+
+      "encoding": {
+        "x": {
+          "field": "metric_label",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "Overweight / Obesity",
+            "Physical Inactivity",
+            "Smoking",
+            "Alcohol Risk"
+          ],
+          "axis": {
+            "labelAngle": 0,
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 13,
+            "labelFontWeight": "bold",
+            "labelColor": "#d9e7ff",
+            "domain": false,
+            "ticks": false,
+            "labelPadding": 8
+          }
+        },
+
+        "y": {
+          "field": "normalised_value",
+          "type": "quantitative",
+          "title": "Normalised risk level",
+          "scale": {
+            "domain": [
+              -5,
+              105
+            ],
+            "clamp": false
+          },
+          "axis": {
+            "values": [
+              0,
+              25,
+              50,
+              75,
+              100
+            ],
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 12,
+            "titleFontSize": 14,
+            "labelFontWeight": "bold",
+            "titleFontWeight": "bold",
+            "labelColor": "#d9e7ff",
+            "titleColor": "#eaf2ff",
+            "grid": true,
+            "gridColor": "rgba(220, 230, 245, 0.24)",
+            "domainColor": "rgba(220, 230, 245, 0.45)",
+            "tickColor": "rgba(220, 230, 245, 0.45)"
+          }
+        },
+
+        "detail": {
+          "field": "state",
+          "type": "nominal"
+        },
+
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "title": "State / Territory",
+          "scale": {
+            "domain": [
+              "ACT",
+              "NSW",
+              "NT",
+              "QLD",
+              "SA",
+              "TAS",
+              "VIC",
+              "WA"
+            ],
+            "range": [
+              "#7fb4ee",
+              "#f28e2b",
+              "#e15759",
+              "#76b7b2",
+              "#59a14f",
+              "#f3ca63",
+              "#b07aa1",
+              "#ff9da7"
+            ]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "titleFontWeight": "bold",
+            "titleColor": "#eaf2ff",
+            "labelColor": "#d9e7ff",
+            "symbolStrokeWidth": 3,
+            "symbolSize": 130
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "metric_label",
+            "type": "nominal",
+            "title": "Risk factor"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "title": "Original value (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "normalised_value",
+            "type": "quantitative",
+            "title": "Normalised value",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 72,
+        "opacity": 1,
+        "stroke": "#eaf2ff",
+        "strokeWidth": 1.1,
+        "clip": false
+      },
+
+      "encoding": {
+        "x": {
+          "field": "metric_label",
+          "type": "ordinal",
+          "sort": [
+            "Overweight / Obesity",
+            "Physical Inactivity",
+            "Smoking",
+            "Alcohol Risk"
+          ]
+        },
+
+        "y": {
+          "field": "normalised_value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -5,
+              105
+            ],
+            "clamp": false
+          }
+        },
+
+        "detail": {
+          "field": "state",
+          "type": "nominal"
+        },
+
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "ACT",
+              "NSW",
+              "NT",
+              "QLD",
+              "SA",
+              "TAS",
+              "VIC",
+              "WA"
+            ],
+            "range": [
+              "#7fb4ee",
+              "#f28e2b",
+              "#e15759",
+              "#76b7b2",
+              "#59a14f",
+              "#f3ca63",
+              "#b07aa1",
+              "#ff9da7"
+            ]
+          },
+          "legend": null
+        },
+
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "metric_label",
+            "type": "nominal",
+            "title": "Risk factor"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "title": "Original value (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "normalised_value",
+            "type": "quantitative",
+            "title": "Normalised value",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null,
+      "fill": "transparent"
+    },
+
+    "axis": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff",
+      "domainColor": "rgba(220, 230, 245, 0.45)",
+      "tickColor": "rgba(220, 230, 245, 0.45)",
+      "gridColor": "rgba(220, 230, 245, 0.24)"
+    },
+
+    "legend": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff"
+    },
+
+    "title": {
+      "font": "Inter, Segoe UI, Arial, sans-serif",
+      "color": "#eaf2ff",
+      "subtitleColor": "#9fb6da"
+    }
+  }
+}

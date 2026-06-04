@@ -1,0 +1,33 @@
+group,category,value
+Overall,Underweight,2.0
+Overall,Healthy weight,32.2
+Overall,Overweight,35.6
+Overall,Obese,30.2
+Male,Underweight,1.5
+Male,Healthy weight,28.0
+Male,Overweight,39.0
+Male,Obese,31.5
+Female,Underweight,2.5
+Female,Healthy weight,36.5
+Female,Overweight,32.0
+Female,Obese,29.0
+18-24,Underweight,5.0
+18-24,Healthy weight,52.9
+18-24,Overweight,25.0
+18-24,Obese,17.1
+25-34,Underweight,2.5
+25-34,Healthy weight,39.5
+25-34,Overweight,34.0
+25-34,Obese,24.0
+35-49,Underweight,1.5
+35-49,Healthy weight,31.0
+35-49,Overweight,36.0
+35-49,Obese,31.5
+50-64,Underweight,1.0
+50-64,Healthy weight,25.0
+50-64,Overweight,38.0
+50-64,Obese,36.0
+65+,Underweight,1.0
+65+,Healthy weight,24.0
+65+,Overweight,40.0
+65+,Obese,35.0

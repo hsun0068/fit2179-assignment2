@@ -1,0 +1,379 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Binned dashboard showing BMI and sedentary time distribution.",
+  "background": "transparent",
+
+  "title": {
+    "text": "BMI and Sedentary Time Dashboard",
+    "subtitle": "Background colour shows all participants count; circle size shows selected group count",
+    "anchor": "start",
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "subtitleFont": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": 23,
+    "subtitleFontSize": 13,
+    "fontWeight": "bold",
+    "color": "#eaf2ff",
+    "subtitleColor": "#9fb6da",
+    "offset": 15
+  },
+
+  "data": {
+    "url": "data/7.bmi_sedentary_bins.csv"
+  },
+
+  "transform": [
+    {
+      "calculate": "datum.bmi_bin + '-' + (datum.bmi_bin + 2)",
+      "as": "bmi_range"
+    },
+    {
+      "calculate": "datum.sedentary_bin + '-' + (datum.sedentary_bin + 120)",
+      "as": "sedentary_range"
+    }
+  ],
+
+  "vconcat": [
+    {
+      "width": 560,
+      "height": 420,
+
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "stroke": "rgba(7, 20, 38, 0.18)",
+            "strokeWidth": 0.7
+          },
+
+          "encoding": {
+            "x": {
+              "field": "bmi_bin",
+              "type": "ordinal",
+              "title": "BMI (binned)",
+              "sort": [
+                18,
+                20,
+                22,
+                24,
+                26,
+                28,
+                30,
+                32,
+                34,
+                36
+              ],
+              "axis": {
+                "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+                "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+                "labelFontSize": 12,
+                "titleFontSize": 14,
+                "titleFontWeight": "bold",
+                "labelColor": "#d9e7ff",
+                "titleColor": "#eaf2ff",
+                "domainColor": "rgba(220, 230, 245, 0.45)",
+                "tickColor": "rgba(220, 230, 245, 0.45)",
+                "grid": false
+              }
+            },
+
+            "y": {
+              "field": "sedentary_bin",
+              "type": "ordinal",
+              "title": "Sedentary minutes per day (binned)",
+              "sort": [
+                720,
+                600,
+                480,
+                360,
+                240,
+                120,
+                0
+              ],
+              "axis": {
+                "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+                "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+                "labelFontSize": 12,
+                "titleFontSize": 14,
+                "titleFontWeight": "bold",
+                "labelColor": "#d9e7ff",
+                "titleColor": "#eaf2ff",
+                "domainColor": "rgba(220, 230, 245, 0.45)",
+                "tickColor": "rgba(220, 230, 245, 0.45)",
+                "grid": false
+              }
+            },
+
+            "color": {
+              "field": "all_count",
+              "type": "quantitative",
+              "title": "All Participants Count",
+              "scale": {
+                "domain": [
+                  0,
+                  170
+                ],
+                "range": [
+                  "#d7f4f0",
+                  "#9ee0da",
+                  "#56d3cf",
+                  "#2286a5",
+                  "#0c5278"
+                ]
+              },
+              "legend": {
+                "orient": "right",
+                "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+                "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+                "titleFontSize": 13,
+                "labelFontSize": 12,
+                "titleFontWeight": "bold",
+                "titleColor": "#eaf2ff",
+                "labelColor": "#d9e7ff",
+                "gradientLength": 180,
+                "gradientThickness": 14
+              }
+            },
+
+            "tooltip": [
+              {
+                "field": "bmi_range",
+                "type": "nominal",
+                "title": "BMI range"
+              },
+              {
+                "field": "sedentary_range",
+                "type": "nominal",
+                "title": "Sedentary minutes range"
+              },
+              {
+                "field": "all_count",
+                "type": "quantitative",
+                "title": "All participants count"
+              },
+              {
+                "field": "selected_count",
+                "type": "quantitative",
+                "title": "Selected group count"
+              }
+            ]
+          }
+        },
+
+        {
+          "mark": {
+            "type": "circle",
+            "filled": false,
+            "stroke": "rgba(234, 242, 255, 0.62)",
+            "strokeWidth": 2
+          },
+
+          "encoding": {
+            "x": {
+              "field": "bmi_bin",
+              "type": "ordinal",
+              "sort": [
+                18,
+                20,
+                22,
+                24,
+                26,
+                28,
+                30,
+                32,
+                34,
+                36
+              ]
+            },
+
+            "y": {
+              "field": "sedentary_bin",
+              "type": "ordinal",
+              "sort": [
+                720,
+                600,
+                480,
+                360,
+                240,
+                120,
+                0
+              ]
+            },
+
+            "size": {
+              "field": "selected_count",
+              "type": "quantitative",
+              "title": "Selected Group Count",
+              "scale": {
+                "domain": [
+                  0,
+                  100
+                ],
+                "range": [
+                  20,
+                  2200
+                ]
+              },
+              "legend": {
+                "orient": "right",
+                "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+                "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+                "titleFontSize": 13,
+                "labelFontSize": 12,
+                "titleFontWeight": "bold",
+                "titleColor": "#eaf2ff",
+                "labelColor": "#d9e7ff",
+                "symbolStrokeColor": "rgba(234, 242, 255, 0.70)",
+                "symbolFillColor": "rgba(234, 242, 255, 0.06)",
+                "symbolStrokeWidth": 1.8,
+                "values": [
+                  0,
+                  25,
+                  50,
+                  75,
+                  100
+                ]
+              }
+            },
+
+            "tooltip": [
+              {
+                "field": "bmi_range",
+                "type": "nominal",
+                "title": "BMI range"
+              },
+              {
+                "field": "sedentary_range",
+                "type": "nominal",
+                "title": "Sedentary minutes range"
+              },
+              {
+                "field": "all_count",
+                "type": "quantitative",
+                "title": "All participants count"
+              },
+              {
+                "field": "selected_count",
+                "type": "quantitative",
+                "title": "Selected group count"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "width": 560,
+      "height": 150,
+
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 2,
+        "color": "#56d3cf",
+        "opacity": 0.88
+      },
+
+      "encoding": {
+        "x": {
+          "field": "bmi_bin",
+          "type": "ordinal",
+          "title": "BMI bin",
+          "sort": [
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30,
+            32,
+            34,
+            36
+          ],
+          "axis": {
+            "labelAngle": -35,
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 11,
+            "titleFontSize": 14,
+            "titleFontWeight": "bold",
+            "labelColor": "#d9e7ff",
+            "titleColor": "#eaf2ff",
+            "domainColor": "rgba(220, 230, 245, 0.45)",
+            "tickColor": "rgba(220, 230, 245, 0.45)"
+          }
+        },
+
+        "y": {
+          "aggregate": "sum",
+          "field": "selected_count",
+          "type": "quantitative",
+          "title": "Selected group count",
+          "axis": {
+            "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+            "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+            "labelFontSize": 12,
+            "titleFontSize": 14,
+            "titleFontWeight": "bold",
+            "labelColor": "#d9e7ff",
+            "titleColor": "#eaf2ff",
+            "grid": true,
+            "gridColor": "rgba(220, 230, 245, 0.24)",
+            "domainColor": "rgba(220, 230, 245, 0.45)",
+            "tickColor": "rgba(220, 230, 245, 0.45)"
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "bmi_bin",
+            "type": "ordinal",
+            "title": "BMI bin"
+          },
+          {
+            "aggregate": "sum",
+            "field": "selected_count",
+            "type": "quantitative",
+            "title": "Selected group count"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null,
+      "fill": "transparent"
+    },
+
+    "axis": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff",
+      "domainColor": "rgba(220, 230, 245, 0.45)",
+      "tickColor": "rgba(220, 230, 245, 0.45)",
+      "gridColor": "rgba(220, 230, 245, 0.24)"
+    },
+
+    "legend": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff"
+    },
+
+    "title": {
+      "font": "Inter, Segoe UI, Arial, sans-serif",
+      "color": "#eaf2ff",
+      "subtitleColor": "#9fb6da"
+    },
+
+    "concat": {
+      "spacing": 35
+    }
+  }
+}

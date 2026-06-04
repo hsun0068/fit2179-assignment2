@@ -1,0 +1,158 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Year-selectable choropleth map showing adult overweight and obesity rates by Australian state and territory.",
+  "width": 430,
+  "height": 315,
+
+  "title": {
+    "text": "Overweight and Obesity Rate by State and Territory",
+    "subtitle": "Select a survey year to compare state-level rates",
+    "color": "#e7f0ff",
+    "subtitleColor": "#aebfdd",
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "subtitleFont": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": 15,
+    "subtitleFontSize": 12,
+    "fontWeight": "bold",
+    "anchor": "middle",
+    "offset": 8
+  },
+
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": "2022",
+      "bind": {
+        "input": "select",
+        "options": [
+          "2007-08",
+          "2011-12",
+          "2014-15",
+          "2017-18",
+          "2022"
+        ],
+        "labels": [
+          "2007-08",
+          "2011-12",
+          "2014-15",
+          "2017-18",
+          "2022"
+        ],
+        "name": "Survey year: "
+      }
+    }
+  ],
+
+  "data": {
+    "url": "data/2.bmi_by_state_year.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.year == Year_selection"
+    },
+    {
+      "lookup": "state",
+      "from": {
+        "data": {
+          "url": "data/1.australia_states.json",
+          "format": {
+            "type": "topojson",
+            "feature": "STE_2021_AUST_GDA2020"
+          }
+        },
+        "key": "properties.STE_NAME21",
+        "fields": [
+          "type",
+          "geometry",
+          "properties"
+        ]
+      }
+    }
+  ],
+
+  "projection": {
+    "type": "mercator",
+    "center": [134, -28],
+    "scale": 385,
+    "translate": [215, 154]
+  },
+
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#e7f0ff",
+    "strokeWidth": 1
+  },
+
+  "encoding": {
+    "color": {
+      "field": "overweight_obese",
+      "type": "quantitative",
+      "title": "Overweight / Obese (%)",
+      "scale": {
+        "type": "threshold",
+        "domain": [60, 64, 66, 68, 70],
+        "range": [
+          "#e8f5f7",
+          "#c5e8ee",
+          "#8fd1df",
+          "#55b3cb",
+          "#1f7fa8",
+          "#083f63"
+        ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "titleAnchor": "start",
+        "labelColor": "#dce9ff",
+        "titleColor": "#e7f0ff",
+        "gradientLength": 205,
+        "gradientThickness": 13,
+        "labelFontSize": 11,
+        "titleFontSize": 12,
+        "offset": 6
+      }
+    },
+
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal",
+        "title": "State / Territory"
+      },
+      {
+        "field": "abbr",
+        "type": "nominal",
+        "title": "Abbreviation"
+      },
+      {
+        "field": "year",
+        "type": "nominal",
+        "title": "Survey Year"
+      },
+      {
+        "field": "overweight_obese",
+        "type": "quantitative",
+        "title": "Overweight / Obese (%)",
+        "format": ".1f"
+      }
+    ]
+  },
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null
+    },
+
+    "legend": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "bold"
+    }
+  }
+}

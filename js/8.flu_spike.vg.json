@@ -1,0 +1,399 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "The winter spike: monthly influenza-related deaths in Australia.",
+  "width": 860,
+  "height": 420,
+  "background": "transparent",
+  "padding": {
+    "left": 80,
+    "right": 80,
+    "top": 35,
+    "bottom": 80
+  },
+
+  "title": {
+    "text": "The Winter Spike",
+    "subtitle": "Monthly influenza-related deaths in Australia",
+    "anchor": "middle",
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": 30,
+    "fontWeight": "bold",
+    "color": "#eaf2ff",
+    "subtitleFont": "Inter, Segoe UI, Arial, sans-serif",
+    "subtitleFontSize": 18,
+    "subtitleFontWeight": "bold",
+    "subtitleColor": "#9fb6da",
+    "offset": 18
+  },
+
+  "data": {
+    "url": "data/8.flu_monthly.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.year == 2024 || datum.year == 2025"
+    }
+  ],
+
+  "encoding": {
+    "x": {
+      "field": "month_order",
+      "type": "quantitative",
+      "title": "Month",
+      "scale": {
+        "domain": [1, 12]
+      },
+      "axis": {
+        "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        "labelExpr": "datum.value == 1 ? 'Jan' : datum.value == 2 ? 'Feb' : datum.value == 3 ? 'Mar' : datum.value == 4 ? 'Apr' : datum.value == 5 ? 'May' : datum.value == 6 ? 'Jun' : datum.value == 7 ? 'Jul' : datum.value == 8 ? 'Aug' : datum.value == 9 ? 'Sep' : datum.value == 10 ? 'Oct' : datum.value == 11 ? 'Nov' : 'Dec'",
+        "labelAngle": 0,
+        "labelColor": "#d9e7ff",
+        "titleColor": "#eaf2ff",
+        "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+        "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+        "titleFontWeight": "bold",
+        "labelFontSize": 13,
+        "titleFontSize": 15,
+        "domainColor": "rgba(220, 230, 245, 0.45)",
+        "tickColor": "rgba(220, 230, 245, 0.45)",
+        "grid": false
+      }
+    },
+
+    "y": {
+      "field": "deaths",
+      "type": "quantitative",
+      "title": "Influenza-related deaths",
+      "scale": {
+        "domain": [0, 620]
+      },
+      "axis": {
+        "grid": true,
+        "gridColor": "rgba(220, 230, 245, 0.24)",
+        "labelColor": "#d9e7ff",
+        "titleColor": "#eaf2ff",
+        "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+        "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+        "titleFontWeight": "bold",
+        "labelFontSize": 13,
+        "titleFontSize": 15,
+        "domainColor": "rgba(220, 230, 245, 0.45)",
+        "tickColor": "rgba(220, 230, 245, 0.45)"
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2024"
+        },
+        {
+          "calculate": "datum.deaths * 1.95",
+          "as": "shadow_deaths"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "interpolate": "monotone",
+        "color": "#f3ca63",
+        "opacity": 0.22
+      },
+      "encoding": {
+        "y": {
+          "field": "shadow_deaths",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 620]
+          }
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2025"
+        },
+        {
+          "calculate": "datum.deaths * 2.05",
+          "as": "shadow_deaths"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "interpolate": "monotone",
+        "color": "#9d8cff",
+        "opacity": 0.28
+      },
+      "encoding": {
+        "y": {
+          "field": "shadow_deaths",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 620]
+          }
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2024"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "stroke": "#f3ca63",
+        "strokeWidth": 4.5
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "month",
+            "type": "nominal",
+            "title": "Month"
+          },
+          {
+            "field": "deaths",
+            "type": "quantitative",
+            "title": "Deaths"
+          }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2025"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "stroke": "#cf59b5",
+        "strokeWidth": 4.5
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "month",
+            "type": "nominal",
+            "title": "Month"
+          },
+          {
+            "field": "deaths",
+            "type": "quantitative",
+            "title": "Deaths"
+          }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2024"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "fill": "#f3ca63",
+        "stroke": "rgba(234, 242, 255, 0.55)",
+        "strokeWidth": 2,
+        "size": 110
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "month",
+            "type": "nominal",
+            "title": "Month"
+          },
+          {
+            "field": "deaths",
+            "type": "quantitative",
+            "title": "Deaths"
+          }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2025"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "fill": "#cf59b5",
+        "stroke": "rgba(234, 242, 255, 0.55)",
+        "strokeWidth": 2,
+        "size": 110
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "month",
+            "type": "nominal",
+            "title": "Month"
+          },
+          {
+            "field": "deaths",
+            "type": "quantitative",
+            "title": "Deaths"
+          }
+        ]
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "month_order": 7,
+            "deaths": 281
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "fill": "#f3ca63",
+        "stroke": "#eaf2ff",
+        "strokeWidth": 3,
+        "size": 220
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "month_order": 7,
+            "deaths": 331
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "fill": "#cf59b5",
+        "stroke": "#eaf2ff",
+        "strokeWidth": 3,
+        "size": 220
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "month_order": 7,
+            "deaths": 281,
+            "label": "2024 peak month"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -16,
+        "dy": -18,
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 14,
+        "fontStyle": "italic",
+        "fontWeight": "bold",
+        "color": "#56d3cf"
+      },
+      "encoding": {
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "month_order": 7,
+            "deaths": 331,
+            "label": "2025 peak month"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 18,
+        "dy": -18,
+        "font": "Inter, Segoe UI, Arial, sans-serif",
+        "fontSize": 14,
+        "fontStyle": "italic",
+        "fontWeight": "bold",
+        "color": "#56d3cf"
+      },
+      "encoding": {
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null,
+      "fill": "transparent"
+    },
+
+    "axis": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff",
+      "domainColor": "rgba(220, 230, 245, 0.45)",
+      "tickColor": "rgba(220, 230, 245, 0.45)",
+      "gridColor": "rgba(220, 230, 245, 0.24)"
+    },
+
+    "title": {
+      "font": "Inter, Segoe UI, Arial, sans-serif",
+      "color": "#eaf2ff",
+      "subtitleColor": "#9fb6da"
+    }
+  }
+}

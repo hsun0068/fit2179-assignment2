@@ -1,0 +1,757 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Donut charts showing BMI composition across Australian population groups.",
+
+  "title": {
+    "text": "BMI Composition Across Australian Population Groups",
+    "subtitle": "Overweight and obesity become more visible across older age groups",
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "font": "Inter, Segoe UI, Arial, sans-serif",
+    "subtitleFont": "Inter, Segoe UI, Arial, sans-serif",
+    "fontWeight": "bold",
+    "color": "#eaf2ff",
+    "subtitleColor": "#9fb6da",
+    "offset": 14
+  },
+
+  "data": {
+    "url": "data/3.bmi_composition.csv"
+  },
+
+  "vconcat": [
+    {
+      "width": 720,
+      "height": 190,
+
+      "transform": [
+        {
+          "filter": "datum.group == 'Overall'"
+        }
+      ],
+
+      "layer": [
+        {
+          "mark": {
+            "type": "arc",
+            "innerRadius": 52,
+            "outerRadius": 84,
+            "stroke": "#d9e7ff",
+            "strokeWidth": 1.8
+          },
+
+          "encoding": {
+            "theta": {
+              "field": "value",
+              "type": "quantitative",
+              "stack": true
+            },
+
+            "color": {
+              "field": "category",
+              "type": "nominal",
+              "title": "BMI Category",
+              "scale": {
+                "domain": [
+                  "Underweight",
+                  "Healthy weight",
+                  "Overweight",
+                  "Obese"
+                ],
+                "range": [
+                  "#9fb6da",
+                  "#7bc96f",
+                  "#f3ca63",
+                  "#ff7468"
+                ]
+              },
+              "legend": {
+                "orient": "right",
+                "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+                "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+                "titleFontSize": 13,
+                "labelFontSize": 11,
+                "titleFontWeight": "bold",
+                "titleColor": "#eaf2ff",
+                "labelColor": "#d9e7ff",
+                "symbolSize": 90,
+                "offset": 20
+              }
+            },
+
+            "tooltip": [
+              {
+                "field": "group",
+                "type": "nominal",
+                "title": "Group"
+              },
+              {
+                "field": "category",
+                "type": "nominal",
+                "title": "BMI Category"
+              },
+              {
+                "field": "value",
+                "type": "quantitative",
+                "title": "Percentage",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+
+        {
+          "mark": {
+            "type": "text",
+            "font": "Inter, Segoe UI, Arial, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "color": "#eaf2ff"
+          },
+
+          "encoding": {
+            "text": {
+              "value": "Overall"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "hconcat": [
+        {
+          "width": 135,
+          "height": 135,
+
+          "transform": [
+            {
+              "filter": "datum.group == 'Male'"
+            }
+          ],
+
+          "layer": [
+            {
+              "mark": {
+                "type": "arc",
+                "innerRadius": 36,
+                "outerRadius": 60,
+                "stroke": "#d9e7ff",
+                "strokeWidth": 1.4
+              },
+
+              "encoding": {
+                "theta": {
+                  "field": "value",
+                  "type": "quantitative",
+                  "stack": true
+                },
+
+                "color": {
+                  "field": "category",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Underweight",
+                      "Healthy weight",
+                      "Overweight",
+                      "Obese"
+                    ],
+                    "range": [
+                      "#9fb6da",
+                      "#7bc96f",
+                      "#f3ca63",
+                      "#ff7468"
+                    ]
+                  },
+                  "legend": null
+                },
+
+                "tooltip": [
+                  {
+                    "field": "group",
+                    "type": "nominal",
+                    "title": "Group"
+                  },
+                  {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "BMI Category"
+                  },
+                  {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "Percentage",
+                    "format": ".1f"
+                  }
+                ]
+              }
+            },
+
+            {
+              "mark": {
+                "type": "text",
+                "font": "Inter, Segoe UI, Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "color": "#eaf2ff"
+              },
+
+              "encoding": {
+                "text": {
+                  "value": "Male"
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          "width": 135,
+          "height": 135,
+
+          "transform": [
+            {
+              "filter": "datum.group == 'Female'"
+            }
+          ],
+
+          "layer": [
+            {
+              "mark": {
+                "type": "arc",
+                "innerRadius": 36,
+                "outerRadius": 60,
+                "stroke": "#d9e7ff",
+                "strokeWidth": 1.4
+              },
+
+              "encoding": {
+                "theta": {
+                  "field": "value",
+                  "type": "quantitative",
+                  "stack": true
+                },
+
+                "color": {
+                  "field": "category",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Underweight",
+                      "Healthy weight",
+                      "Overweight",
+                      "Obese"
+                    ],
+                    "range": [
+                      "#9fb6da",
+                      "#7bc96f",
+                      "#f3ca63",
+                      "#ff7468"
+                    ]
+                  },
+                  "legend": null
+                },
+
+                "tooltip": [
+                  {
+                    "field": "group",
+                    "type": "nominal",
+                    "title": "Group"
+                  },
+                  {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "BMI Category"
+                  },
+                  {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "Percentage",
+                    "format": ".1f"
+                  }
+                ]
+              }
+            },
+
+            {
+              "mark": {
+                "type": "text",
+                "font": "Inter, Segoe UI, Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "color": "#eaf2ff"
+              },
+
+              "encoding": {
+                "text": {
+                  "value": "Female"
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          "width": 135,
+          "height": 135,
+
+          "transform": [
+            {
+              "filter": "datum.group == '18-24'"
+            }
+          ],
+
+          "layer": [
+            {
+              "mark": {
+                "type": "arc",
+                "innerRadius": 36,
+                "outerRadius": 60,
+                "stroke": "#d9e7ff",
+                "strokeWidth": 1.4
+              },
+
+              "encoding": {
+                "theta": {
+                  "field": "value",
+                  "type": "quantitative",
+                  "stack": true
+                },
+
+                "color": {
+                  "field": "category",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Underweight",
+                      "Healthy weight",
+                      "Overweight",
+                      "Obese"
+                    ],
+                    "range": [
+                      "#9fb6da",
+                      "#7bc96f",
+                      "#f3ca63",
+                      "#ff7468"
+                    ]
+                  },
+                  "legend": null
+                },
+
+                "tooltip": [
+                  {
+                    "field": "group",
+                    "type": "nominal",
+                    "title": "Group"
+                  },
+                  {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "BMI Category"
+                  },
+                  {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "Percentage",
+                    "format": ".1f"
+                  }
+                ]
+              }
+            },
+
+            {
+              "mark": {
+                "type": "text",
+                "font": "Inter, Segoe UI, Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "color": "#eaf2ff"
+              },
+
+              "encoding": {
+                "text": {
+                  "value": "18-24"
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          "width": 135,
+          "height": 135,
+
+          "transform": [
+            {
+              "filter": "datum.group == '25-34'"
+            }
+          ],
+
+          "layer": [
+            {
+              "mark": {
+                "type": "arc",
+                "innerRadius": 36,
+                "outerRadius": 60,
+                "stroke": "#d9e7ff",
+                "strokeWidth": 1.4
+              },
+
+              "encoding": {
+                "theta": {
+                  "field": "value",
+                  "type": "quantitative",
+                  "stack": true
+                },
+
+                "color": {
+                  "field": "category",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Underweight",
+                      "Healthy weight",
+                      "Overweight",
+                      "Obese"
+                    ],
+                    "range": [
+                      "#9fb6da",
+                      "#7bc96f",
+                      "#f3ca63",
+                      "#ff7468"
+                    ]
+                  },
+                  "legend": null
+                },
+
+                "tooltip": [
+                  {
+                    "field": "group",
+                    "type": "nominal",
+                    "title": "Group"
+                  },
+                  {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "BMI Category"
+                  },
+                  {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "Percentage",
+                    "format": ".1f"
+                  }
+                ]
+              }
+            },
+
+            {
+              "mark": {
+                "type": "text",
+                "font": "Inter, Segoe UI, Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "color": "#eaf2ff"
+              },
+
+              "encoding": {
+                "text": {
+                  "value": "25-34"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "hconcat": [
+        {
+          "width": 135,
+          "height": 135,
+
+          "transform": [
+            {
+              "filter": "datum.group == '35-49'"
+            }
+          ],
+
+          "layer": [
+            {
+              "mark": {
+                "type": "arc",
+                "innerRadius": 36,
+                "outerRadius": 60,
+                "stroke": "#d9e7ff",
+                "strokeWidth": 1.4
+              },
+
+              "encoding": {
+                "theta": {
+                  "field": "value",
+                  "type": "quantitative",
+                  "stack": true
+                },
+
+                "color": {
+                  "field": "category",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Underweight",
+                      "Healthy weight",
+                      "Overweight",
+                      "Obese"
+                    ],
+                    "range": [
+                      "#9fb6da",
+                      "#7bc96f",
+                      "#f3ca63",
+                      "#ff7468"
+                    ]
+                  },
+                  "legend": null
+                },
+
+                "tooltip": [
+                  {
+                    "field": "group",
+                    "type": "nominal",
+                    "title": "Group"
+                  },
+                  {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "BMI Category"
+                  },
+                  {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "Percentage",
+                    "format": ".1f"
+                  }
+                ]
+              }
+            },
+
+            {
+              "mark": {
+                "type": "text",
+                "font": "Inter, Segoe UI, Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "color": "#eaf2ff"
+              },
+
+              "encoding": {
+                "text": {
+                  "value": "35-49"
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          "width": 135,
+          "height": 135,
+
+          "transform": [
+            {
+              "filter": "datum.group == '50-64'"
+            }
+          ],
+
+          "layer": [
+            {
+              "mark": {
+                "type": "arc",
+                "innerRadius": 36,
+                "outerRadius": 60,
+                "stroke": "#d9e7ff",
+                "strokeWidth": 1.4
+              },
+
+              "encoding": {
+                "theta": {
+                  "field": "value",
+                  "type": "quantitative",
+                  "stack": true
+                },
+
+                "color": {
+                  "field": "category",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Underweight",
+                      "Healthy weight",
+                      "Overweight",
+                      "Obese"
+                    ],
+                    "range": [
+                      "#9fb6da",
+                      "#7bc96f",
+                      "#f3ca63",
+                      "#ff7468"
+                    ]
+                  },
+                  "legend": null
+                },
+
+                "tooltip": [
+                  {
+                    "field": "group",
+                    "type": "nominal",
+                    "title": "Group"
+                  },
+                  {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "BMI Category"
+                  },
+                  {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "Percentage",
+                    "format": ".1f"
+                  }
+                ]
+              }
+            },
+
+            {
+              "mark": {
+                "type": "text",
+                "font": "Inter, Segoe UI, Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "color": "#eaf2ff"
+              },
+
+              "encoding": {
+                "text": {
+                  "value": "50-64"
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          "width": 135,
+          "height": 135,
+
+          "transform": [
+            {
+              "filter": "datum.group == '65+'"
+            }
+          ],
+
+          "layer": [
+            {
+              "mark": {
+                "type": "arc",
+                "innerRadius": 36,
+                "outerRadius": 60,
+                "stroke": "#d9e7ff",
+                "strokeWidth": 1.4
+              },
+
+              "encoding": {
+                "theta": {
+                  "field": "value",
+                  "type": "quantitative",
+                  "stack": true
+                },
+
+                "color": {
+                  "field": "category",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Underweight",
+                      "Healthy weight",
+                      "Overweight",
+                      "Obese"
+                    ],
+                    "range": [
+                      "#9fb6da",
+                      "#7bc96f",
+                      "#f3ca63",
+                      "#ff7468"
+                    ]
+                  },
+                  "legend": null
+                },
+
+                "tooltip": [
+                  {
+                    "field": "group",
+                    "type": "nominal",
+                    "title": "Group"
+                  },
+                  {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "BMI Category"
+                  },
+                  {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "Percentage",
+                    "format": ".1f"
+                  }
+                ]
+              }
+            },
+
+            {
+              "mark": {
+                "type": "text",
+                "font": "Inter, Segoe UI, Arial, sans-serif",
+                "fontSize": 12,
+                "fontWeight": "bold",
+                "color": "#eaf2ff"
+              },
+
+              "encoding": {
+                "text": {
+                  "value": "65+"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "config": {
+    "background": "transparent",
+
+    "view": {
+      "stroke": null
+    },
+
+    "concat": {
+      "spacing": 28
+    },
+
+    "legend": {
+      "labelFont": "Inter, Segoe UI, Arial, sans-serif",
+      "titleFont": "Inter, Segoe UI, Arial, sans-serif",
+      "labelColor": "#d9e7ff",
+      "titleColor": "#eaf2ff"
+    },
+
+    "title": {
+      "font": "Inter, Segoe UI, Arial, sans-serif",
+      "color": "#eaf2ff",
+      "subtitleColor": "#9fb6da"
+    }
+  }
+}
